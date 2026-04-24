@@ -10,10 +10,19 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
+import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Inicializa o leitor de variáveis de ambiente
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+# Lê o arquivo .env se existir na raiz do projeto
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pgi', # <-- Nosso Módulo PGI
 ]
 
 MIDDLEWARE = [
@@ -75,8 +85,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': env('SQL_ENGINE', default='django.db.backends.sqlite3'),
+        'NAME': env('SQL_DATABASE', default=BASE_DIR / 'db.sqlite3'),
+        'USER': env('SQL_USER', default=''),
+        'PASSWORD': env('SQL_PASSWORD', default=''),
+        'HOST': env('SQL_HOST', default=''),
+        'PORT': env('SQL_PORT', default=''),
     }
 }
 
