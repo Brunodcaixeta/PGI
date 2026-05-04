@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': env('SQL_ENGINE', default='django.db.backends.sqlite3'),
-        'NAME': env('SQL_DATABASE', default=BASE_DIR / 'db.sqlite3'),
+        'NAME': env('SQL_DATABASE', default=str(BASE_DIR / 'db.sqlite3')),
         'USER': env('SQL_USER', default=''),
         'PASSWORD': env('SQL_PASSWORD', default=''),
         'HOST': env('SQL_HOST', default=''),
@@ -135,3 +135,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configuração de Autenticação - Usa nosso modelo User Customizado
+AUTH_USER_MODEL = 'pgi.User'
