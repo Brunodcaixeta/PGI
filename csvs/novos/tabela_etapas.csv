@@ -1,0 +1,679 @@
+codigo_acao,concluido,etapa,id_etapa,ordem,responsavel,id_user
+AI150,sim,Assinatura do convênio do doutorado profissional em direito e políticas públicas para membras e membros do MPGO,AI150-1,1,adriano.firmino@mpgo.mp.br,22
+AI150,não,Fase inicial de conversações com UNIALFA-FADISP para celebração de convênio ou ajuste semelhante para ofertas de vagas para o MPGO em curso de pós-graduação strictu sensu .,AI150-2,2,adriano.firmino@mpgo.mp.br,22
+AI154,sim,Plataforma OJS disponível.,AI154-1,1,adriano.firmino@mpgo.mp.br,22
+AI158,sim,"Contratação da base ""Minha Biblioteca"". ",AI158-1,1,adriano.firmino@mpgo.mp.br,22
+AI158,sim,Encaminhamento de lista para aquisição de obras nacionais e estrangeiras,AI158-2,2,adriano.firmino@mpgo.mp.br,22
+AI160,não,Fase de contratação do Moodle Workplace,AI160-1,1,adriano.firmino@mpgo.mp.br,22
+AI161,não,Desenvolvimento de uma nova página (hotsite) para apresentação dos conteúdos da ESUMP.,AI161-1,1,adriano.firmino@mpgo.mp.br,22
+AI159,não,Desenvolvimento de uma ferramenta (painel) que entregue um relatório pormenorizado das atividades desenvolvidas e concluídas pelos membras(os) do MPGO organizadas pela Esump.,AI159-1,1,adriano.firmino@mpgo.mp.br,22
+AI159,não,"Ferramenta que possibilite o cadastro de atividades de aprendizagem realizadas fora do MPGO, com conexão com outras estruturas organizacionais do MP.",AI159-2,2,adriano.firmino@mpgo.mp.br,22
+AI153,não,Discussão sobre o projeto de criação de uma ferramenta com um painel que apresente de forma contínua e em tempo real as competências adquiridas e a área de interesse.,AI153-1,1,adriano.firmino@mpgo.mp.br,22
+AI110,não,PROJETO. NEXUS. APROVAÇÃO. EXECUÇÃO. Aprovar o projeto na RAE e seguir com a sua execução,AI110-14,14,liana.tormin@mpgo.mp.br,9
+AI110,sim,MP PROJETA. Desenvolver solução tecnológica para auxiliar na elaboração de planos operacionais de atuação,AI110-,,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. POA INTELIGENTE. ESTRUTURAÇÃO. Planejar projeto institucional voltado à criação de solução tecnológica e à realização de capacitações para auxiliar e orientar na elaboração de planos operacionais de atuação,AI110-3,3,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. NEXUS. PLANEJAMENTO. Planejar projeto institucional voltado a automomatizar a gestão dos instrumentos de planejamento no MPGO ,AI110-10,10,liana.tormin@mpgo.mp.br,9
+AI110,não,Criar aba específica no sistema Atena para registro e monitoramento de projetos institucionais,AI110-,,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. POA INTELIGENTE. CAPACITAÇÃO. Capacitar integrantes do MPGO para o planejamento de planos operacionais de atuação.,AI110-5,5,liana.tormin@mpgo.mp.br,9
+AI110,não,Reconhecer e disseminar boas práticas para o fortalecimento da cultura de projetos no MPGO,AI110-,,liana.tormin@mpgo.mp.br,9
+AI110,não,Elaborar e implementar plano de comunicação de iniciativas institucionais,AI110-,,liana.tormin@mpgo.mp.br,9
+AI113,não,Desenvolver Mapa Social com dados sobre políticas públicas nas áreas de atuação do MPGO (Responsabilidade: Liana Antunes e Rafael Corrêa) ,AI113-,,rafael.correa@mpgo.mp.br,10
+AI115,sim,PROJETO. REVISÃO ESTRATÉGICA. DADOS PARA TOMADA DE DECISÃO. Identificar temas prioritários para a revisão do planejamento estratégico do MPGO baseados em dados,AI115-6,6,liana.tormin@mpgo.mp.br,9
+AI126,não,Criar aba específica no sistema Atena para registro e monitoramento de projetos institucionais,AI126-,,liana.tormin@mpgo.mp.br,9
+AI126,não,Criar taxonomias e recursos específicos para os projetos institucionais ,AI126-,,liana.tormin@mpgo.mp.br,9
+AI91,sim,PROJETO. MPGO PREMIA. Planejar o projeto MPGO Premia que visa reconhecer e disseminar boas práticas do MPGO. ,AI91-8,8,liana.tormin@mpgo.mp.br,9
+AI91,não,PROJETO. MPGO PREMIA. Aprovar o projeto na RAE e prosseguir com a sua execução.,AI91-12,12,liana.tormin@mpgo.mp.br,9
+AI91,não,PRÊMIO MPGO. Estabelecer equipe de avaliação e seleção de boas práticas,AI91-,,liana.tormin@mpgo.mp.br,9
+AI91,não,PRÊMIO MPGO. Realizar evento de premiação de boas práticas ,AI91-,,liana.tormin@mpgo.mp.br,9
+AI113,não,Revisar o Planejamento Estratégico Institucional a partir de dados extraídos do mapa Social,AI113-,,liana.tormin@mpgo.mp.br,9
+AI116,sim,PROJETO. BUSCADOR DE PRECEDENTES. SUBJUR. REQUISITOS. Levantamento de requisitos do sistema.,AI116-1,1,rafael.correa@mpgo.mp.br,10
+AI116,não,Mapeamento de tarefas individuais a partir dos requisitos.,AI116-,,rafael.correa@mpgo.mp.br,10
+AI116,sim,Implementar módulo de ingestão e validação automática de decisões administrativas.,AI116-,,rafael.correa@mpgo.mp.br,10
+AI116,sim,Desenvolver motor de busca inteligente com processamento de linguagem natural e busca semântica.,AI116-,,rafael.correa@mpgo.mp.br,10
+AI116,sim,Construir interface de pesquisa avançada com filtros especializados e visualização de resultados,AI116-,,rafael.correa@mpgo.mp.br,10
+AI116,sim,Estabelecer base de dados vetorizada para armazenamento e recuperação otimizada de precedentes.,AI116-,,rafael.correa@mpgo.mp.br,10
+AI116,não,Integrar sistema de autenticação e controle de acesso,AI116-,,rafael.correa@mpgo.mp.br,10
+AI116,não,Disponibilizar módulo de estatísticas e relatórios gerenciais sobre uso e precedentes,AI116-,,rafael.correa@mpgo.mp.br,10
+AI116,não,Disponibilizar a aplicação final ao público interno.,AI116-,,rafael.correa@mpgo.mp.br,10
+AI106,não,Edição do Ato PGJ que institui o COMPOR.,AI106-,,sandra.mara@mpgo.mp.br,31
+AI106,não,Estruturação dos integrantes do COMPOR com 02 Promotores de Justiça afastados com dedicação exclusiva.,AI106-,,sandra.mara@mpgo.mp.br,31
+AI102,sim,Estudos prévio e definição da forma de contratação e do processo licitatório.,AI102-1,1,rafael.oliveira@mpgo.mp.br,2
+AI102,sim,Preparo do processo licitatório.,AI102-2,2,rafael.oliveira@mpgo.mp.br,2
+AI102,não,Fase licitatória.,AI102-,,rafael.oliveira@mpgo.mp.br,2
+AI102,sim,Fase licitatória.,AI102-3,3,rafael.oliveira@mpgo.mp.br,2
+AI102,não,Execução da obra pela contratada e fiscalização pela comissão multidisciplinar designada.  ,AI102-5,5,rafael.oliveira@mpgo.mp.br,2
+AI102,não,Recebimento da obra.,AI102-,,rafael.oliveira@mpgo.mp.br,2
+AI103,não,Identificação de possíveis espaços para a implantação de coworking no Edifício sede ou em outros prédios próximos.,AI103-,,rafael.oliveira@mpgo.mp.br,2
+AI103,sim,Identificação de possíveis espaços para a implantação de coworking na sede do MP.,AI103-1,1,rafael.oliveira@mpgo.mp.br,2
+AI103,sim,Adaptação estrutural do espaço.,AI103-3,3,rafael.oliveira@mpgo.mp.br,2
+AI103,sim,Instalação de mobiliário e equipamentos.,AI103-4,4,rafael.oliveira@mpgo.mp.br,2
+AI103,não,Divulgação para as membras e membros.,AI103-,,rafael.oliveira@mpgo.mp.br,2
+AI103,sim,Inauguração do espaço.,AI103-5,5,rafael.oliveira@mpgo.mp.br,2
+AI168,sim,Levantamento e estudo a respeito das áreas com maior necessidade de profissionais e identificação do perfil do cargo correspondente às necessidades encontradas. ,AI168-1,1,rafael.oliveira@mpgo.mp.br,2
+AI168,sim,"Criação de cargos de Técnico Ministerial, Assistente Ministerial e Assessor de Promotor.",AI168-2,2,rafael.oliveira@mpgo.mp.br,2
+AI168,sim,Estudos e preparativos para o provimento de cargos de Analista Ambiental que se encontram vagos. ,AI168-,,rafael.oliveira@mpgo.mp.br,2
+AI85,não,Indenização de férias no primeiro semestre de 2025.,AI85-,,rafael.oliveira@mpgo.mp.br,2
+AI85,não,Indenização de férias no 2º semestre de 2026.,AI85-4,4,rafael.oliveira@mpgo.mp.br,2
+AI85,não,Indenização de férias no 2º semestre de 2025.,AI85-2,2,rafael.oliveira@mpgo.mp.br,2
+AI85,não,Indenização de férias no 1º semestre de 2026.,AI85-3,3,rafael.oliveira@mpgo.mp.br,2
+AI85,sim,Indenização de férias no 1º semestre de 2025.,AI85-1,1,rafael.oliveira@mpgo.mp.br,2
+AI86,sim,Indenização de abonos compensatórios no 1º semestre de 2025.,AI86-1,1,rafael.oliveira@mpgo.mp.br,2
+AI86,sim,Indenização de abonos compensatórios no 2º semestre de 2025.,AI86-2,2,rafael.oliveira@mpgo.mp.br,2
+AI86,sim,Indenização de abonos compensatórios no 1º semestre de 2026.,AI86-3,3,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios no 2º semestre de 2026.,AI86-4,4,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios em Setembro de 2025.,AI86-,,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios em Outubro de 2025.,AI86-,,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios em Dezembro de 2025.,AI86-,,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios em Fevereiro de 2026.,AI86-,,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios em Março de 2026.,AI86-,,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios em Abril de 2026.,AI86-,,rafael.oliveira@mpgo.mp.br,2
+AI86,não,Indenização de abonos compensatórios em Maio de 2026.,AI86-,,rafael.oliveira@mpgo.mp.br,2
+AI104,sim,"Construção da sede de Mineiros, 92,14%, fase atual: obra em execução direta pelas equipes da Administração, com previsão de conclusão para novembro/2025. Montagem do elevador dentro do prazo, instalação de forro, preparo para montagem da subestação, racks, bombas.  ",AI104-1,1,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Construção da sede da Cidade de Goiás - novo contrato em vigência, com percentual de execução acima do previsto, em 10,54%.",AI104-2,2,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Construção da sede de Morrinhos - nova licitação com edital publicado e sessão aberta em 15/09/25 - com interessado.,AI104-3,3,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Construção da sede de Ipameri - novo contrato com 26,03% executado.",AI104-4,4,rafael.oliveira@mpgo.mp.br,2
+AI104,sim,"Construção da sede de Guapó - 83,92%. Fase atual: Executado: 95,38%.Processo em andamento do cercon e habite-se. Pendência da ligação de baixa tensão pela equatorial. ",AI104-5,5,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Construção da sede de Iporá - 41,59% executado, com 55,50% de atraso. Fase atual: aberto procedimento de descumprimento contratual em janeiro e rescisão unilateral do contrato em maio.",AI104-6,6,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Construção da sede de Rubiataba - 22,02%. Previsão de conclusão: novembro de 2025 e vigência contratual até março de 2026.",AI104-7,7,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Reforma e ampliação na sede de Itumbiara - 45,13% executado com 47,41% de atraso. Procedimento de descumprimento contratual aberto em janeiro de 2025.",AI104-8,8,rafael.oliveira@mpgo.mp.br,2
+AI104,sim,"Reforma na sede de Vianópolis -  86,82%. Aberto procedimento por descumprimento contratual em março de 2025. Em Abril foi realizado o levantamento para finalização por execução direta.",AI104-9,9,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Reforma na sede de Crixás - 69,65% executado com 34,43% de atraso. Em maio a empresa foi acionada para finalizar as instalações mínimas para ocupação do imóvel.",AI104-10,10,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Reforma e ampliação na sede de Luziânia - 35,58% executado, com 10,79% de atraso. Em Abril foi aberto o procedimento de descumprimento contratual.",AI104-11,11,rafael.oliveira@mpgo.mp.br,2
+AI104,sim,"Reforma na sede de Quirinópolis - 69,04%. Autorizado o 5° Termo aditivo.",AI104-12,12,rafael.oliveira@mpgo.mp.br,2
+AI104,sim,Locação sob medida em Cidade Ocidental.,AI104-13,13,rafael.oliveira@mpgo.mp.br,2
+AI104,sim,Locação sob medida da sede das Procuradorias de Justiça.,AI104-,,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Pirenópolis - executada cerca de 75% da obra. ,AI104-14,14,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Locação sob medida do galpão sede em Aparecida de Goiânia - Alvará ainda não emitido. Providências paralelas: canteiro pronto, murado e movimentação de solo feita. Projetos complementares em desenvolvimento.",AI104-15,15,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Aparecida de Goiânia. Projeto em análise na prefeitura. Início das atividades de campo (limpeza e início de muro).,AI104-16,16,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Locação sob medida em Posse. Licitação deserta, pela segunda vez, em 14 de maio de 2025. Providências alternativas estão sendo avaliadas pela SENGE.",AI104-17,17,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Locação sob medida em Acreúna. Protocolo de Intenções assinado em março de 2025. Em maio, o projeto arquitetônico foi encaminhado para aprovação.",AI104-18,18,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Acreúna.,AI104-,,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Alexânia. Protocolo de Intenções assinado em abril de 2025. Em maio iniciaram-se os primeiros estudos.,AI104-19,19,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Locação sob medida em Anicuns. Licitação deserta, pela segunda vez, em 14 de abril de 2025. Providências alternativas estão sendo avaliadas pela SENGE.",AI104-20,20,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Padre Bernardo. Protocolo de Intenções n. 006/2025 aguardando assinatura.,AI104-21,21,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Locação sob medida em Aragarças. Protocolo de Intenções 004/2025 assinado em 16 de maio, com gestores nomeados em junho.",AI104-22,22,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Jussara. Protocolo de Intenções 002/2025 assinado em março de 2025. Projeto Arquitetônico encaminhado para aprovação em maio de 2025.,AI104-23,23,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Mozarlândia. Protocolo de Intenções 005/2025 assinado e publicado em 16 de junho.,AI104-24,24,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Locação sob medida em Senador Canedo. Termo de Referência e relatórios técnicos prontos. Os documentos da instrução técnica estão em elaboração.,AI104-25,25,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Projeto de construção em Valparaíso de Goiás. Aguardando juntada da minuta do contrato pela DCC para que a SGOC prossiga com a publicação do edital e agendamento de data para abertura de sessão.,AI104-26,26,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Projeto de construção em Hidrolândia. Previsão de término da elaboração do orçamento para licitação em junho. ,AI104-27,27,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Projeto de construção em Minaçu. Projetos complementares em revisão na SENGE por incompatibilidade técnica executiva, constatada na fase de orçamento.",AI104-28,28,rafael.oliveira@mpgo.mp.br,2
+AI104,não,"Projeto de construção em Itapuranga. Complementares em adaptação decorrente de necessidade
+de retirada de árvore. Para então encaminhar para orçamento.",AI104-29,29,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Projeto de construção em São Miguel do Araguaia.  Termo de cessão de uso de imóvel  assinado. Encaminhado ao cartório para averbar na matrícula do imóvel. ,AI104-30,30,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Projeto de reforma com ampliação em Itaberaí. Estudo preliminar aprovado em Abril de 2025. Os autos retornaram para SENGE.,AI104-31,31,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Projeto de reforma com ampliação em Ceres. Estudo preliminar em revisão.,AI104-32,32,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Projeto de construção em Catalão. Estudo preliminar em desenvolvimento.,AI104-33,33,rafael.oliveira@mpgo.mp.br,2
+AI104,não,Projeto de reforma com ampliação em Uruaçu. Em análise de nova alternativa de execução por licitação com a anuência da coordenação local.,AI104-34,34,rafael.oliveira@mpgo.mp.br,2
+AI105,sim,Alocação de mão de obra própria para execução direta de trabalhos.,AI105-3,3,rafael.oliveira@mpgo.mp.br,2
+AI168,sim,Minuta do projeto de Lei.,AI168-3,3,rafael.oliveira@mpgo.mp.br,2
+AI168,sim,Aprovação do projeto de Lei pelo Colégio de Procuradores de Justiça.,AI168-4,4,rafael.oliveira@mpgo.mp.br,2
+AI168,sim,Aprovação do Projeto de Lei pela Assembleia Legislativa.,AI168-5,5,rafael.oliveira@mpgo.mp.br,2
+AI168,sim,Sanção pelo Governador.,AI168-6,6,rafael.oliveira@mpgo.mp.br,2
+AI168,não,Deflagração do concurso para analista ambiental e sanitarista.,AI168-,,rafael.oliveira@mpgo.mp.br,2
+AI168,não,Nomeação dos Analistas Ambiental e Sanitarista.,AI168-,,rafael.oliveira@mpgo.mp.br,2
+AI94,sim,Elaborar sugestão de alteração da Lei.,AI94-1,1,rafael.oliveira@mpgo.mp.br,2
+AI94,sim,Aprovação do projeto pelo Colégio de Procuradores de Justiça e pela Assembleia Legislativa.,AI94-2,2,rafael.oliveira@mpgo.mp.br,2
+AI94,sim,Sanção da Lei.,AI94-3,3,rafael.oliveira@mpgo.mp.br,2
+AI102,não,Formalização da contratação.,AI102-4,4,rafael.oliveira@mpgo.mp.br,2
+AI103,sim,Elaboração de projeto (Atena 202500186145).,AI103-2,2,rafael.oliveira@mpgo.mp.br,2
+AI105,sim,Formalização de contrato para ampliação de contratação de terceirizados.,AI105-2,2,rafael.oliveira@mpgo.mp.br,2
+AI105,sim,Licitação para ampliação da contratação de terceirizados para adequações estruturais.,AI105-1,1,rafael.oliveira@mpgo.mp.br,2
+AI92,sim,Realizar levantamentos de outros MPs.,AI92-2,2,rafael.oliveira@mpgo.mp.br,2
+AI92,não,Apresentar proposta de projeto e realizar impacto financeiro e orçamentário.,AI92-3,3,rafael.oliveira@mpgo.mp.br,2
+AI89,sim,2025 - Acompanhar as publicações de Resoluções e Recomendações CNMP que versem sobre direitos.,AI89-1,1,rafael.oliveira@mpgo.mp.br,2
+AI89,sim,2025 - Realizar estudos para implementação de direitos previstos em Resoluções e Recomendações do CNMP.,AI89-2,2,rafael.oliveira@mpgo.mp.br,2
+AI89,sim,2026 - Acompanhar as publicações de Resoluções e Recomendações CNMP que versem sobre direitos.,AI89-3,3,rafael.oliveira@mpgo.mp.br,2
+AI89,não,2026 - Realizar estudos para implementação de direitos previstos em Resoluções e Recomendações do CNMP.,AI89-4,4,rafael.oliveira@mpgo.mp.br,2
+AI88,sim,2025 - Realizar estudos para atualização dos auxílios.,AI88-1,1,rafael.oliveira@mpgo.mp.br,2
+AI88,não,2026 - Realizar estudos para atualização dos auxílios.,AI88-4,4,rafael.oliveira@mpgo.mp.br,2
+AI88,sim,2025 - Realizar impacto financeiro e orçamentário para atualização dos auxílios.,AI88-2,2,rafael.oliveira@mpgo.mp.br,2
+AI88,não,2026 - Realizar impacto financeiro e orçamentário para atualização dos auxílios.,AI88-5,5,rafael.oliveira@mpgo.mp.br,2
+AI87,sim,2025 - Realizar estudos para antecipação de despesas de exercícios anteriores.,AI87-1,1,rafael.oliveira@mpgo.mp.br,2
+AI87,sim,2025 - Implementar antecipação de despesas de exercícios anteriores - acervo retroativo.,AI87-2,2,rafael.oliveira@mpgo.mp.br,2
+AI87,sim,2026 - Realizar estudos para antecipação de despesas de exercícios anteriores.,AI87-3,3,rafael.oliveira@mpgo.mp.br,2
+AI87,não,2026 - Implementar antecipação de despesas de exercícios anteriores.,AI87-4,4,rafael.oliveira@mpgo.mp.br,2
+AI169,sim,Realizar estudos para novo Plano de Cargos e Salários.,AI169-1,1,rafael.oliveira@mpgo.mp.br,2
+AI169,sim,Elaborar minuta da proposta de PCS.,AI169-2,2,rafael.oliveira@mpgo.mp.br,2
+AI169,sim,Realizar impacto financeiro e orçamentário.,AI169-3,3,rafael.oliveira@mpgo.mp.br,2
+AI169,sim,Encaminhar minuta para aprovação do Colégio de Procuradores.,AI169-4,4,rafael.oliveira@mpgo.mp.br,2
+AI169,sim,Encaminhar minuta para aprovação da Assembleia Legislativa.,AI169-5,5,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Piracanjuba - Secretário Auxiliar - fase atual: publicação do resultado preliminar de títulos.,AI167-,,rafael.oliveira@mpgo.mp.br,2
+AI167,sim,Santa Helena de Goiás - Secretário Auxiliar - fase atual: homologado.,AI167-1,1,rafael.oliveira@mpgo.mp.br,2
+AI167,sim,Paraúna - Secretário Auxiliar - fase atual: homologado.,AI167-2,2,rafael.oliveira@mpgo.mp.br,2
+AI167,sim,Cachoeira Alta - Secretário Auxiliar - fase atual: homologado.,AI167-4,4,rafael.oliveira@mpgo.mp.br,2
+AI167,sim,Trindade - Secretário Auxiliar - fase atual: homologado.,AI167-5,5,rafael.oliveira@mpgo.mp.br,2
+AI167,sim,Alvorada do Norte - Oficial de Promotoria - fase atual: homologado.,AI167-6,6,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Aparecida de Goiânia - Secretário Auxiliar - fase atual: interposição de recursos contra a classificação final dos candidatos.,AI167-7,7,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Senador Canedo - Secretário Auxiliar - fase atual: interposição de recursos contra a análise títulos.,AI167-8,8,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Goiânia - Analistas Ambiental e Sanitarista - fase atual: aguardando contratação da empresa.,AI167-9,9,rafael.oliveira@mpgo.mp.br,2
+AI144,sim, Realização de curso de media training com palestrante externo para membras e membros,AI144-2,2,pedro.palazzo@mpgo.mp.br,21
+AI144,não, Regionalização da comunicação com veículos da imprensa,AI144-1,1,pedro.palazzo@mpgo.mp.br,21
+AI144,sim,Realização de curso de media training para membras e membros do curso de aperfeiçoamento do 62º concurso,AI144-3,3,pedro.palazzo@mpgo.mp.br,21
+AI144,não,Realização do 6º Prêmio de Jornalismo do MPGO,AI144-4,4,pedro.palazzo@mpgo.mp.br,21
+AI148,sim,Envio na lista de WhatsApp do gabinete do PGJ de informações selecionadas e de interesse das membras e membros,AI148-2,2,pedro.palazzo@mpgo.mp.br,21
+AI148,sim,"Edições frequentes do Informativo Institucional Avança MP, com as principais conquistas e notícias relevantes para membras e membros e para a instituição.",AI148-1,1,pedro.palazzo@mpgo.mp.br,21
+AI168,não,teste,AI168-,,rafael.oliveira@mpgo.mp.br,2
+AI114,sim,Reunião de todo material produzido pelos Centros de Apoio,AI114-1,1,sandra.mara@mpgo.mp.br,31
+AI114,sim,Solicitação aos Coordenadores dos Centros de Apoio para o trabalho uniforme e de padronização do MAMP,AI114-2,2,sandra.mara@mpgo.mp.br,31
+AI114,sim,"Realização de reunião com a Subprocuradoria-Geral de Justiça de Planejamento, Estratégia e Inovação para tratar da ferramenta do MAMP",AI114-3,3,sandra.mara@mpgo.mp.br,31
+AI106,sim,"Edição do Ato PGJ n. 22, de 15 de abril de 2025, que institui o Centro de Autocomposição de Conflitos e Segurança Jurídica (COMPOR) do Ministério Público do Estado de Goiás e dá outras providências.",AI106-2,2,cyro.peres@mpgo.mp.br,24
+AI106,sim,"Nomeação de mais 03 (três) membros, Augusto Henrique Moreno Alves, Carolina de Angelis Prado e Lucas Cesar Costa Ferreira para integrarem o COMPOR.",AI106-1,1,laura.bueno@mpgo.mp.br,35
+AI106,sim,Afastamento com prejuízo da Promotora de Justiça Carolina de Angelis Prado para atuação exclusiva no COMPOR,AI106-3,3,cyro.peres@mpgo.mp.br,24
+AI106,sim,"Disponibilização de mais 02 (dois) cargos de Assessor Jurídico, 02 (dois) cargos de Assistente de Promotoria, 07 (sete) Residentes e 01 (uma) terceirizada para estrutura do COMPOR ",AI106-4,4,rafael.oliveira@mpgo.mp.br,2
+AI106,sim,Cessão da Assistente Social Iraides Campos da Luz pelo Estado de Goiás para o MPGO para integrar o COMPOR,AI106-5,5,laura.bueno@mpgo.mp.br,35
+AI108,sim,"Edição do Ato PGJ n. 12, de 14 de março de 2025, que cria, no âmbito do Ministério Público do Estado
+de Goiás, o Núcleo de Assessoramento Temático e de Fomento à Articulação na Área Eleitoral (NAT Eleitoral).",AI108-1,1,cyro.peres@mpgo.mp.br,24
+AI108,sim,"Edição do Ato PGJ n. 31, de 6 de maio de 2025, Cria, no âmbito do Ministério Público do Estado
+de Goiás, o Núcleo de Assessoramento Temático e de Fomento à Articulação para Atuação na Defesa e Proteção do Consumidor (NAT Consumidor)",AI108-2,2,cyro.peres@mpgo.mp.br,24
+AI120,sim,Elaboração do Projeto Extra Resolutivo MPGO para apoio estratégico às Promotorias de Justiça com autos extrajudiciais criados há mais de 3 anos,AI120-1,1,sandra.mara@mpgo.mp.br,31
+AI132,sim,Disponibilização de mais 01 (um) Residente Jurídico e 01 (um) Estagiário para o GAESP,AI132-1,1,rafael.oliveira@mpgo.mp.br,2
+AI132,sim,"Participação do membro e integrante do GAESP, Renner Carvalho Pedroso, no Workshop ""Estratégia Nacional de Atuação do Controle Externo da Atividade Policial"" - realizado na sede do CNMP em Brasília, nos dias 27 e 28 de março de 2025",AI132-2,2,sandra.mara@mpgo.mp.br,31
+AI132,sim,"Participação do membro e integrante do GAESP, Promotor de Justiça Danilo de Souza
+Colucci Resende,  na 1ª Reunião Ordinária de 2025 do Grupo Nacional de Controle Externo da Atividade Policial - GNCEAP do Conselho Nacional de Procuradores-Gerais de Justiça - realizado no
+dia 16 de maio de 2025 no Rio de Janeiro
+",AI132-3,3,sandra.mara@mpgo.mp.br,31
+AI143,sim,"Elaboração do Projeto Eu Vereador (a) - MPGO pelo aprimoramento da fiscalização municipal (CAO - Área do Patrimônio Público, Eleitoral e Terceiro Setor)",AI143-1,1,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Guapó, no dia 26 de maio de 2025",AI143-2,2,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,Publicação de Edital para chamamento das Promotorias de Justiça com atribuição na tutela do patrimônio público para manifestação de interesse na participação no Projeto Eu Vereador(a),AI143-3,3,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Elaboração da cartilha ""Guia do Vereador (a) - Como Fiscalizar a Administração Municipal. ",AI143-5,5,tommaso.leonardi@mpgo.mp.br,
+AI93,sim,Auxílio a 09 (nove) Promotorias de Justiça pelo Projeto Especial em Atuação na Área Criminal.,AI93-1,1,sandra.mara@mpgo.mp.br,31
+AI93,sim,"Realização do Projeto Especial de Atuação na Área Criminal às audiências da 2ª Vara de Feitos Relativos a Delitos Praticados por Organização Criminosa e de Lavagem ou Ocultação de Bens, Direitos e Valores",AI93-2,2,sandra.mara@mpgo.mp.br,31
+AI172,sim,"Adesão de 29 (vinte e nove) Promotorias de Justiça, abrangendo 52 municípios, ao Projeto mais Inclusão, que tem como objetivo fomentar a criação e a regularização dos Conselhos Municipais dos Direitos das Pessoas com Deficiência",AI172-1,1,andre.lobo@mpgo.mp.br,30
+AI172,sim,"Apresentação do Projeto Mais Inclusão no 5º Encontro Regional do Tribunal de Contas dos
+Municípios do Estado de Goiás, realizado em parceria com o Ministério Público de Contas",AI172-2,2,andre.lobo@mpgo.mp.br,30
+AI172,sim,"Articulação com o CAO Saúde para tratar da política de saúde mental do município
+de Goiânia em relação à população em situação de rua.",AI172-3,3,andre.lobo@mpgo.mp.br,30
+AI172,sim,"Elaboração de projeto institucional, idealizado pelo GAEDH, visando fomentar a criação dos Conselhos Municipais de Promoção da Igualdade Racial e seus respectivos Fundos",AI172-4,4,andre.lobo@mpgo.mp.br,30
+AI172,sim,"Realização de webinar Atuação Com Perspectiva Racial no Sistema de Justiça Brasileiro, no dia 13/05/2025, promovendo debate sobre a necessidade do letramento racial, da atuação com perspectiva e da implementação das políticas públicas voltadas à promoção da igualdade racial
+
+",AI172-5,5,andre.lobo@mpgo.mp.br,30
+AI172,sim,"Realização do Seminário A População LGBTQIAPN  e o Sistema Prisional, no dia 09/06/2025, com o objetivo apresentar propostas para tornar mais acessíveis as políticas públicas
+de inclusão desta população que se encontra no sistema prisional, bem como fortalecer ações que favoreçam a reintegração social no pós-cárcere, efetivando o direito à ressocialização.",AI172-6,6,andre.lobo@mpgo.mp.br,30
+AI121,sim,"PROJETO. CAPACITAÇÃO IA NO MPGO. ESTRUTURAÇÃO. Organização e divulgação do curso de extensão ""IA no MPGO - Inteligência Artificial Aplicada ao Ministério Público""",AI121-1,1,rafael.correa@mpgo.mp.br,10
+AI121,não,2 - Realização do Módulo 1 - Fundamentos e Primeiros Prompts com IA Generativa,AI121-,,rafael.correa@mpgo.mp.br,10
+AI121,sim,PROJETO. CAPACITAÇÃO IA NO MPGO. EXECUÇÃO. Módulo 1 - Fundamentos e Primeiros Prompts com IA Generativa,AI121-4,4,rafael.correa@mpgo.mp.br,10
+AI121,sim,PROJETO. CAPACITAÇÃO IA NO MPGO. EXECUÇÃO. Módulo 2 - Engenharia de Prompt com Aplicações Jurídicas,AI121-5,5,rafael.correa@mpgo.mp.br,10
+AI121,sim,PROJETO. CAPACITAÇÃO IA NO MPGO. EXECUÇÃO. Módulo 3 - Aplicações Funcionais da IA no MPGO,AI121-6,6,rafael.correa@mpgo.mp.br,10
+AI121,sim,PROJETO. CAPACITAÇÃO IA NO MPGO. EXECUÇÃO. Módulo 4 - IA Multimodal: Além do Texto,AI121-7,7,rafael.correa@mpgo.mp.br,10
+AI121,sim,"PROJETO. CAPACITAÇÃO IA NO MPGO. COMUNICAÇÃO. Criação de grupo de WhatsApp para troca de informações, esclarecimento de dúvidas e compartilhamento de materiais",AI121-2,2,rafael.correa@mpgo.mp.br,10
+AI121,sim,"PROJETO. CAPACITAÇÃO IA NO MPGO. REPOSITÓRIO. Disponibilização de repositório digital com tutoriais, vídeos dos encontros e materiais complementares",AI121-3,3,rafael.correa@mpgo.mp.br,10
+AI121,sim,PROJETO. CAPACITAÇÃO IA NO MPGO. CERTIFICAÇÃO. Certificar os participantes pela ESUMP com carga horária de 35 horas-aula,AI121-8,8,rafael.correa@mpgo.mp.br,10
+AI130,não,"Execução do projeto ""Cyber-capacitação"".",AI130-1,1,carlos.pina@mpgo.mp.br,
+AI130,não,Disponibilização de sistema de preservação e busca de vestígios digitas de pornografia infantil,AI130-2,2,carlos.pina@mpgo.mp.br,
+AI131,não,"Nomear 2 Promotores de Justiça para autuarem em auxílio aos GAECOS regionais (Sul e Entorno), conforme permissivo do artigo 7º, parágrafo único, inciso IX, do Ato/PGJ 36/2022 e consoante modelo dos demais grupos de atuação especial.",AI131-1,1,carlos.pina@mpgo.mp.br,
+AI131,sim,Criar gratificação específica aos Promotores de Justiça que atuam em prejuízo nos GAECOs regionais (Sul e Entorno),AI131-2,2,carlos.pina@mpgo.mp.br,
+AI131,não,"Incrementar a estrutura de apoio dos GAECOS regionais (Sul e Entorno) com designação de assistente, residente e cessão de policiais em quantidade adequada à demanda. ",AI131-3,3,carlos.pina@mpgo.mp.br,
+AI131,não,Consolidar a estrutura de apoio já existente nos GAECOS regionais (Sul e Entorno) com gratificação aos secretários lotados nas duas unidades.,AI131-4,4,carlos.pina@mpgo.mp.br,
+AI131,não,Desenvolver estudo sobre a pertinência de instalação de novas regionais.,AI131-,,carlos.pina@mpgo.mp.br,
+AI133,não,"Nomear 2 Promotores de Justiça para autuarem em auxílio ao CyberGAECO, conforme permissivo do artigo 7º, parágrafo único, inciso IX, do Ato/PGJ 36/2022 e consoante modelo dos demais grupos de atuação especial.",AI133-1,1,carlos.pina@mpgo.mp.br,
+AI133,não,"Aumentar a equipe do CyberGAECO com ao menos 2 analistas de crimes cibernéticos (tal como policiais cedidos), deixando-a mais próxima das estruturas análogas em outros Estados (MPSP, MPMG e MPSC, por exemplo)",AI133-2,2,carlos.pina@mpgo.mp.br,
+AI133,não,Incrementar a estrutura de apoio do CyberGAECO com designação de assistente e residente em quantidade adequada à demanda.,AI133-3,3,carlos.pina@mpgo.mp.br,
+AI134,não,"Projeto fusão dos sistemas PAI, PANDORA e FORSETI.",AI134-1,1,carlos.pina@mpgo.mp.br,
+AI134,não,"Projeto expansão das bases de dados disponibilizadas pelo PAI, Forseti e futuro PANDORA.",AI134-2,2,carlos.pina@mpgo.mp.br,
+AI135,não,Aurilândia (Habitantes: 3.284).,AI135-1,1,carlos.pina@mpgo.mp.br,
+AI135,não,Taquaral de Goiás (Habitantes: 4.026).,AI135-2,2,carlos.pina@mpgo.mp.br,
+AI135,não,Itajá (Habitantes: 4.380).,AI135-3,3,carlos.pina@mpgo.mp.br,
+AI135,não,Mossâmedes (Habitantes: 4.654).,AI135-4,4,carlos.pina@mpgo.mp.br,
+AI135,não,Goiandira (Habitantes: 4.973).,AI135-6,6,carlos.pina@mpgo.mp.br,
+AI135,não,Fazenda Nova (Habitantes: 5.877).,AI135-5,5,carlos.pina@mpgo.mp.br,
+AI135,não,Jandaia (Habitantes: 6.272).,AI135-7,7,carlos.pina@mpgo.mp.br,
+AI135,não,Paranaiguara (Habitantes: 7.607).,AI135-8,8,carlos.pina@mpgo.mp.br,
+AI135,não,Sanclerlândia (Habitantes: 7.918).,AI135-9,9,carlos.pina@mpgo.mp.br,
+AI135,não,Montes Claros de Goiás (Habitantes: 8.756).,AI135-10,10,carlos.pina@mpgo.mp.br,
+AI135,não,Paraúna (Habitantes: 10.659).,AI135-11,11,carlos.pina@mpgo.mp.br,
+AI135,não,Cachoeira Alta (Habitantes: 11.513).,AI135-12,12,carlos.pina@mpgo.mp.br,
+AI135,não,Rialma (Habitantes: 12.165).,AI135-13,13,carlos.pina@mpgo.mp.br,
+AI135,não,Montividiu (Habitantes: 12.521).,AI135-14,14,carlos.pina@mpgo.mp.br,
+AI135,não,Uruana (Habitantes: 13.729).,AI135-15,15,carlos.pina@mpgo.mp.br,
+AI135,não,Caçu (Habitantes: 13.774).,AI135-16,16,carlos.pina@mpgo.mp.br,
+AI135,não,Vianópolis (Habitantes: 14.956).,AI135-17,17,carlos.pina@mpgo.mp.br,
+AI135,não,Crixás (Habitantes: 17.065).,AI135-18,18,carlos.pina@mpgo.mp.br,
+AI135,não,Rubiataba (Habitantes: 19.788).,AI135-19,19,carlos.pina@mpgo.mp.br,
+AI135,não,Ceres (Habitantes: 22.046).,AI135-20,20,carlos.pina@mpgo.mp.br,
+AI135,não,Bom Jesus de Goiás (Habitantes: 23.958).,AI135-21,21,carlos.pina@mpgo.mp.br,
+AI135,não,Piracanjuba (Habitantes: 24.883).,AI135-22,22,carlos.pina@mpgo.mp.br,
+AI135,não,Cocalzinho de Goiás (Habitantes: 25.016).,AI135-23,23,carlos.pina@mpgo.mp.br,
+AI135,não,Hidrolândia (Habitantes: 27.742).,AI135-24,24,carlos.pina@mpgo.mp.br,
+AI135,não,Bela Vista de Goiás (Habitantes: 34.445).,AI135-25,25,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Anápolis.,AI136-1,1,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Aparecida de Goiânia.,AI136-2,2,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Trindade.,AI136-3,3,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Rio Verde.,AI136-4,4,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Itumbiara.,AI136-5,5,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Catalão.,AI136-6,6,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Caldas Novas.,AI136-7,7,carlos.pina@mpgo.mp.br,
+AI136,não,Sede do MP em Águas Lindas.,AI136-8,8,carlos.pina@mpgo.mp.br,
+AI136,não,Anexo I do Edifício-Sede em Goiânia.,AI136-9,9,carlos.pina@mpgo.mp.br,
+AI136,não,Anexo II do Edifício-Sede em Goiânia (Centro de Treinamento e SINFO).,AI136-10,10,carlos.pina@mpgo.mp.br,
+AI121,sim,"PROJETO. IMERSÃO IA. Criar o fluxo e implementar os encontros quinzenais da ""Imersão IA"" para aplicação prática e aprofundamento em ferramentas de IA",AI121-9,9,rafael.correa@mpgo.mp.br,10
+AI109,não,Proposta de criação do Núcleo de Apoio Técnico em Controle de Constitucionalidade elaborada.,AI109-1,1,fabiana.zamalloa@mpgo.mp.br,32
+AI109,não,Publicação do ato de criação do núcleo temático no Diário Oficial do Ministério Público.,AI109-2,2,fabiana.zamalloa@mpgo.mp.br,32
+AI109,não,Definição da estrutura interna e da composição do núcleo temático.,AI109-3,3,fabiana.zamalloa@mpgo.mp.br,32
+AI109,não,"Desenvolvimento de ferramentas de atuação: a) criação de instrumentos adequados e metodologias padronizadas para o monitoramento de legislações municipais que apresentem possíveis conflitos de constitucionalidade; b) técnica de controle consensual, a fim de evitar a judicialização indiscriminada de demandas constitucionais.",AI109-4,4,fabiana.zamalloa@mpgo.mp.br,32
+AI109,não,"Elaboração e aprovação de plano de operação, com instalação física e digital da unidade e divulgação institucional dos canais de acesso ao núcleo.",AI109-5,5,fabiana.zamalloa@mpgo.mp.br,32
+AI112,não,"ESTRUTURAÇÃO. GESTÃO. Formalizar o funcionamento do laboratório como unidade estruturada:
+1. Incorporando o Laboratório ao regimento interno do MPGO como instância permanente de inovação.
+2. Editando ato normativo conjunto entre a PGJ e a SUBPLEI com definição de competências, fluxo de entrada de projetos, critérios de priorização e atribuições da equipe.Estrutura física e de pessoal;",AI112-4,4,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,Estrutura de trabalho e institucionalização,AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"CONTROLE. Implantar sistema contínuo de monitoramento e avaliação, criando painéis dinâmicos para acompanhamento de indicadores de desempenho, incluindo desafios mapeados, soluções testadas, impacto percebido e replicabilidade, ou outros meios disponíveis.",AI112-6,6,marcelo.azevedo@mpgo.mp.br,8
+AI122,sim,PROJETO. ATENA. APERFEIÇOAMENTO. Adaptação do sistema para melhoria e otimização do preenchimento do Cadastro Nacional de Violência Doméstica (CNV) e encaminhamento ao CNMP via Webservice,AI122-1,1,rafael.correa@mpgo.mp.br,10
+AI111,sim,"Proposta de criação de projeto para promover maior integração entre a Subprocuradoria-Geral de Justiça para Assuntos Jurídicos e as Promotorias e Procuradorias de Justiça do Ministério Público do Estado de Goiás, a fim de aprimorar a atuação institucional estratégica nas instâncias ordinárias e extraordinárias. ",AI111-1,1,fabiana.zamalloa@mpgo.mp.br,32
+AI122,não,"Melhoria na integração do Atena tornando o peticionamento, leitura e descarte síncronos",AI122-,,rafael.correa@mpgo.mp.br,10
+AI122,sim,PROJETO. ATENA. CRIAÇÃO. Criação de canal de comunicação para cientificação de membros e servidores dentro do sistema Atena,AI122-2,2,rafael.correa@mpgo.mp.br,10
+AI122,sim,PROJETO. ATENA. INTEGRAÇÃO. Integração do Atena com o sistema Destina (destinação articulada de acordos) do COMPOR,AI122-3,3,rafael.correa@mpgo.mp.br,10
+AI111,sim,"Criação do Projeto Conexões no âmbito Criminal (Etapa I) e Cível (Etapa II), com o objeto de fomentar a atuação estratégica e efetiva do Ministério Público do Estado de Goiás nas instâncias ordinárias e extraordinárias.",AI111-2,2,fabiana.zamalloa@mpgo.mp.br,32
+AI122,não, Desenvolvimento do Novo Grifo,AI122-,,rafael.correa@mpgo.mp.br,10
+AI122,não,Criação de módulo separado para registro de Denúncias à Corregedoria-Geral de Justiça,AI122-,,rafael.correa@mpgo.mp.br,10
+AI122,não,PROJETO. ATENA. IMPLEMENTAÇÃO. Implementação de criação automatizada de Ementas usando LLMs,AI122-7,7,rafael.correa@mpgo.mp.br,10
+AI122,não,Testes e validação das funcionalidades implementadas,AI122-,,rafael.correa@mpgo.mp.br,10
+AI122,não,Disponibilização das melhorias para uso institucional,AI122-,,rafael.correa@mpgo.mp.br,10
+AI111,não,Encontros da Subprocuradoria-Geral de Justiça com os Procuradores e com os Promotores de Justiça para exposição das linhas de atuação e acolhimento de sugestões para aprimorar e tornar efetiva a atuação ministerial no âmbito dos recursos constitucionais. ,AI111-,,fabiana.zamalloa@mpgo.mp.br,32
+AI111,não,"Conclusão do Projeto Conexões, com levantamento das ações adotadas e dos resultados proporcionados. ",AI111-,,fabiana.zamalloa@mpgo.mp.br,32
+AI119,não,"Desenvolver, em parceria com a Subprocuradoria-Geral de Justiça para Assuntos de Planejamento, Estratégia e Inovação, plataforma digital de monitoramento automático das legislações municipais, para identificar, em tempo real, possíveis conflitos de constitucionalidade. ",AI119-1,1,fabiana.zamalloa@mpgo.mp.br,32
+AI119,sim,Fortalecer a relação entre a Subprocuradoria-Geral de Justiça para Assuntos Jurídicos e as Câmaras Municipais por meio de abertura de canais de comunicação para controle preventivo e colaborativo e de programas contínuos de capacitação.,AI119-3,3,fabiana.zamalloa@mpgo.mp.br,32
+AI95,sim,"Elaboração de enunciados sobre ANPP para uniformização da atuação do Ministério Público, nos termos do artigo 18J da Resolução 181 de 7 de agosto de 2017, do Conselho Nacional do Ministério Público.",AI95-1,1,fabiana.zamalloa@mpgo.mp.br,32
+AI128,sim,"WORKSPACE. TRATATIVAS. Tratativas com fornecedor do Google Workspace, com disponibilização de POC para testes",AI128-5,5,luizmauro@mpgo.mp.br,
+AI127,sim, PROJETO. SIGA. REQUISITOS. Levantamento de requisitos funcionais e elaboração da especificação técnica do sistema SIGA-MP,AI127-1,1,rafael.correa@mpgo.mp.br,10
+AI127,sim,PROJETO. SIGA. DESENVOLVIMENTO. Desenvolvimento do módulo de cadastro de editais com validação de datas e configuração de vagas,AI127-2,2,rafael.correa@mpgo.mp.br,10
+AI127,sim,"PROJETO. SIGA. DESENVOLVIMENTO. Implementação do sistema de inscrições, classificação automática e lógica de seleção de membros",AI127-3,3,rafael.correa@mpgo.mp.br,10
+AI127,sim,"PROJETO. SIGA. CRIAÇÃO. Criação do módulo de confirmação de participação, substituições e distribuição em bancas",AI127-4,4,rafael.correa@mpgo.mp.br,10
+AI127,sim,PROJETO. SIGA. DESENVOLVIMENTO. Desenvolvimento do painel pessoal dos membros e sistema de relatórios gerenciais,AI127-5,5,rafael.correa@mpgo.mp.br,10
+AI127,sim,"PROJETO. SIGA. DESENVOLVIMENTO. Realização de testes de funcionalidade, validação das regras de negócio e disponibilização do sistema",AI127-6,6,rafael.correa@mpgo.mp.br,10
+AI128,sim,"SERPRO. CONVENIO CNMP. Firmar convênio com CNMP para acesso a tabela de preços negociada pelo CNMP com o SERPRO viabilizando desconto para as unidades ministeriais aderentes, com vistas à contratação de serviços de cloud (infraestrutura e processamento em nuvem)",AI128-1,1,rafael.correa@mpgo.mp.br,10
+AI128,sim,SERPRO. TR. Elaborar termo de referência e iniciar processo licitatório para contratação do SERPRO para fornecimento de serviços de infraestrutura em nuvem ,AI128-2,2,luizmauro@mpgo.mp.br,
+AI128,sim,"WORKSPACE. TR. Elaborar termo de referência e iniciar processo licitatório para contratação de suíte de ferramentas de colaboração e compartilhamento de arquivos em nuvem (Google Workspace, Google Drive, Calendar, Docs, dentre outros).",AI128-6,6,luizmauro@mpgo.mp.br,
+AI129,sim,PROJETO. ATUALIZAÇÃO CONTINUADA. DIAGNÓSTICO. Levantamento e inventário dos equipamentos institucionais com identificação de necessidades de substituição,AI129-1,1,luizmauro@mpgo.mp.br,
+AI124,sim,PROJETO. ASSISTENTES VIRTUAIS. LEVANTAMENTO E PROTOTIPAÇÃO. Levantamento de requisitos e prototipação de projeto inicial da CATEP para auxiliar no fluxo de atendimento para solicitações de perícias e laudos.,AI124-1,1,rafael.correa@mpgo.mp.br,10
+AI124,sim, PROJETO. ASSISTENTES VIRTUAIS. DEFINIÇÃO DE PRIORIDADES. Identificação de outros órgãos prioritários para desenvolvimento de assistentes virtuais automatizados para atendimento e suporte aos processos internos,AI124-2,2,rafael.correa@mpgo.mp.br,10
+AI129,sim,PROJETO. ATUALIZAÇÃO CONTINUADA. PRODUTOS. SERVIÇOS. Definição de investimentos prioritários e elaboração de estudos técnicos e termos de referência,AI129-2,2,luizmauro@mpgo.mp.br,
+AI129,não,PROJETO. ATUALIZAÇÃO CONTINUADA. LICITAÇÃO. Realização de procedimentos licitatórios para aquisição de hardware e software,AI129-3,3,luizmauro@mpgo.mp.br,
+AI129,não,PROJETO. ATUALIZAÇÃO CONTINUADA. Substituição efetiva dos equipamentos e atualização dos sistemas em ciclos planejados,AI129-4,4,luizmauro@mpgo.mp.br,
+AI124,não, PROJETO. ASSISTENTES VIRTUAIS. BASE DE CONHECIMENTO. Constituição da arquitetura do banco de dados e sistema de apoio baseado em inteligência artificial para subsidiar a geração automática e padronizada de respostas das áreas prioritárias,AI124-3,3,rafael.correa@mpgo.mp.br,10
+AI124,não, PROJETO. ASSISTENTES VIRTUAIS. INFRAESTRUTURA DE COMUNICAÇÃO. Contratação da API oficial do WhatsApp via convênio CNMP/SERPRO,AI124-4,4,rafael.correa@mpgo.mp.br,10
+AI124,não, PROJETO. ASSISTENTES VIRTUAIS. DESENVOLVIMENTO E ENTREGA. Desenvolvimento e implementação das ferramentas atendimento automatizado via WhatsApp para as áreas prioritárias,AI124-5,5,rafael.correa@mpgo.mp.br,10
+AI128,sim,SERPRO. TRATATIVAS. Realizar tratativas com o Serpro para levantamento dos produtos disponíveis.,AI128-3,3,rafael.correa@mpgo.mp.br,10
+AI113,sim,"PROJETO. PAINEL PANORAMA MPGO. Levantamento de requisitos, definição de indicadores e extração de dados do sistema Atena para o BI PANORAMA MPGO",AI113-1,1,rafael.correa@mpgo.mp.br,10
+AI113,não,PROJETO. PAINEL PANORAMA MPGO. APRIMORAMENTO E DISPONIBILIZAÇÃO. Desenvolvimento de aplicação de análises estatísticas e implementação do BI PJ EM TEMPO REAL. Disponibilização do BI PANORAMA MPGO para uso institucional,AI113-2,2,rafael.correa@mpgo.mp.br,10
+AI113,não,Disponibilização do BI Sincroniza para uso institucional,AI113-,,rafael.correa@mpgo.mp.br,10
+AI113,não,"Definição de escopo, objetivos e mapeamento das fontes de dados sociodemográficos para o BI do Mapa Social",AI113-,,rafael.correa@mpgo.mp.br,10
+AI113,não,PROJETO. PAINEL MAPA SOCIAL. Desenvolvimento e implementação do BI do Mapa Social.  Disponibilização do BI do Mapa Social para gestores e tomadores de decisão,AI113-4,4,rafael.correa@mpgo.mp.br,10
+AI113,não,Disponibilização do BI do Mapa Social para gestores e tomadores de decisão,AI113-,,rafael.correa@mpgo.mp.br,10
+AI113,sim,"PROJETO. PAINEL MAPA SOCIAL. Definição de escopo, objetivos e mapeamento preliminar das fontes de dados sociodemográficos para o BI do Mapa Social",AI113-3,3,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECENDENTES. SUBJUR. IMPLEMENTAÇÃO. Implementar módulo de ingestão e validação automática de decisões administrativas da SUBJUR,AI116-4,4,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECEDENTES. SUBJUR. CONSELHO SUPERIOR. DESENVOLVIMENTO. Desenvolver motor de busca inteligente com processamento de linguagem natural e busca semântica ,AI116-3,3,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECEDENTES. INTERFACE DE PESQUISA. SUBJUR. Construir interface de pesquisa avançada com filtros especializados e visualização de resultados,AI116-6,6,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECEDENTES. BASE DE DADOS. CONSELHO SUPERIOR. Estabelecer base de dados vetorizada para armazenamento e recuperação otimizada de precedentes,AI116-8,8,rafael.correa@mpgo.mp.br,10
+AI116,sim,"PROJETO. BUSCADOR DE PRECEDENTES. INTEGRAÇÃO FINAL. SUBJUR. Integração final do sistema (autenticação, controle de acesso e módulo de estatísticas) e disponibilização da aplicação ao público interno",AI116-10,10,rafael.correa@mpgo.mp.br,10
+AI122,sim,"PROJETO. ATENA. MELHORIA. Melhoria na integração do Atena tornando o peticionamento, leitura e descarte assíncronos",AI122-5,5,rafael.correa@mpgo.mp.br,10
+AI122,não,PROJETO. ATENA. DESENVOLVIMENTO. Desenvolver um novo atena gerencial integrado ao Novo Grifo.,AI122-8,8,rafael.correa@mpgo.mp.br,10
+AI122,sim,PROJETO. ATENA. DESENVOLVIMENTO. Criação de módulo separado para registro de Denúncias à Corregedoria-Geral do Ministério Público,AI122-4,4,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. EQUIPE. DESENVOLVEDORES. Contratação de equipe técnica SUBPLEI (01 engenheiro de software e 04 desenvolvedores de TI),AI123-1,1,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. EQUIPE. CAPACITAÇÃO. Contratação de serviços de capacitação UFG,AI123-2,2,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. EQUIPAMENTOS. INFRAESTRUTURA. VERTEX. Contratação do Google Cloud Vertex AI para aquisição de pacote de créditos de inteligência artificial generativa,AI123-6,6,rafael.correa@mpgo.mp.br,10
+AI123,sim,"Contratação de serviços SERPRO (Multicloud, Backup, Virtual, SerproID, ProID e Plataforma WhatsApp Business)",AI123-,,rafael.correa@mpgo.mp.br,10
+AI123,não,Contratação de solução DATALAKE UFG para armazenamento e processamento de dados,AI123-,,rafael.correa@mpgo.mp.br,10
+AI123,não,"Aquisição de equipamentos de infraestrutura tecnológica, DDX de processamento de IA",AI123-,,luizmauro@mpgo.mp.br,
+AI123,não,"PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. EQUIPAMENTOS. INFRAESTRUTURA. DATA LAKE. Elaboração de estudos sobre a viabilidade de criação de DATALAKE institucional, inclusive em parceria com outras instituições (UFG, iniciativa privada).",AI123-5,5,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. EQUIPAMENTOS. INFRAESTRUTURA. AQUISIÇÃO. Aquisição de equipamentos de infraestrutura tecnológica, DGX de GPUs para processamento de IA",AI123-4,4,rafael.correa@mpgo.mp.br,10
+AI126,sim,PROJETO. GESTÃO EM PAINEIS. DIAGNÓSTICO. Levantamento de necessidades específicas de cada unidade ministerial e mapeamento de dados relevantes,AI126-1,1,rafael.correa@mpgo.mp.br,10
+AI126,sim,PROJETO. GESTÃO EM PAINEIS. ESTRUTURA DE BANCO DE DADOS. Criação de funções/estrutura do banco de dados que retorne as informações necessárias,AI126-2,2,rafael.correa@mpgo.mp.br,10
+AI126,sim,"PROJETO. GESTÃO EM PAINEIS. FILTROS PERSONALIZADOS. Desenvolvimento de estrutura de filtros personalizáveis por assunto, classe, movimento, órgão e período",AI126-3,3,rafael.correa@mpgo.mp.br,10
+AI126,sim,"PROJETO. GESTÃO EM PAINEIS. DASHBOARDS JUDICIAIS. Desenvolvimento de dashboards para autos judiciais (quantitativos, taxa de vazão, comparativos e rankings personalizados)",AI126-4,4,rafael.correa@mpgo.mp.br,10
+AI126,não,PROJETO. GESTÃO EM PAINEIS. CONSOLIDAÇÃO JUDICIAL E EXPANSÃO. Finalização dos dashboards judiciais (testes e disponibilização) e desenvolvimento de dashboards para autos extrajudiciais,AI126-5,5,rafael.correa@mpgo.mp.br,10
+AI126,não,PROJETO. GESTÃO EM PAINEIS. DASHBOARDS ADMINISTRATIVOS. Desenvolvimento de dashboards para autos administrativos e atividades gerais com testes e disponibilização final,AI126-6,6,rafael.correa@mpgo.mp.br,10
+AI125,não,PROJETO. INTEGRAÇÃO. PREPARAÇÃO PARA INTEGRAÇÃO. Ajustes adicionais no Atena e definição de requisitos para receber dados de sistemas externos.,AI125-2,2,rafael.correa@mpgo.mp.br,10
+AI125,sim,PROJETO. INTEGRAÇÃO. ADEQUAÇÃO INTERNA DO ATENA. Separação por sistemas e ajustes técnicos para garantir compatibilidade com SEEU e PJe.,AI125-1,1,rafael.correa@mpgo.mp.br,10
+AI125,não,PROJETO. INTEGRAÇÃO. ARTICULAÇÃO INSTITUCIONAL E TÉCNICA. Condução de tratativas com os gestores do SEEU e do PJe para viabilizar fluxos de integração.,AI125-3,3,rafael.correa@mpgo.mp.br,10
+AI125,não,"PROJETO. INTEGRAÇÃO. IMPLEMENTAÇÃO DA INTEGRAÇÃO. Execução efetiva da integração entre Atena, SEEU e PJe, com testes, validação e homologação.",AI125-4,4,rafael.correa@mpgo.mp.br,10
+AI110,sim,PROJETO. POA INTELIGENTE. APROVAÇÃO. EXECUÇÃO. Aprovar o projeto na RAE e seguir com a sua execução,AI110-4,4,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. POA INTELIGENTE. APRIMORAMENTO. Aprimorar a Ferramenta POA Inteligente para o planejamento de ações do RADAR ESTRATÉGICO ,AI110-6,6,liana.tormin@mpgo.mp.br,9
+AI173,sim,PROCURADORIAS DE JUSTIÇA. INSTALAÇÃO. Instalar as 04 novas Procuradorias de Justiça,AI173-4,4,cyro.peres@mpgo.mp.br,24
+AI173,não,PROMOTORIAS DE JUSTIÇA. CRIAÇÃO. Criar cargos de Promotor de Justiça visando à implementação de novas Promotorias,AI173-7,7,cyro.peres@mpgo.mp.br,24
+AI173,sim,PROMOTORIAS DE JUSTIÇA. INSTALAÇÃO. Instalar Promotorias de Justiça em áreas estratégicas,AI173-3,3,cyro.peres@mpgo.mp.br,24
+AI173,não,"CARREIRA. UNIFICAÇÃO DE CARGOS. Unificar na LC n. 25/1998 os cargos de Promotor de Justiça, permitindo reclassificação por Resolução",AI173-8,8,cyro.peres@mpgo.mp.br,24
+AI173,sim,PROMOTORIAS DE JUSTIÇA. ELEVAÇÃO DE ENTRÂNCIA. Elevar Promotorias de Justiça para entrância final e intermediária,AI173-1,1,cyro.peres@mpgo.mp.br,24
+AI173,sim, CARREIRA. CONCUROS. Realizar concurso para ingresso na carreira,AI173-2,2,cyro.peres@mpgo.mp.br,24
+AI174,sim,"CARREIRA. MOVIMENTAÇÃO. VOTAÇÃO DE EDITAIS. SISTEMA MOVIMENTA. Agilizar a votação de editais de promoção e remoção, com aprimoramento no sistema movimenta ",AI174-4,4,cyro.peres@mpgo.mp.br,24
+AI174,sim,"CARREIRA. INTEGRAÇÃO. Promover reuniões periódicas, presenciais e por videoconferência com membros",AI174-2,1,cyro.peres@mpgo.mp.br,24
+AI174,sim,"GOVERNANÇA INTERNA. ACESSO. DIÁLOGO. Manter o acesso permanente ao gabinete do PGJ e por realização de evento anual com a PGJ
+",AI174-2,2,cyro.peres@mpgo.mp.br,24
+AI115,sim,PROJETO. PAINEL PANORAMA MPGO. DECISÃO A PARTIR DE DADOS. Extrair do BI PANORAMA MPGO temas para atuação estratégica por região geográfica do Estado de Goiás,AI115-3,3,liana.tormin@mpgo.mp.br,9
+AI174,sim,"GESTÃO INSTITUCIONAL. EQUIDADE. GÊNERO. Promover equidade de gênero nos cargos da Administração Superior, inclusive com paridade entre as funções de subprocurador-geral de justiça.",AI174-3,3,cyro.peres@mpgo.mp.br,24
+AI177,sim,INSTITUCIONAL. INTERLOCUÇÃO. PODERES ESTADUAIS. Exercer de forma independente a interlocução junto aos Poderes estaduais,AI177-4,4,cyro.peres@mpgo.mp.br,24
+AI177,sim,"INSTITUCIONAL. INTERLOCUÇÃO. Promover a interlocução institucional junto aos Tribunais Superiores e Conselhos Nacionais (CNMP e CNJ), mediante a atuação pessoal do Procurador-Geral de Justiça, especialmente em cooperação com a pauta do CNPG.",AI177-3,3,cyro.peres@mpgo.mp.br,24
+AI115,sim,PROJETO. MAPA SOCIAL. DECISÃO A PARTIR DE DADOS. Extrair do MAPA SOCIAL temas para atuação estratégica por área temática de atuação do MPGO,AI115-4,4,rafael.correa@mpgo.mp.br,10
+AI176,não,"PRERROGATIVAS. REPOSITÓRIO. Criar repositório com peças, pareceres e jurisprudência sobre prerrogativas",AI176-,,cyro.peres@mpgo.mp.br,24
+AI176,não,PRERROGATIVAS. CANAL INSTITUCIONAL. Criar canal institucional para comunicação de ameaças às prerrogativas (e-mail ou formulário digital),AI176-3,3,cyro.peres@mpgo.mp.br,24
+AI176,não,PRERROGATIVAS. PAINEL. Criar painel de monitoramento de decisões e atos que afetem a autonomia ou as prerrogativas,AI176-,,cyro.peres@mpgo.mp.br,24
+AI176,não,"PRERROGATIVAS. NÚCLEO. Criar núcleo institucional permanente para defesa das prerrogativas, vinculado diretamente ao PGJ",AI176-4,4,cyro.peres@mpgo.mp.br,24
+AI176,sim," PRERROGATIVAS. DEFESA. Zelar, em todas as instâncias, pela defesa das prerrogativas institucionais dos membros e do Ministério Público.",AI176-2,2,cyro.peres@mpgo.mp.br,24
+AI115,não,PROJETO. REVISÃO ESTRATÉGICA. APROVAÇÃO. EXECUÇÃO. Aprovar o projeto em RAE e seguir com a sua execução,AI115-7,7,liana.tormin@mpgo.mp.br,9
+AI177,sim, INSTITUCIONAL. RELATÓRIO DE GESTÃO. ELABORAÇÃO. Elaborar material institucional de apresentação do MPGO para parlamentares e órgãos federais,AI177-5,5,cyro.peres@mpgo.mp.br,24
+AI177,não, Incentivar a participação de membros do MPGO em eventos nacionais com apoio institucional,AI177-,,cyro.peres@mpgo.mp.br,24
+AI177,sim,"INSTITUCIONAL. SEDE COMPARTILHADA. TRATATIVAS. Iniciar tratativas com os Ministérios Públicos do Centro-Oeste para locação e uso compartilhado de sede institucional em Brasília
+",AI177-1,1,cyro.peres@mpgo.mp.br,24
+AI177,sim,INSTITUCIONAL. SEDE COMPARTILHADA. ESPAÇO FÍSICO. Realizar busca de imóvel para locação compartilhada em Brasília,AI177-2,2,cyro.peres@mpgo.mp.br,24
+AI177,sim,INSTITUCIONAL. TECNOLOGIA. ACESSO A DECISÕES. STJ. Criar ferramenta digital de acesso diário e automático a decisões de habeas corpus no STJ,AI177-,,cyro.peres@mpgo.mp.br,24
+AI110,não,Desenvolver no Sistema Atena aba específica para o registro e monitoramento de projetos e planos operacionais de atuação,AI110-,,liana.tormin@mpgo.mp.br,9
+AI91,sim,PROGRAMA. MP PROJETA. APROVAÇÃO. EXECUÇÃO. Aprovar em RAE e prosseguir com a sua execução,AI91-2,2,liana.tormin@mpgo.mp.br,9
+AI91,não,PRÊMIO MPGO. Identificar e selecionar boas práticas institucionais a partir de critérios objetivos e mensuráveis,AI91-,,liana.tormin@mpgo.mp.br,9
+AI174,sim,CARREIRA. MOVIMENTAÇÃO. VOTAÇÃO DE EDITAIS. Agilizar a votação de editais de promoção e remoção.,AI174-5,5,cyro.peres@mpgo.mp.br,24
+AI115,sim,PROJETO REVISÃO ESTRATÉGICA. ESTRUTURAÇÃO. Planejar projeto institucional voltado à revisão do Planejamento Estratégico do MPGO baseada em dados.,AI115-5,5,liana.tormin@mpgo.mp.br,9
+AI145,não, PAUTAS PRIORITÁRIAS. ESTRUTURAÇÃO. Construir plano anual de pautas prioritárias a serem debatidas com as entidades.,AI145-,,cyro.peres@mpgo.mp.br,24
+AI145,sim,"PAUTAS PRIORITÁRIAS. PUBLICIDADE. SOLUÇÃO. Divulgar as pautas tratadas e as soluções pactuadas entre MPGO, AGMP e SINDSEMP.",AI145-4,4,cyro.peres@mpgo.mp.br,24
+AI145,sim,PAUTAS PRIORITÁRIAS. RESPOSTA TEMPESTIVA. Garantir resposta formal para as propostas enviadas pelas entidades.,AI145-5,5,cyro.peres@mpgo.mp.br,24
+AI91,não,Implementar estratégia de comunicação das boas práticas institucionais,AI91-,,liana.tormin@mpgo.mp.br,9
+AI95,não,"Desenvolvimento de sistema de busca de precedentes para compilar as decisões proferidas pelo Procurador-Geral de Justiça no âmbito de sua atuação decisória e revisional, a fim de oportunizar aos demais órgãos ministeriais a pesquisa e o acesso ao conteúdo dessas decisões.",AI95-,,fabiana.zamalloa@mpgo.mp.br,32
+AI170,sim,Realizar o levantamento completo dos conteúdos relevantes para a ambientação.,AI170-1,1,rafael.oliveira@mpgo.mp.br,2
+AI170,sim,Organizar o roteiro de conteúdos.,AI170-2,2,rafael.oliveira@mpgo.mp.br,2
+AI170,não,Produzir materiais informativos claros e objetivos.,AI170-3,3,rafael.oliveira@mpgo.mp.br,2
+AI170,não,"Produzir ou gravar conteúdos em formatos diversos, sendo vídeos curtos e apresentações interativas.",AI170-4,4,rafael.oliveira@mpgo.mp.br,2
+AI170,não,Organizar e disponibilizar todo o material no ambiente virtual de aprendizagem (Moodle).,AI170-5,5,rafael.oliveira@mpgo.mp.br,2
+AI165,não,Planejar e estruturar o Programa de Mentoria institucional.,AI165-1,1,rafael.oliveira@mpgo.mp.br,2
+AI165,não,Selecionar e capacitar os mentores.,AI165-2,2,rafael.oliveira@mpgo.mp.br,2
+AI165,não,"Acompanhar e apoiar o desenvolvimento dos mentorados, criando um modelo-padrão para registro das interações e temas abordados.",AI165-3,3,rafael.oliveira@mpgo.mp.br,2
+AI165,não,Avaliar o programa.,AI165-4,4,rafael.oliveira@mpgo.mp.br,2
+AI119,sim,Firmar parceria com a Associação Goiana de Municípios e Federação Goiana de Municípios para a disponibilização ao Ministério Público do Estado de Goiás da base de dados do Diário Oficial dos Municípios.,AI119-2,2,fabiana.zamalloa@mpgo.mp.br,32
+AI111,não,3.	Encontros da Subprocuradoria-Geral de Justiça com os Procuradores e com os Promotores de Justiça para exposição das linhas de atuação e acolhimento de sugestões para aprimorar e tornar efetiva a atuação ministerial no âmbito dos recursos constitucionais.,AI111-3,3,fabiana.zamalloa@mpgo.mp.br,32
+AI111,não,"4.	Conclusão do Projeto Conexões, com levantamento das ações adotadas e dos resultados proporcionados.  ",AI111-4,4,fabiana.zamalloa@mpgo.mp.br,32
+AI95,não,"Desenvolvimento de sistema de busca de precedentes para compilar as decisões proferidas pelo Procurador-Geral de Justiça no âmbito de sua atuação decisória e revisional, a fim de oportunizar aos demais órgãos ministeriais a pesquisa e o acesso ao conteúdo dessas decisões.",AI95-2,2,fabiana.zamalloa@mpgo.mp.br,32
+AI164,sim,"PROJETO. ICT. PARECER. Obter parecer jurídico formal da Assessoria Jurídica acerca do reconhecimento do MPGO como ICT, com base na Lei nº 10.973/2004 e Lei Estadual.",AI164-5,5,marcelo.azevedo@mpgo.mp.br,8
+AI164,sim,PROJETO. ICT. TRATATIVAS. AGU. Tratativas iniciais com AGU que se qualificou como ICT,AI164-2,2,marcelo.azevedo@mpgo.mp.br,8
+AI164,não,Propor alteração legislativa (estadual ou resolução) reconhecendo formalmente o MPGO como ICT no âmbito estadual.,AI164-,,marcelo.azevedo@mpgo.mp.br,8
+AI164,não,"PROJETO. ICT. Cadastrar o MPGO na Plataforma Nacional das ICTs e no CNPq, com vinculação técnica e responsável institucional.",AI164-8,8,marcelo.azevedo@mpgo.mp.br,8
+AI164,não,"PROJETO. ICT. Firmar primeiros convênios com universidades e centros de pesquisa reconhecidos, com base na Lei da Inovação.",AI164-9,9,marcelo.azevedo@mpgo.mp.br,8
+AI164,sim,PROJETO. ICT. ESTUDOS. Viabilizar o estudo da legislação aplicável e viabilidade de adequação ao MPGO;,AI164-1,1,marcelo.azevedo@mpgo.mp.br,8
+AI123,não,"PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. LABORATÓRIO IA. Estruturar o Laboratório de Dados, Estatística e IA: 
+1. Elaborar proposta de plano de atividades a ser aprovada pelo PGJ; 
+2. Contratar quadro de pessoal para as atribuições definidas no plano.        ",AI123-7,7,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,Criar o Programa MPGO Experimental ou outro nome para testar soluções inovadoras com ciclo de avaliação rápida,AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,Criar portfólio digital vivo de projetos inovadores em andamento ou concluídos no MPGO,AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"SELO. PREMIAÇÃO. Lançar o Selo “Soluções que Transformam”
+Objetivo: Reconhecer formalmente iniciativas internas com impacto institucional comprovado.
+Entrega: Edital anual com critérios técnicos e premiação simbólica.",AI112-7,7,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,Produzir boletim de inovação com curadoria de tendências aplicáveis ao MP,AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"Instituir “rodadas de inovação” entre o Laboratório e as CAOs/unidades finalísticas, bem como outras unidades.",AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"FERRAMENTA. Criar e manter o Painel de Desafios Institucionais. 
+Objetivo: Disponibilizar ambiente digital para que membros, servidores e unidades submetam problemas institucionais complexos a serem trabalhados pelo laboratório.",AI112-5,5,marcelo.azevedo@mpgo.mp.br,8
+AI112,sim,"ESTRUTURAÇÃO. SERVIÇO. PARCERIAS. Realizar Rodadas de Diagnóstico Colaborativo. 
+Objetivo: Conduzir oficinas e entrevistas em campo para entender causas, contexto e necessidades institucionais específicas.",AI112-1,1,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"CAPACITAÇÃO.  Implantar o Programa de Formação “Trilhas de Inovação”
+Objetivo: Capacitar agentes internos em inovação pública, com trilhas compostas por aulas, mentorias e aplicação prática.",AI112-8,8,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"PROJETO. ELABORAÇÃO. ARTICULAÇÃO. PARCERIAS Formalizar Parcerias Estratégicas de Inovação
+Objetivo: Estabelecer convênios e memorandos de entendimento com universidades, ICTs, centros de excelência e redes de inovação.",AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"PORTFÓLIO. .Criar e divulgar o Portfólio de Projetos Inovadores do MPGO
+Objetivo: Reunir e apresentar soluções em andamento ou concluídas, com status, resultados e replicabilidade.",AI112-9,9,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"ESTRUTURAÇÃO. SERVIÇO. OFICINAS Criar o Kit de Ferramentas para Inovação
+Objetivo: Disponibilizar métodos, canvas, checklists e guias de inovação prática para uso das unidades.",AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,sim,"REDES. Participar ativamente da Rede MP Digital e da Rede InovaGov; Rede Goiana de Laboratórios de Inovação.
+Objetivo: Integrar o MPGO às agendas de inovação pública em nível nacional.",AI112-3,3,marcelo.azevedo@mpgo.mp.br,8
+AI112,não,"RESULTADOS. GESTÃO. MATURIDADE EM INOVAÇÃO. Publicar relatório anual de impacto do Laboratório
+Objetivo: Documentar os avanços, aprendizados e indicadores do ano, com transparência e foco em melhoria contínua.",AI112-,,marcelo.azevedo@mpgo.mp.br,8
+AI112,sim,"ESTRUTURAÇÃO. EXECUÇÃO. Garantir infraestrutura física adequada para atuação integrada do laboratório, assim como: 
+1. Definir, adequar e sinalizar espaço físico exclusivo e funcional para as atividades do MP GO!, com áreas para reuniões, oficinas, testes e coworking institucional.
+2. Equipar o ambiente com mobiliário ergonômico, recursos audiovisuais e acesso privilegiado a sistemas institucionais e bases de dados.",AI112-2,2,marcelo.azevedo@mpgo.mp.br,8
+AI177,não,"INSTITUCIONAL. MAPEAMENTO. CONTRATOS-CHAVE. Mapear contatos-chave no CNMP, CNJ, ministérios e lideranças do Congresso Nacional",AI177-,,cyro.peres@mpgo.mp.br,24
+AI177,sim,"INSTITUCIONAL. MONITORAMENTO. TRIBUNAIS SUPERIORES. Realizar o monitoramento estratégico das matérias em tramitação nos Tribunais Superiores com potencial de impacto institucional, classificando-as por relevância, sistematizando fundamentos jurídicos, articulando audiências com ministros e acompanhando seus desdobramentos por meio de sustentações orais, reuniões técnicas e ações institucionais coordenadas.",AI177-,,cyro.peres@mpgo.mp.br,24
+AI177,sim,"INSTITUCIONAL. INTERLOCUÇÃO. TRIBUNAIS SUPERIORES. Estabelecer diálogo institucional contínuo com ministros das Cortes Superiores, por meio de reuniões estratégicas e entrega de memorandos técnicos sobre casos relevantes ao MPGO, visando qualificar a atuação institucional nos julgamentos de impacto. Obs.: Criar controle de todas as atividades de reuniões e entrega de memoriais.",AI177-,,cyro.peres@mpgo.mp.br,24
+AI139,sim,ARTICULAÇÃO. CNMP. Realizar reuniões institucionais com membros do Conselho Nacional do Ministério Público (CNMP) para despachar assuntos de interesse do MPGO,AI139-1,1,marcelo.azevedo@mpgo.mp.br,8
+AI139,sim,"ACOMPANHAMENTO. SESSÕES DE JULGAMENTO. CNMP. Acompanhar as sessões de julgamento do CNMP com monitoramento dos resultados de processos, procedimentos e matérias de interesse do MPGO",AI139-2,2,marcelo.azevedo@mpgo.mp.br,8
+AI139,sim,TRATATIVAS. SEDE COMPARTILHADA. MPs. Iniciar tratativas com os Ministérios Públicos do Centro-Oeste para locação e uso compartilhado de sede institucional em Brasília ,AI139-,,marcelo.azevedo@mpgo.mp.br,8
+AI139,sim,"ACOMPANHAMENTO. PROPOSTAS DE RESOLUÇÃO. CNMP. Acompanhar a tramitação, apreciação e julgamento das propostas de resolução no âmbito do CNMP, com monitoramento constante de seus desdobramentos e impactos institucionais",AI139-3,3,marcelo.azevedo@mpgo.mp.br,8
+AI139,sim,PROJETO. BUSCADOR DE PRECEDENTES STJ. DESENVOLVIMENTO. Criar ferramenta digital de acesso diário e automático a decisões de habeas corpus no STJ,AI139-,,marcelo.azevedo@mpgo.mp.br,8
+AI173,sim,Instalar 5 Procuradorias em 2025,AI173-,,cyro.peres@mpgo.mp.br,24
+AI106,sim,Implementar a operacionalização do sistema Destina,AI106-6,6,sandra.mara@mpgo.mp.br,31
+AI106,sim,Incrementar os modelos de autocomposição,AI106-7,7,sandra.mara@mpgo.mp.br,31
+AI106,sim,Reestruturar o serviço Fortalecendo Redes,AI106-8,8,sandra.mara@mpgo.mp.br,31
+AI106,sim,"Edição do ATO SGJAI n. 01, de 23 de junho de 2025, que aprova o Regimento Interno do COMPOR, publicado na edição n. 3941 do Diário Oficial do Ministério Público do Estado de Goiás.",AI106-9,9,sandra.mara@mpgo.mp.br,31
+AI106,sim,"Realização do III Seminário de Incentivo à Autocomposição no MPGO, em 22/08/2025",AI106-10,10,laura.bueno@mpgo.mp.br,35
+AI132,sim,"Estabelecimento de divisão interna de atribuições com duas frentes de trabalho, uma relacionada ao fomento de políticas de segurança pública e outra de controle externo da atividade policial.",AI132-4,4,sandra.mara@mpgo.mp.br,31
+AI132,sim,Disponibilização de mais 01 (um)cargo de Assistente e 01 (um) residente jurídico,AI132-5,5,rafael.oliveira@mpgo.mp.br,2
+AI132,sim,"Ampliação do espaço do GAESP com a transferência para as salas 158 e 160, Ala B, do Edifício- Sede, as quais foram unificadas e promovida ampla reforma, no mês de maio de 2025, com a disponibilização de 10 (dez) estações de trabalho e 02 (dois) gabinetes.",AI132-6,6,sandra.mara@mpgo.mp.br,31
+AI132,sim,"Melhoria da gestão do trabalho com priorização de procedimentos antigos, ajuizamento de denúncias, alegações finais, recursos e ações civis públicas, promoção de arquivamento de procedimentos extrajudiciais.",AI132-7,7,sandra.mara@mpgo.mp.br,31
+AI132,sim,"Instauração de Procedimento Administrativo para acompanhar a implementação, no âmbito do Ministério Público do Estado de Goiás, da Resolução n. 310 do CNMP.",AI132-8,8,sandra.mara@mpgo.mp.br,31
+AI132,sim,"Atualização dos dados constantes da Ferramenta Métis, relacionada a mortes decorrentes de intervenções policiais, que no início da gestão encontrava-se atualizada até o ano de 2022 e, em apenas 04 (quatro) meses, promoveu a atualização até o ano de 2024.",AI132-9,9,sandra.mara@mpgo.mp.br,31
+AI132,sim,"Edição do Ato PGJ n. 71, de 12 de setembro de 2025, atualizando a atuação do GAESP em relação às seguintes Resoluções CNMP: 277/23 (Atribuições do Ministério Público na tutela coletiva das  políticas públicas de execução), 278/2023 (Atribuições do Ministério Público na Tutela Coletiva de Segurança Pública),  279/2023 (Atribuições do Ministério Público no exercício do Controle Externo da
+Atividade Policial) e 310/2025 (investigação de morte, violência sexual, tortura, desaparecimento forçado de pessoas e outros crimes ocorridos em decorrência ou no contexto de intervenções dos órgãos de segurança pública). Houve a inclusão em capítulo específico sobre o sistema prisional e execução penal, prevenção e combate à vitimização policial (saúde mental), disposição expressa sobre o Controle Externo da Guarda Civil Municipal, promoção de integração e aperfeiçoamento.",AI132-10,10,cyro.peres@mpgo.mp.br,24
+AI132,sim,"Instauração de procedimento administrativo para acompanhar e fiscalizar, de forma continuada, a política pública de segurança pública do Município de Goiânia, especialmente quanto às políticas a serem desenvolvidas e aplicadas no âmbito de atuação da Agência da Guarda Civil Metropolitana de Goiânia (AGCM) e aquelas relacionadas à implantação de  câmeras de reconhecimento facial, a partir de visita realizada pelos integrantes do GAESP ao Programa Smart Sampa de São Paulo. 
+",AI132-11,11,guilherme.oliveira@mpgo.mp.br,
+AI107,sim,"Reunião de alinhamento para realização da segunda edição do Projeto Uniformidade, ano 2025, entre as Subprocuradorias-Gerais de Justiça (Institucional, Jurídica e de Planejamento, Estratégia e Inovação). ",AI107-1,1,sandra.mara@mpgo.mp.br,31
+AI107,sim,Elaboração de Edital para Construção e Aperfeiçoamento de Enunciados Institucionais (Uniformidade MPGO 2025),AI107-2,2,liana.tormin@mpgo.mp.br,9
+AI114,sim,"Reunião, no mês de julho de 2025, com todos (as) os (as) assessores(as) dos Centros de Apoio para aprimoramento e padronização do material disponibilizado ao MAMP, visando acrescentar as matérias mais demandadas pelos integrantes. ",AI114-4,4,sandra.mara@mpgo.mp.br,31
+AI114,sim,"Reunião para apresentação à Subprocuradora-Geral de Justiça para Assuntos Institucionais da conclusão do material produzido pelos(as) assessores(as) dos Centros de Apoio, no mês de agosto de 2025. ",AI114-5,5,sandra.mara@mpgo.mp.br,31
+AI114,sim,Organização do material na ferramenta digital do MAMP,AI114-6,6,lorrayne.cruz@mpgo.mp.br,11
+AI114,sim,Reunião para apresentação do MAMP ao Procurador-Geral de Justiça,AI114-7,7,sandra.mara@mpgo.mp.br,31
+AI114,sim,Elaboração de material publicitário para lançamento do MAMP,AI114-8,8,sandra.mara@mpgo.mp.br,31
+AI114,não,Inserção do MAMP no ambiente da intranet,AI114-9,9,marcelo.azevedo@mpgo.mp.br,8
+AI114,não,Lançamento do MAMP,AI114-10,10,cyro.peres@mpgo.mp.br,24
+AI110,sim,PROJETO. EXPERT EM GESTÃO MPGO. ESTRUTURAÇÃO. Planejar projeto institucional voltado à capacitação para o planejamento de iniciativas,AI110-8,8,liana.tormin@mpgo.mp.br,9
+AI110,sim,Planejar e executar o Projeto Estratégico Gestão de Premiações,AI110-,,liana.tormin@mpgo.mp.br,9
+AI110,sim,Planejar e executar o Programa MP Projeta,AI110-,,liana.tormin@mpgo.mp.br,9
+AI113,sim,"PROJETO. PAINEL TEMÁTICO MPGO. Desenvolvimento e implementação do BI Temático MPGO. Disponibilização do BI Temático MPGO para gestores e tomadores de decisão, em especial para subsidiar a revisão do Planejamento Estratégico Institucional.",AI113-5,5,rafael.correa@mpgo.mp.br,10
+AI113,não,"Disponibilização do BI MPGO Temático para gestores e tomadores de decisão, em especial para subsidiar a revisão do Planejamento Estratégico Institucional",AI113-,,liana.tormin@mpgo.mp.br,9
+AI123,sim,Realizar estudos e tratativas para o reconhecimento do MPGO como ICT,AI123-,,liana.tormin@mpgo.mp.br,9
+AI164,sim,PROJETO. ICT. TRATATIVAS. TCU. Realizar tratativas com TCU acerca do procedimento para reconhecimento de órgãos públicos como ICT,AI164-3,3,marcelo.azevedo@mpgo.mp.br,8
+AI141,sim,ARTICULAÇÃO. TRIBUNAIS SUPERIORES. Realizar reuniões periódicas com ministros dos Tribunais Superiores para despachar assuntos de interesse do MPGO,AI141-1,1,marcelo.azevedo@mpgo.mp.br,8
+AI141,sim,ACOMPANHAMENTO. SESSÕES DE JULGAMENTO. TRIBUNAIS SUPERIORES. Acompanhar sessões de julgamento dos Tribunais Superiores com monitoramento dos resultados de processos e matérias de interesse do MPGO,AI141-3,3,marcelo.azevedo@mpgo.mp.br,8
+AI92,sim,Acompanhar a tramitação da Proposta no CNMP.,AI92-1,1,rafael.oliveira@mpgo.mp.br,2
+AI88,sim,2025 - Reajustar o percentual do auxílio-saúde.,AI88-3,3,rafael.oliveira@mpgo.mp.br,2
+AI164,não,"Planejar e estruturar o canal de comunicação, definindo temas, periodicidade e formato(s) do canal.",AI164-1,1,rafael.oliveira@mpgo.mp.br,2
+AI164,não,Criar identidade visual.,AI164-2,2,rafael.oliveira@mpgo.mp.br,2
+AI164,não,Produzir e divulgar conteúdos e campanhas,AI164-3,3,rafael.oliveira@mpgo.mp.br,2
+AI143,sim,"Disponibilização do KIT Controle Interno 2025 às Promotorias de Justiça com atribuição na tutela do patrimônio público, com o objetivo de apoiar a estruturação e o fortalecimento das Controladorias Internas nos municípios goianos.",AI143-4,4,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de São Luís de Montes Belos, no dia 18 de junho de 2025",AI143-6,6,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Sanclerlândia, no dia 18 de junho de 2025",AI143-7,7,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Hidrolândia, no dia 26 de junho de 2025",AI143-8,8,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Abadiânia, no dia 05 de agosto de 2025",AI143-10,10,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Ceres, no dia 06 de agosto de 2025",AI143-11,11,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Goiânia, no dia 27 de agosto de 2025",AI143-12,12,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Rio Verde, no dia 03 de setembro de 2025",AI143-13,13,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,Publicação de 2º Edital para chamamento para seleção de outras 10 (dez) Promotorias de Justiça com atribuição na tutela do patrimônio público para manifestação de interesse na participação no Projeto Eu Vereador(a),AI143-9,9,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Planaltina , no dia 16 de setembro de 2025",AI143-14,14,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Santo Antônio do Descoberto, no dia 17 de setembro de 2025",AI143-15,15,tommaso.leonardi@mpgo.mp.br,
+AI117,sim,Solicitação de abertura de concurso público para 2 (dois) cargos de Engenheiro Ambiental.,AI117-1,1,manuela.portugal@mpgo.mp.br,
+AI117,sim,"Encaminhamento de Documento de Oficialização de Demanda (DOD) e Termo de Referência (TR) para realização de credenciamento de profissionais da Psicologia, Serviço Social e Pedagogia, com a finalidade de realização de visita técnica nas entidades de acolhimento na Região do Centro Oeste Goiano (Eixo BR-153), conforme Resolução CNMP n. 293/2024.",AI117-2,2,manuela.portugal@mpgo.mp.br,
+AI117,sim,"Formalização do Serviço Pronto Atende consistente na realização de orientação técnica à Promotoria de Justiça de forma simplificada, visando instruir o procedimento e reduzir o tempo de espera na Unidade, da seguinte forma:  o(a) Chefe da UTP deverá se reunir com a equipe ou analista com formação na área objeto da demanda para definir estratégias de atuação pela Promotoria de Justiça, visando a instrução do procedimento, e, posteriormente, entrará em contato com o Promotor(a) responsável, momento em que fará a proposta do Pronto Atendimento.",AI117-3,3,manuela.portugal@mpgo.mp.br,
+AI117,sim,"Regulamentação do fluxo de atendimento da Coordenação de Apoio Técnico Pericial (CATEP), onde os Suportes Técnicos prestados pelas Chefias e Corpo Técnico das Unidades da CATEP, por telefone, e-mail e/ou WhatsApp, às Promotorias de Justiça, Centros de Apoio ou outros órgãos da administração do MPGO, passaram a ser registrados no sistema Atena como Atendimento na serventia do respectivo Analista, contendo a descrição do Suporte Técnico prestado incluindo os encaminhamentos sugeridos ao demandante.",AI117-4,4,manuela.portugal@mpgo.mp.br,
+AI117,sim,"Criação, no âmbito da Coordenação de Apoio Técnico Pericial (CATEP), do Grupo de Inovação, instituído com a finalidade de planejar, propor, implementar e acompanhar iniciativas voltadas à inovação na atuação em matérias de ordem técnica relacionadas às atividades das Unidades Técnico-Periciais do Ministério Público do Estado de Goiás.",AI117-5,5,manuela.portugal@mpgo.mp.br,
+AI123,sim,"PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. EQUIPAMENTOS. INFRAESTRUTURA. TR. Elaboração de ata de registro de preços para aquisição de equipamentos de infraestrutura tecnológica, DGX de GPUs para processamento de IA",AI123-3,3,luizmauro@mpgo.mp.br,
+AI117,sim,Cessão de 01 (uma) Assistente Social do Estado de Goiás para a Unidade Técnico-Pericial em Serviço Social da CATEP,AI117-6,6,sandra.mara@mpgo.mp.br,31
+AI117,sim,Solicitação de cessão de 01 (um) médico do Município de Goiânia para a Unidade Técnico-Pericial em Medicina da CATEP.,AI117-7,7,sandra.mara@mpgo.mp.br,31
+AI128,sim,"WORKSPACE. SERPRO. TRATATIVAS. Realizar tratativas com o SERPRO  para contratação de suíte de ferramentas de colaboração e compartilhamento de arquivos em nuvem (Google Workspace, Google Drive, Calendar, Docs, dentre outros). 
+Obs: a disponibilização do serviço/produto pelo Serpro somente se deu em setembro de 2025. ",AI128-7,7,luizmauro@mpgo.mp.br,
+AI128,não,"WORKSPACE. CONTRATAÇÃO. Contratação de suíte de ferramentas de colaboração e compartilhamento de arquivos em nuvem (Google Workspace, Google Drive, Calendar, Docs, dentre outros).",AI128-8,8,luizmauro@mpgo.mp.br,
+AI128,sim,SERPRO. CONTRATAÇÃO. Assinatura do contrato com o SERPRO para fornecimento de serviços de infraestrutura em nuvem.,AI128-4,4,luizmauro@mpgo.mp.br,
+AI164,não,PROJETO. ICT. Manifestação formal do Subplei.,AI164-7,7,marcelo.azevedo@mpgo.mp.br,8
+AI164,sim,PROJETO. ICT. PGA. ICT. Instaurar PGA com despacho fundamentado. ,AI164-4,4,marcelo.azevedo@mpgo.mp.br,8
+AI164,sim,PROJETO. ICT. TRATATIVAS. MPRS. Realizar tratativas com MPRS acerca do procedimento para reconhecimento de órgãos públicos como ICT,AI164-6,6,marcelo.azevedo@mpgo.mp.br,8
+AI164,não,"PROJETO. ICT. RECONHECIMENTO. MPGO.ICT. 
+1. Elaborar minuta de Ato reconhecendo o MPGO como ICT; 
+2. Assinatura do Ato.",AI164-10,10,liana.tormin@mpgo.mp.br,9
+AI91,sim,PROJETO. MPGO EM DESTAQUE. Planejar o projeto de gestão de premiações que visa identificar certames de premiações de outros órgãos e fomentar as inscrições.,AI91-6,6,liana.tormin@mpgo.mp.br,9
+AI91,não,PROJETO GESTÃO DE RISCOS. Aprovar o projeto na RAE e prosseguir com a sua execução.,AI91-13,13,liana.tormin@mpgo.mp.br,9
+AI91,sim,PROJETO. MP PERFORMANCE. Planejar o projeto de gestão de indicadores dos projetos institucionais.,AI91-7,7,liana.tormin@mpgo.mp.br,9
+AI91,não,PROJETO. MPGO EM DESTAQUE. Aprovar o projeto na RAE e prosseguir com a sua execução.,AI91-10,10,liana.tormin@mpgo.mp.br,9
+AI91,não,PROJETO. MP PERFORMANCE. Aprovar o projeto na RAE e prosseguir com a sua execução.,AI91-11,11,liana.tormin@mpgo.mp.br,9
+AI106,sim,"Edição do Ato PGJ n. 58/2025, que dispõe sobre a destinação de recursos financeiros, no âmbito do Ministério Público do Estado de Goiás, relacionada ao Projeto Institucional de Destinação Articulada de Acordos do Ministério Público, doravante denominado Destina, e o procedimento para o cadastro de órgãos e de entidades públicas ou privadas de interesse social para serem aptas ao recebimento desses benefícios.",AI106-11,11,cyro.peres@mpgo.mp.br,24
+AI106,sim,"Edição do Ato PGJ n. 59/2025, que dispõe sobre a criação, no âmbito do Ministério Público do Estado de Goiás, de banco de cadastro de pessoas jurídicas de direito privado sem fins lucrativos, cuja atuação se relacione à promoção de direitos transindividuais, nos termos da Resolução Conjunta CNJ e CNMP n. 10, de 29 de maio de 2024.",AI106-12,12,cyro.peres@mpgo.mp.br,24
+AI106,não,Disponibilização de um Residente Jurídico em Ciências Contábeis para auxiliar na prestação de contas das entidades beneficiadas com recursos financeiros pelo Destina.,AI106-13,13,sandra.mara@mpgo.mp.br,31
+AI106,sim,Visita Institucional realizada ao Compor do Ministério Público de Minas Gerais pelos Integrantes do Compor do MPGO.,AI106-14,14,rafaello.boschi@mpgo.mp.br,36
+AI106,sim,Ampliação do espaço físico do COMPOR ,AI106-15,15,laura.bueno@mpgo.mp.br,35
+AI107,sim,Inserção dos enunciados institucionais na intranet ,AI107-3,3,sandra.mara@mpgo.mp.br,31
+AI108,sim,"Edição do Ato PGJ n. 57/2025, que redefine a organização e o funcionamento do Núcleo Estadual de Gênero no âmbito do Ministério Público do Estado de Goiás. ",AI108-3,3,cyro.peres@mpgo.mp.br,24
+AI108,sim,Atuação do Núcleo de Assessoramento Temático e de Fomento à Articulação na Área dos Direitos da Pessoa com Deficiência (NAT Pessoa com Deficiência) no Projeto + Inclusão voltado à criação e regularização de Conselhos Municipais de Direitos da Pessoa com Deficiência,AI108-4,4,andre.lobo@mpgo.mp.br,30
+AI108,sim,"Atuação do NAT Educação na articulação das ações do projeto Sede de Aprender do CNMP,  pelo Direito à Água nas Escolas, realizada de 02 a 06 de junho de 2025, realizando visitas em 40 escolas municipais que não possuíam água potável, distribuição de água, esgotamento sanitário ou banheiro. ",AI108-5,5,vanessa.barbosa@mpgo.mp.br,
+AI118,sim,Atuação do GAEMA na regionalização dos resíduos sólidos integrando os órgãos de execução,AI118-1,1,daniela.serafim@mpgo.mp.br,
+AI118,sim,"Apoio do GAEMA às Promotorias de Justiça abrangidas pela instalação de hidrelétricas com alcance regional, atuando no procedimento administrativo de licença ambiental",AI118-2,2,daniela.serafim@mpgo.mp.br,
+AI118,sim,Atuação do GAEMA na elaboração de modelos para atuação em matéria de desmatamento,AI118-3,3,daniela.serafim@mpgo.mp.br,
+AI118,sim,Atuação do GAEMA no alinhamento da gestão dos Municípios com os Comitês de Bacia,AI118-4,4,daniela.serafim@mpgo.mp.br,
+AI118,sim,Apoio do GAEMA aos órgãos de execução no combate aos incêndios florestais com participação no Comitê Estadual de Combate aos Incêndios Florestais,AI118-5,5,daniela.serafim@mpgo.mp.br,
+AI118,sim,Apoio do GAEMA ao Projeto Extra Resolutividade,AI118-6,6,daniela.serafim@mpgo.mp.br,
+AI118,sim,Apoio do GAEPP ao Projeto Extra Resolutividade,AI118-7,7,tommaso.leonardi@mpgo.mp.br,
+AI118,sim,Apoio do GAEPP em investigações complexas na área do patrimônio público,AI118-8,8,tommaso.leonardi@mpgo.mp.br,
+AI118,sim,Colaboração do GAEJURI aos órgãos de execução nos casos de júris complexos e com vários réus e advogados,AI118-9,9,savio.greco@mpgo.mp.br,
+AI120,sim,"Aprovação e implementação do Projeto Extra Resolutivo, no mês de agosto de 2025",AI120-2,2,sandra.mara@mpgo.mp.br,31
+AI120,sim,"Busca ativa de autos extrajudiciais com maior tempo de tramitação na área do patrimônio público para oferecer suporte à sua resolução, por meio da AJE Extrajudicial",AI120-3,3,sandra.mara@mpgo.mp.br,31
+AI120,sim,Busca ativa de autos extrajudiciais com maior tempo de tramitação pelos Coordenadores de todas as áreas de atuação do Centro de Apoio Operacional às Procuradorias e Promotorias de Justiça para elaborar modelos e oferecer suporte à sua resolução,AI120-4,4,sandra.mara@mpgo.mp.br,31
+AI120,sim,Disponibilização de 04 (quatro) Assistentes Jurídicos para suporte à atuação de 04 (quatro) Promotores (as) de Justiça que estão auxiliando a AJE Extrajudicial nos autos antigos,AI120-5,5,cyro.peres@mpgo.mp.br,24
+AI120,sim,"Expedição de Ofício aos (às) membros (as) com atuação no patrimônio público para suporte na celebração de ANPCs, pelo GAEPP, nos autos criados há mais de 03 (três) anos",AI120-6,6,tommaso.leonardi@mpgo.mp.br,
+AI172,sim,"Realização do Seminário Atuação do Ministério Público com Perspectiva de Gênero: formas de violência contra a mulher, Lei Maria da Penha, Interseccionalidades e combate ao feminicídio",AI172-7,7,sandra.mara@mpgo.mp.br,31
+AI172,sim,Realização do Ciclo de Diálogos da Lei Maria da Penha: a importância da rede de atenção à mulher em situação de violência,AI172-8,8,andre.lobo@mpgo.mp.br,30
+AI172,sim,"Criação, por meio do Ato PGJ n. 61/2025, do Núcleo de Apoio às Vítimas, no âmbito do Ministério Público do Estado de Goiás",AI172-9,9,cyro.peres@mpgo.mp.br,24
+AI172,sim,"Inauguração do Espaço Físico, no Edifício-sede do MPGO, do Núcleo de Apoio às Vítimas",AI172-10,10,cyro.peres@mpgo.mp.br,24
+AI172,sim,Nomeação do Coordenador do Núcleo de Apoio às Vítimas,AI172-11,11,cyro.peres@mpgo.mp.br,24
+AI110,sim,"PROGRAMA. MP PROJETA. ESTRUTURAÇÃO. Planejar programa institucional voltado ao fomento, à valorização e à gestão de iniciativas, com vários projetos vinculados.",AI110-1,1,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROGRAMA. MP PROJETA. APROVAÇÃO. EXECUÇÃO. Aprovar o programa na RAE e seguir com a sua execução,AI110-2,2,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. POA INTELIGENTE. GESTÃO. Desenvolver dashboard e acompanhar a execução de planos operacionais de atuação.,AI110-7,7,liana.tormin@mpgo.mp.br,9
+AI115,sim,PROGRAMA. SINCRONIZA. ESTRUTURAÇÃO. Planejar programa institucional voltado a implementar estratégias de diagnóstico e intervenção voltadas à redução do acúmulo processual judicial e extrajudicial,AI115-0,0,liana.tormin@mpgo.mp.br,9
+AI115,sim,PROGRAMA. SINCRONIZA. APROVAÇÃO. EXECUÇÃO. Aprovar o programa na RAE e seguir com a sua execução,AI115-2,2,liana.tormin@mpgo.mp.br,9
+AI91,sim,"PROGRAMA. MP PROJETA. ESTRUTURAÇÃO. Planejar programa institucional voltado ao fomento e valorização de boas práticas, com vários projetos vinculados",AI91-1,1,liana.tormin@mpgo.mp.br,9
+AI125,não,"PROJETO. INTEGRAÇÃO. DISPONIBILIZAÇÃO E ACOMPANHAMENTO. Colocação em produção, monitoramento contínuo e ajustes de desempenho.",AI125-5,5,rafael.correa@mpgo.mp.br,10
+AI91,sim,PROJETO. BNP INTELIGENTE. ESTRUTURAÇÃO. Planejar o Projeto BNP Inteligente voltado ao desenvolvimento de solução tecnológica e mobilização institucional para incrementar a participação no Prêmio CNMP,AI91-3,3,liana.tormin@mpgo.mp.br,9
+AI91,sim,PROJETO. BNP INTELIGENTE. APROVAÇÃO. EXECUÇÃO. Aprovar em RAE e prosseguir com a sua execução,AI91-4,4,liana.tormin@mpgo.mp.br,9
+AI91,sim,PROJETO. BNP INTELIGENTE. CAPACITAÇÃO. Capacitar integrantes do MPGO para o uso da Ferramenta BNP INTELIGENTE e participação no Prêmio CNMP,AI91-5,5,liana.tormin@mpgo.mp.br,9
+AI123,sim,"PROJETO X. NÃO INICIADO. Projeto aprovado, mas sem execução.",AI123-,,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. CUSTODIA. DOCUMENTAÇÃO. Levantamento de requisitos e documentação inicial do projeto.,AI123-8,8,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. CUSTODIA. DESENVOLVIMENTO. Executar o projeto com desenvolvimento de todos os módulos necessários para adequado funcionamento (MVP).,AI123-9,9,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. CUSTODIA. TESTES. HOMOLOGAÇÃO. Desenvolver teste unitários e de integração, bem como, validar o MVP em ambiente de homologação.",AI123-10,10,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. CUSTODIA. CONCLUSÃO. Validações final, deploy em produção e disponibilização dos usuários.",AI123-11,11,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO YYYY. INICIADO. Primeira entrega interna registrada (ex.: termo de abertura, equipe definida, protótipo mínimo).",AI123-,,rafael.correa@mpgo.mp.br,10
+AI123,não,PROJETO YYYY. TESTES. Projeto em fase de validação interna ou piloto controlado.,AI123-,,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO YYY. HOMOLOGAÇÃO. Melhorias, integração com sistemas e preparação para homologação. Projeto validado oficialmente, pronto para ser lançado.",AI123-,,rafael.correa@mpgo.mp.br,10
+AI121,sim,"PROJETO. IMERSÃO IA. Iniciado, com aula em periodicidade de 15 dias.",AI121-10,10,rafael.correa@mpgo.mp.br,10
+AI121,não,PROJETO. IMERSÃO IA. APRIMORAMENTO. Normatizar o projeto e controle os materiais entregues. ,AI121-,,rafael.correa@mpgo.mp.br,10
+AI139,sim,"ARTICULAÇÃO. CNJ. Realizar, quando necessário, reuniões institucionais com membros do Conselho Nacional de Justiça (CNJ) e Parlamentares para despachar assuntos de interesse do MPGO",AI139-4,4,marcelo.azevedo@mpgo.mp.br,8
+AI117,sim,Prestação de informações pela UTP em Medicina da CATEP para embasar realização de credenciamento de Médicos (as) para a aludida Unidade.,AI117-8,8,manuela.portugal@mpgo.mp.br,
+AI93,sim,"Realização do Projeto Especial de Atuação na Área Criminal para auxílio em manifestações de autos acumulados nas Promotorias de Justiça que atuam perante a 1ª e a 2ª Varas de Feitos Relativos a Delitos Praticados por Organização Criminosa e de Lavagem ou Ocultação de Bens, Direitos e Valores",AI93-3,3,sandra.mara@mpgo.mp.br,31
+AI93,sim,Realização de Projeto Especial para auxílio às Promotorias de Justiça de Goiânia com atribuição na área criminal na realização de Acordos de Não Persecução Penal.,AI93-4,4,sandra.mara@mpgo.mp.br,31
+AI93,sim,Realização do Projeto Extra Resolutivo com a finalidade de prestar apoio à conclusão de autos extrajudiciais criados há mais de 3 anos.,AI93-5,5,sandra.mara@mpgo.mp.br,31
+AI167,não,Uruaçu - Secretário Auxiliar - fase atual: prova agendada para 22/03/2026.,AI167-10,10,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Pirenópolis - Secretário Auxiliar - fase atual: prova agendada para o dia 01/03/2026.,AI167-11,11,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Montividiu - Secretário Auxiliar - fase atual: aguardando a aplicação da prova em 08/02/2026.,AI167-13,13,rafael.oliveira@mpgo.mp.br,2
+AI167,não,,AI167-,,,
+AI93,sim,Realização de Projeto Especial para auxílio ao Núcleo Especializado em Recursos Constitucionais (NUREC) na elaboração de contrarrazões.,AI93-6,6,sandra.mara@mpgo.mp.br,31
+AI167,não,Maurilândia - Secretário Auxiliar - fase atual: interposição de recursos contra o resultado preliminar das provas discursivas e de redação.,AI167-12,12,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Itauçu - Secretário Auxiliar - fase atual: análise de recursos contra o gabarito preliminar da prova objetiva.,AI167-14,14,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Santa Terezinha de Goiás - Oficial de Promotoria - fase atual: análise de recursos contra o gabarito preliminar da prova objetiva.,AI167-15,15,rafael.oliveira@mpgo.mp.br,2
+AI167,sim,Piracanjuba - Secretário Auxiliar - fase atual: homologado.,AI167-3,3,rafael.oliveira@mpgo.mp.br,2
+AI113,não,"PROJETO. PAINEL MAPA SOCIAL. Levantamento de requisitos, funcionais e não funcionais, e elaboração de documentação inicial do projeto.",AI113-6,6,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECEDENTES. CONSELHO SUPERIOR. REQUISITOS. Levantamento de requisitos do sistema.,AI116-2,2,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECENDENTES. CONSELHO SUPERIOR. IMPLEMENTAÇÃO. Implementar módulo de ingestão e validação automática de decisões administrativas do Conselho Superior,AI116-5,5,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECEDENTES. INTERFACE DE PESQUISA. CONSELHO SUPERIOR. Construir interface de pesquisa avançada com filtros especializados e visualização de resultados,AI116-7,7,rafael.correa@mpgo.mp.br,10
+AI116,sim,"PROJETO. BUSCADOR DE PRECEDENTES. INTEGRAÇÃO FINAL. CONSELHO SUPERIOR. Integração final do sistema (autenticação, controle de acesso e módulo de estatísticas) e disponibilização da aplicação ao público interno",AI116-11,11,rafael.correa@mpgo.mp.br,10
+AI121,sim,"PROJETO. REPOSITÓRIO. IMERSÃO IA. Disponibilização de repositório digital da Imersão IA com tutoriais, vídeos dos encontros e materiais complementares",AI121-11,11,rafael.correa@mpgo.mp.br,10
+AI116,sim,PROJETO. BUSCADOR DE PRECEDENTES. BASE DE DADOS. SUBJUR. Estabelecer base de dados vetorizada para armazenamento e recuperação otimizada de precedentes,AI116-9,9,rafael.correa@mpgo.mp.br,10
+AI122,sim,PROJETO. ATENA. MELHORIA. Desenvolvimento de melhoria no módulo de violência doméstica para possibilitar o preenchimento em todas as fases processuais.,AI122-6,6,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. EMENTA+. DOCUMENTAÇÃO. Levantamento de requisitos e documentação inicial do projeto.,AI123-12,12,rafael.correa@mpgo.mp.br,10
+AI123,não,PROJETO. EMENTA+. DESENVOLVIMENTO. Executar o projeto com desenvolvimento de todos os módulos necessários para adequado funcionamento (MVP).,AI123-13,13,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO. EMENTA+. TESTES. HOMOLOGAÇÃO. Desenvolver teste unitários e de integração, bem como, validar o MVP em ambiente de homologação.",AI123-14,14,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO. EMENTA+. CONCLUSÃO. Validações final, deploy em produção e disponibilização dos usuários.",AI123-15,15,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. EXTRACT JUR. DOCUMENTAÇÃO. Levantamento de requisitos e documentação inicial do projeto.,AI123-16,16,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. EXTRACT JUR. DESENVOLVIMENTO. Executar o projeto com desenvolvimento de todos os módulos necessários para adequado funcionamento (MVP).,AI123-17,17,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. EXTRACT JUR. TESTES. HOMOLOGAÇÃO. Desenvolver teste unitários e de integração, bem como, validar o MVP em ambiente de homologação.",AI123-18,18,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO. EXTRACT JUR. CONCLUSÃO. Validações final, deploy em produção e disponibilização dos usuários",AI123-19,19,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. THEMISIA-BASE. DOCUMENTAÇÃO. Levantamento de requisitos e documentação inicial do projeto.,AI123-20,20,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. THEMISIA-BASE. DESENVOLVIMENTO. Executar o projeto com desenvolvimento de todos os módulos necessários para adequado funcionamento (MVP).,AI123-21,21,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. THEMISIA-BASE. TESTES. HOMOLOGAÇÃO. Desenvolver teste unitários e de integração, bem como, validar o MVP em ambiente de homologação.",AI123-22,22,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. THEMISIA-BASE. CONCLUSÃO. Validações final, deploy em produção e disponibilização dos usuários",AI123-23,23,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. CHATBOT ATENA. DOCUMENTAÇÃO. Levantamento de requisitos e documentação inicial do projeto.,AI123-24,24,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. CHATBOT ATENA. DESENVOLVIMENTO. Executar o projeto com desenvolvimento de todos os módulos necessários para adequado funcionamento (MVP).,AI123-25,25,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. CHATBOT ATENA. TESTES. HOMOLOGAÇÃO. Desenvolver teste unitários e de integração, bem como, validar o MVP em ambiente de homologação.",AI123-26,26,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. CHATBOT ATENA. CONCLUSÃO. Validações final, deploy em produção e disponibilização dos usuários",AI123-27,27,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. AUTOJUS. DOCUMENTAÇÃO. Levantamento de requisitos e documentação inicial do projeto.,AI123-28,28,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. AUTOJUS. DESENVOLVIMENTO. Executar o projeto com desenvolvimento de todos os módulos necessários para adequado funcionamento (MVP).,AI123-29,29,rafael.correa@mpgo.mp.br,10
+AI123,sim,"PROJETO. AUTOJUS. TESTES. HOMOLOGAÇÃO. Desenvolver teste unitários e de integração, bem como, validar o MVP em ambiente de homologação.",AI123-30,30,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO. AUTOJUS. CONCLUSÃO. Validações final, deploy em produção e disponibilização dos usuários",AI123-31,31,rafael.correa@mpgo.mp.br,10
+AI123,sim,PROJETO. EXTENSÃO PROJUDI-CUSTODIA. DOCUMENTAÇÃO. Levantamento de requisitos e documentação inicial do projeto.,AI123-32,32,rafael.correa@mpgo.mp.br,10
+AI123,não,PROJETO. EXTENSÃO PROJUDI-CUSTODIA. DESENVOLVIMENTO. Executar o projeto com desenvolvimento de todos os módulos necessários para adequado funcionamento (MVP).,AI123-33,33,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO. EXTENSÃO PROJUDI-CUSTODIA. TESTES. HOMOLOGAÇÃO. Desenvolver teste unitários e de integração, bem como, validar o MVP em ambiente de homologação.",AI123-34,34,rafael.correa@mpgo.mp.br,10
+AI123,não,"PROJETO. EXTENSÃO PROJUDI-CUSTODIA. CONCLUSÃO. Validações final, deploy em produção e disponibilização dos usuários",AI123-35,35,rafael.correa@mpgo.mp.br,10
+AI118,sim,"Apoio do GAEDUC às Promotorias de Justiça de Aparecida de Goiânia, Anápolis, Senador Canedo e Goiânia em relação  à ampliação de vagas da educação infantil e à regularização de impropriedades encontradas nos Centros Municipais de Educação Infantil (CMEIs) em vistorias realizadas pelo Tribunal de Contas dos Municípios de Goiás (TCM-GO), inclusive participando de reuniões promovidas com os respectivos prefeitos, além de reuniões de orientação aos(às) promotores (às) naturais.",AI118-10,10,vanessa.barbosa@mpgo.mp.br,
+AI118,sim,"Colaboração do GAEDUC na temática da educação especial sob a perspectiva inclusiva em apoio às Promotorias de Justiça de São Luís de Montes Belos, Inhumas, Cachoeira Alta, Uruaçu, Uruana, Iporá e Goiatuba em relação à transição de alunos com deficiência de escolas estaduais especiais para a rede regular de ensino",AI118-11,11,vanessa.barbosa@mpgo.mp.br,
+AI108,sim,Elaboração de uma informação técnico-jurídica sobre o transporte escolar pelo NAT Educação ,AI108-6,6,vanessa.barbosa@mpgo.mp.br,
+AI118,sim,"Atuação do GAESAÚDE na fiscalização dos CAPS (Centros de Atenção Psicossocial) instalados em todos os Municípios abrangidos pelas Macrorregiões de Saúde do Estado de Goiás (Centro-Oeste, Centro-Norte, Centro-Sudeste, Nordeste e Sudoeste), em apoio aos órgãos de execução",AI118-12,12,marlene.bueno@mpgo.mp.br,
+AI118,não,"Atuação do GAESAÚDE para instalação de CAPS nos Municípios onde está indicada a sua necessidade, auxiliando os órgãos de execução nas tratativas com os(as) Prefeitos (as) e gestores(as) locais",AI118-13,13,marlene.bueno@mpgo.mp.br,
+AI118,sim,Elaboração de um Roteiro de Estratégia pelo GAESAÚDE para atuação na melhoria da Rede de Atenção Psicossocial-RAPS no Estado de Goiás,AI118-14,14,marlene.bueno@mpgo.mp.br,
+AI137,não,Oferta de curso de extensão ,AI137-,,adriano.firmino@mpgo.mp.br,22
+AI137,sim,Oferta de curso sobre Inteligência Artificial aplicada ao Ministério Público,AI137-1,1,adriano.firmino@mpgo.mp.br,22
+AI137,sim,Oferta de curso sobre Segurança Institucional,AI137-2,2,adriano.firmino@mpgo.mp.br,22
+AI151,sim,Master of Laws (LL.M.) - Universidade de Syracuse,AI151-1,1,adriano.firmino@mpgo.mp.br,22
+AI151,sim,"Curso de formação “Novos desafios para o Ministério Público: desmatamento, crime organizado e proteção penal do meio ambiente - Universidade de Castilla-La Mancha (UCLM)",AI151-2,2,adriano.firmino@mpgo.mp.br,22
+AI162,sim,Mapear e avaliar as políticas de bem-estar já existentes na instituição.,AI162-1,1,rafael.oliveira@mpgo.mp.br,2
+AI162,não,Desenvolver proposta de política integrada de bem-estar e qualidade de vida.,AI162-2,2,rafael.oliveira@mpgo.mp.br,2
+AI162,não,Implementar programas de promoção da saúde física e mental.,AI162-3,3,rafael.oliveira@mpgo.mp.br,2
+AI162,não,Divulgar amplamente os programas e recursos disponíveis aos integrantes.,AI162-4,4,rafael.oliveira@mpgo.mp.br,2
+AI163,não,Desenvolver programa de sensibilização sobre a importância da cultura do cuidado no ambiente de trabalho.,AI163-5,5,rafael.oliveira@mpgo.mp.br,2
+AI163,sim,"Capacitar lideranças e gestores em práticas de gestão humanizada e cuidado com as equipes: Curso em andamento ""Programa Liderança e Cultura Organizacional"".",AI163-3,3,rafael.oliveira@mpgo.mp.br,2
+AI163,não,Criar protocolos e diretrizes institucionais para promoção da cultura do cuidado.,AI163-6,6,rafael.oliveira@mpgo.mp.br,2
+AI163,não,Implementar ações de acolhimento e suporte emocional para servidores e membros.,AI163-7,7,rafael.oliveira@mpgo.mp.br,2
+AI163,não,Desenvolver campanhas internas de conscientização sobre autocuidado e cuidado coletivo.,AI163-8,8,rafael.oliveira@mpgo.mp.br,2
+AI163,sim,Acompanhar a tramitação da Proposta de Resolução do CNMP sobre assédio.,AI163-2,2,rafael.oliveira@mpgo.mp.br,2
+AI163,não,Regulamentar atuação contra assédio no âmbito do MPGO (Criar Ato PGJ para instituir Política de Prevenção e Enfrentamento de assédio moral e sexual do âmbito do MPGO).,AI163-4,4,rafael.oliveira@mpgo.mp.br,2
+AI163,sim,Realizar seminário: (Re)Pense propõe debate com integrantes do MPGO sobre ideias para um novo jeito de conviver (maio de 2025).,AI163-1,1,rafael.oliveira@mpgo.mp.br,2
+AI141,sim,MEMORIAIS. Criar fluxo de encaminhamento de memoriais ao STF e STF em casos prioritários,AI141-2,2,marcelo.azevedo@mpgo.mp.br,8
+AI110,sim,PROJETO. EXPERT EM GESTÃO MPGO. EXECUÇÃO. Executar o projeto institucional voltado à capacitação para o planejamento de iniciativas,AI110-9,9,liana.tormin@mpgo.mp.br,9
+AI145,sim,DIÁLOGO. Manter permanente diálogo com a AGMP e o SINDSEMP,AI145-1,1,cyro.peres@mpgo.mp.br,24
+AI118,sim,Elaboração dos Planos Operacionais de Atuação dos Grupos de Atuação Especial,AI118-15,15,manuela.portugal@mpgo.mp.br,
+AI106,sim,"Edição de Portaria da Subprocuradoria-Geral de Justiça para Assuntos Institucionais que cria e regulamenta os fluxos de tramitação dos serviços institucionais destinados à Unidade de  Autocomposição em Políticas Públicas do COMPOR, para atendimento às demandas dos Centros de Apoio Operacional e das Promotorias de Justiça ",AI106-16,16,sandra.mara@mpgo.mp.br,31
+AI106,sim,Disponibilização de mais 01 (uma) Psicóloga para Unidade de Autocomposição,AI106-17,17,sandra.mara@mpgo.mp.br,31
+AI107,sim,Publicação de Edital para realização do Projeto Uniformidade 2º Ciclo - 2025,AI107-4,4,sandra.mara@mpgo.mp.br,31
+AI107,sim,Coleta de sugestões das membras e membros para construção dos Enunciados 2025.,AI107-5,5,sandra.mara@mpgo.mp.br,31
+AI107,sim,"Análise pelos (as) Coordenadores (as) dos Centros de Apoio Operacional às Procuradorias e Promotorias de Justiça das sugestões apresentadas, bem como proposições de novos enunciados e revisão de alguns aprovados no ano de 2024",AI107-6,6,sandra.mara@mpgo.mp.br,31
+AI107,sim,Divulgação das propostas de enunciados para o ano de 2025 e abertura de inscrições para participação das reuniões temáticas deliberativas no dia 05/12/2025,AI107-7,7,sandra.mara@mpgo.mp.br,31
+AI117,sim,Disponibilização de 01 (um) cargo de Assistente para a Unidade Ambiental,AI117-9,9,sandra.mara@mpgo.mp.br,31
+AI117,não,Disponibilização de um (a) Servidor (a) da Informática para desenvolvimento de novas ferramentas para otimizar os atendimentos,AI117-10,10,sandra.mara@mpgo.mp.br,31
+AI117,não,"Integração entre a Área de Atuação do Meio Ambiente, Urbanismo e Patrimônio Cultural com a CATEP visando aperfeiçoamento no deferimento dos requerimentos",AI117-11,11,sandra.mara@mpgo.mp.br,31
+AI120,sim,Conclusão da primeira etapa do Projeto ExtraResolutivo na área do patrimônio público,AI120-7,7,sandra.mara@mpgo.mp.br,31
+AI120,sim,Início da nova etapa do Projeto ExtraResolutivo na área do patrimônio público,AI120-8,8,sandra.mara@mpgo.mp.br,31
+AI120,sim,"Busca ativa realizada pela Área de Atuação no Meio Ambiente, Urbanismo e Patrimônio Cultural do Centro de Apoio Operacional, em conjunto com o GAEMA, dos autos extrajudiciais com mais de três anos de trâmite e oferecimento de auxílio para resolução",AI120-9,9,daniela.serafim@mpgo.mp.br,
+AI172,sim,Realização do Seminário Estadual Raça e Voz Conselhos pela Igualdade Racial,AI172-12,12,sandra.mara@mpgo.mp.br,31
+AI172,sim,"Realização do Seminário Povos de Rua: 10 anos de Lutas, Conquistas e Desafios",AI172-13,13,andre.lobo@mpgo.mp.br,30
+AI172,sim,Realização do V Encontro Estadual dos Direitos da Pessoa Idosa - Gestão e Transparência dos Fundos Municipais dos Direitos da Pessoa Idosa,AI172-14,14,andre.lobo@mpgo.mp.br,30
+AI93,sim,"Realização de Projeto Especial Prioridade Judicial, que visa prestar auxílio específico à 8ª Promotoria de Justiça da Comarca de Águas Lindas de Goiás para o impulsionamento qualificado de autos judiciais sem movimentação há mais de 40 dias.",AI93-7,7,sandra.mara@mpgo.mp.br,31
+AI93,sim,Realização de Projeto Especial que visa prestar auxílio específico às Promotorias de Justiça do Estado com atribuições na área criminal que realizam Acordos de Não Persecução Penal.,AI93-8,8,sandra.mara@mpgo.mp.br,31
+AI93,sim,Realização de Projeto Especial que visa prestar auxílio específico nos processos em trâmite no Núcleo 4.0 de Saúde do Tribunal de Justiça do Estado de Goiás.,AI93-9,9,sandra.mara@mpgo.mp.br,31
+AI153,não,2 - Mapeamento da qualificação acadêmica dos integrantes do MPGO.,AI153-,,adriano.firmino@mpgo.mp.br,22
+AI153,sim,Mapeamento da qualificação acadêmica dos integrantes do MPGO.,AI153-2,2,adriano.firmino@mpgo.mp.br,22
+AI161,sim,Utilizar inteligência artificial para personalizar conteúdos educacionais,AI161-2,2,adriano.firmino@mpgo.mp.br,22
+AI161,sim,Utilizar inteligência artificial para otimizar processos administrativos,AI161-3,3,adriano.firmino@mpgo.mp.br,22
+AI155,não,Fase de elaboração da proposta para validação com o Procurador-Geral.,AI155-1,1,adriano.firmino@mpgo.mp.br,22
+AI156,não,Proposta apresentada para validação com o Procurador-Geral.,AI156-1,1,adriano.firmino@mpgo.mp.br,22
+AI152,não,Parcerias com instituições educacionais,AI152-1,1,adriano.firmino@mpgo.mp.br,22
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Valparaíso de Goiás, no dia 18 de setembro de 2025",AI143-16,16,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Goianésia, no dia 25 de setembro de 2025",AI143-17,17,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Goianira, no dia 30 de setembro de 2025",AI143-18,18,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Montes Claros, no dia 08 de outubro de 2025",AI143-19,19,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Quirinópolis, no dia 14 de outubro de 2025",AI143-20,20,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Nova Crixás, no dia 21 de outubro de 2025",AI143-21,21,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Campinorte, no dia 22 de outubro de 2025",AI143-22,22,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Iporá, no dia 04 de novembro de 2025",AI143-23,23,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Caiapônia, no dia 05 de novembro de 2025",AI143-24,24,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Palmeiras, no dia 18 de novembro de 2025",AI143-25,25,tommaso.leonardi@mpgo.mp.br,
+AI143,sim,"Realização de Capacitação Presencial na Câmara Municipal de Mineiros, no dia 19 de novembro de 2025",AI143-26,26,tommaso.leonardi@mpgo.mp.br,
+AI145,sim,REUNIÕES PERIÓDICAS. AGMP. Realizar reuniões periódicas com a AGMP sobre pautas prioritárias,AI145-2,2,cyro.peres@mpgo.mp.br,24
+AI145,sim,REUNIÕES PERIÓDICAS. SINDSEMP. Realizar reuniões periódicas com o SINDSEMP para tratar de pautas prioritárias.,AI145-3,3,cyro.peres@mpgo.mp.br,24
+AI173,não,"PROCURADORIAS DE JUSTIÇA. INSTALAÇÃO (2026). Instalar as 4 novas Procuradorias de Justiça
+",AI173-5,5,cyro.peres@mpgo.mp.br,24
+AI173,não," PROCURADORIAS DE JUSTIÇA. INSTALAÇÃO (2026). Instalar as 2 novas Procuradorias de Justiça
+",AI173-6,6,cyro.peres@mpgo.mp.br,24
+AI176,sim,"PRERROGATIVAS. ACOMPANHAMENTO. Acompanhar pelo Escritório de Representação de Brasília e pelo CNPG, dos principais assuntos legislativos que envolvam prerrogativas institucionais",AI176-1,1,cyro.peres@mpgo.mp.br,24
+AI139,não, INSTITUCIONAL. TECNOLOGIA. ACESSO A DECISÕES. STJ. Criar ferramenta digital de acesso diário e automático a decisões de habeas corpus no STJ,AI139-,,marcelo.azevedo@mpgo.mp.br,8
+AI141,sim, INSTITUCIONAL. TECNOLOGIA. ACESSO A DECISÕES. STJ. Criar ferramenta digital de acesso diário e automático a decisões de habeas corpus no STJ,AI141-4,4,marcelo.azevedo@mpgo.mp.br,8
+AI141,sim,"INSTITUCIONAL. INTERLOCUÇÃO. TRIBUNAIS SUPERIORES. Estabelecer diálogo institucional contínuo com ministros das Cortes Superiores, por meio de reuniões estratégicas e entrega de memorandos técnicos sobre casos relevantes ao MPGO, visando qualificar a atuação institucional nos julgamentos de impacto. Obs.: Criar controle de todas as atividades de reuniões e entrega de memoriais.",AI141-6,6,marcelo.azevedo@mpgo.mp.br,8
+AI141,não,"INSTITUCIONAL. MONITORAMENTO. TRIBUNAIS SUPERIORES. Realizar o monitoramento estratégico das matérias em tramitação nos Tribunais Superiores com potencial de impacto institucional, classificando-as por relevância, sistematizando fundamentos jurídicos, articulando audiências com ministros e acompanhando seus desdobramentos por meio de sustentações orais, reuniões técnicas e ações institucionais coordenadas",AI141-,,marcelo.azevedo@mpgo.mp.br,8
+AI141,sim,PROJETO. BUSCADOR DE PRECEDENTES STJ. DESENVOLVIMENTO. Criar ferramenta digital de acesso diário e automático a decisões de habeas corpus no STJ,AI141-5,5,marcelo.azevedo@mpgo.mp.br,8
+AI122,sim,Criação de chat no ambiente do Atena para pesquisa utilizando LLM,AI122-,,rafael.correa@mpgo.mp.br,10
+AI112,não,"Inovação Aberta - Promover a inovação aberta e o trabalho colaborativo em parceria com órgãos públicos, universidades e outras entidades visando agregar tendências, projetos e outras iniciativas existentes no ecossistema de inovação (Ato PGJ n. 33, de 3 de maio de 2024)",AI112-10,10,fabricio.costa@mpgo.mp.br,1
+AI110,sim, PROJETO. MPGO EM DESTAQUE. PLANEJAMENTO. Planejar projeto institucional voltado a fomentar o reconhecimento de iniciativas institucionais em eventos de premiação externos,AI110-,,liana.tormin@mpgo.mp.br,9
+AI110,não,PROJETO. MPGO EM DESTAQUE. APROVAÇÃO. EXECUÇÃO. Aprovar o projeto na RAE e seguir com a sua execução,AI110-,,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. IDENTIDADE MPGO. PLANEJAMENTO. Planejar projeto institucional voltado a fortalecer a identidade do MPGO em iniciativas institucionais,AI110-11,11,liana.tormin@mpgo.mp.br,9
+AI110,não,PROJETO. IDENTIDADE MPGO. APROVAÇÃO. EXECUÇÃO. Aprovar o projeto na RAE e seguir com a sua execução,AI110-15,15,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. MPGO PERFORMANCE. PLANEJAMENTO. Planejar projeto institucional voltado a desenvolver metodologia e monitorar resulados dos projetos institucionais,AI110-12,12,liana.tormin@mpgo.mp.br,9
+AI110,sim,PROJETO. GESTÃO DE RISCOS. PLANEJAMENTO. Planejar projeto institucional voltado a fortalecer a gestão de riscos das iniciativas institcionais no MPGO,AI110-13,13,liana.tormin@mpgo.mp.br,9
+AI110,não,PROJETO. PERFORMANCE MPGO. APROVAÇÃO. EXECUÇÃO. Aprovar o projeto na RAE e seguir com a sua execução,AI110-16,16,liana.tormin@mpgo.mp.br,9
+AI110,não,PROJETO. GESTÃO DE RISCOS MPGO. APROVAÇÃO. EXECUÇÃO. Aprovar o projeto na RAE e seguir com a sua execução,AI110-17,17,liana.tormin@mpgo.mp.br,9
+AI91,sim,PROJETO. GESTÃO DE RISCOS. Planejar o projeto MPGO Gestão de Riscos que visa aprimorar a gestão de riscos de projetos institucionais.,AI91-9,9,liana.tormin@mpgo.mp.br,9
+AI169,sim,Sanção pelo Governador,AI169-6,6,rafael.oliveira@mpgo.mp.br,2
+AI167,não,Vianópolis - Oficial de Promotoria - fase atual: inscrições abertas de 07 de janeiro até 05 de fevereiro.,AI167-16,16,rafael.oliveira@mpgo.mp.br,2
+AI156,não,Publicação do Edital,AI156-2,2,adriano.firmino@mpgo.mp.br,22

@@ -1,0 +1,45 @@
+---
+description: Estilo de resposta da IA, uso de metadados, prioridade de instruções, ferramentas do Cursor e documentação (analise.md, plano.md).
+alwaysApply: true
+---
+
+# 💬 Estilo de Resposta da IA
+
+- Responder em português técnico, direto e preciso.
+- Sempre explicar brevemente o raciocínio antes do código.
+- Exibir o código completo formatado em blocos ```python.
+- Usar comentários curtos e objetivos dentro do código.
+- Quando houver múltiplas abordagens, indicar a mais eficiente e justificar brevemente.
+- Perguntar antes de gerar código se houver ambiguidade.
+- Evitar redundâncias e respostas genéricas.
+- Quando envolver configuração de ambiente, incluir instruções venv e requirements.txt.
+
+
+## Uso de Metadados do Editor
+- O Cursor pode anexar metadados (arquivos abertos, localização do cursor, diffs, linter, histórico).
+- **Usar metadados quando forem úteis** à tarefa atual; **ignorar** quando irrelevantes para evitar ruído.
+- Se os metadados **entrarem em conflito** com as instruções do usuário, **priorizar as instruções explícitas**.
+- Nunca inferir conteúdo não fornecido: **não alucinar caminhos, arquivos ou estados do repositório**.
+
+## Ordem de Prioridade das Instruções
+1. **<user_query>**: seguir as instruções explícitas do usuário nesta mensagem.
+2. **Regras deste arquivo (`cursor.rules`)**.
+3. **Especificações do projeto** (README, ADRs, docs).
+4. **Boas práticas gerais** (PEP 8/257/484, DRY, SRP, Clean Architecture).
+- Em caso de conflito, **explicitar** o conflito e solicitar confirmação do usuário.
+
+
+## Limites e Restrições (Contexto do Editor)
+- Não inventar erros de linter, diffs ou histórico; usar **apenas** o que for fornecido.
+- Não realizar operações destrutivas (remoção massiva/refactor amplo) **sem confirmação**.
+- Não inserir segredos/tokens em exemplos; usar placeholders e `.env.example`.
+- Se faltar contexto essencial (ex.: schema, contrato de API), **solicitar o trecho mínimo necessário**.
+
+# Documentação e Planejamento
+- Durante discussões técnicas, criar e manter o arquivo `analise.md`:
+  - Registrar pontos críticos, decisões e perguntas/respostas.
+  - Usar formatação Markdown com separadores e subtítulos.
+- Criar também o arquivo `plano.md`:
+  - Listar tarefas detalhadas e pequenas (facilitando rollback).
+  - Basear o plano em `analise.md`, `funcoes.md` e outros artefatos do projeto.
+  - Atualizar à medida que as tarefas forem concluídas ou alteradas.

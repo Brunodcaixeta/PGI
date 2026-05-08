@@ -1,0 +1,41 @@
+id_user,nome,sobrenome,email,gestor_chefe,suporte_admin
+1,FABRICIO,LOPES DA COSTA,fabricio.costa@mpgo.mp.br,não,sim
+2,RAFAEL,MACHADO DE OLIVEIRA,rafael.oliveira@mpgo.mp.br,sim,não
+3,Assessor (Atualizar Nome),(Atualizar Sobrenome),jennifer.santos@mpgo.mp.br,false,false
+4,KAMILLA,SOARES GARCIA,kamilla.soares@mpgo.mp.br,sim,sim
+5,RAPHAEL,RODRIGUES DOS SANTOS,raphaelrsantos@mpgo.mp.br,não,sim
+6,PATRICIA,MATOS,patricia.matos@mpgo.mp.br,sim,sim
+7,THAÍSE,MIRANDA,thaise.miranda@mpgo.mp.br,não,sim
+8,MARCELO ANDRE,DE AZEVEDO,marcelo.azevedo@mpgo.mp.br,sim,sim
+9,Assessor (Atualizar Nome),(Atualizar Sobrenome),liana.tormin@mpgo.mp.br,false,false
+10,Assessor (Atualizar Nome),(Atualizar Sobrenome),rafael.correa@mpgo.mp.br,false,false
+11,LORRAYNE CHRISTYNE,DOS SANTOS CRUZ,lorrayne.cruz@mpgo.mp.br,não,não
+12,VANIA CRISTINA,SOARES,vania.soares@mpgo.mp.br,não,sim
+13,DIEGO,GOMES MARTINS DO CARMO,diego.carmo@mpgo.mp.br,sim,sim
+14,BRUNO,DANTAS CAIXETA,bruno.caixeta@mpgo.mp.br,não,sim
+15,DANIEL,MIELE STEIN,danielmiele@mpgo.mp.br,não,sim
+16,ANA PAULA,PIRES DE MORAIS,ana.morais@mpgo.mp.br,não,não
+17,RENATA,VIEIRA EVANGELISTA,renata.evangelista@mpgo.mp.br,não,não
+18,DANIELA,TAUFICK,daniela.taufick@mpgo.mp.br,não,não
+19,JULIANA LUCIA,DA SILVA,juliana.lucia@mpgo.mp.br,sim,sim
+20,MARINA,DA SILVA NEIVA,marina.neiva@mpgo.mp.br,não,sim
+21,PEDRO,HENRIQUE PALAZZO LUCCAS,pedro.palazzo@mpgo.mp.br,sim,não
+22,ADRIANO,GODOY FIRMINO,adriano.firmino@mpgo.mp.br,sim,não
+23,Assessor (Atualizar Nome),(Atualizar Sobrenome),emanuelli.maia@mpgo.mp.br,false,false
+24,CYRO,TERRA PERES,cyro.peres@mpgo.mp.br,sim,não
+25,MADIHA,ANTONIOS KAYED ELIAS CARVALHO,madiha.elias@mpgo.mp.br,não,não
+26,JANAINA,AZEVEDO,janaina.azevedo@mpgo.mp.br,sim,não
+27,TALITA,ALVES DE MIRANDA,talita.miranda@mpgo.mp.br,sim,não
+28,BRUNNA,MARINS,brunna.marins@mpgo.mp.br,,não
+29,ANA PAULA,BUENO,anapaula.bueno@mpgo.mp.br,,sim
+30,ANDRE,LOBO ALCANTARA NEVES,andre.lobo@mpgo.mp.br,sim,não
+31,SANDRA,MARA GARBELINI,sandra.mara@mpgo.mp.br,sim,sim
+32,FABIANA,LEMES ZAMALLOA DO PRADO,fabiana.zamalloa@mpgo.mp.br,sim,não
+33,Assessor (Atualizar Nome),(Atualizar Sobrenome),luciana.rodrigues@mpgo.mp.br,false,false
+34,Assessor (Atualizar Nome),(Atualizar Sobrenome),laila.borba@mpgo.mp.br,false,false
+35,LAURA,MARIA FERREIRA BUENO,laura.bueno@mpgo.mp.br,sim,não
+36,RAFAELLO,BOSCHI ISAAC,rafaello.boschi@mpgo.mp.br,sim,não
+37,FABRICIO,LAMAS BORGES DA SILVA,fabricio.lamas@mpgo.mp.br,sim,não
+38,Assessor (Atualizar Nome),(Atualizar Sobrenome),camila.chaves@mpgo.mp.br,false,false
+39,LETÍCIA,IANNACONE,leticia.iannacone@mpgo.mp.br,sim,não
+40,FERNANDA CRISTINA ARAGÃO,CRISTINA ARAGÃO,fernanda.rosa@mpgo.mp.br,,não

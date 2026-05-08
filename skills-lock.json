@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "clickup-nexus-progress": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "clickup-nexus-progress/SKILL.md",
+      "computedHash": "40b1dcf5afb9c99e37c70585d6162517ce1c89ef9932168620a3cb47862ea2fe"
+    },
+    "code-review-standards": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "code-review-standards/SKILL.md",
+      "computedHash": "05cc3e9c13f45689579209e636fdecf5d30a9bb968fbb57a894cc7b81b890b74"
+    },
+    "dashboard-cloner": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "dashboard-cloner/SKILL.md",
+      "computedHash": "d650ac60894fd495dc7e3b427bc8e37c8206c461b4f075cfbac9d15de6215c4f"
+    },
+    "django-audit": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "django-audit/SKILL.md",
+      "computedHash": "f32bd98794c3f0974086e785a66c276897c1e6f2686f72b00a6b15db0cec2a3b"
+    },
+    "git-platforms-expert": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "git-platforms-expert/SKILL.md",
+      "computedHash": "4884eea51828069119f64b639f40e4bff4eaeb5e4a74fbbbf7d0584c542b1327"
+    },
+    "phase-execution": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "phase-execution/SKILL.md",
+      "computedHash": "279b4073c57a4ddb54993da7f571dbb85197455e8946b39cd6f7798105c3f164"
+    },
+    "readme-bilingual": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "readme-bilingual/SKILL.md",
+      "computedHash": "0f6c6f8cf2d19746f28f29eb3e762ebd23b88e97476b006d16074aaa6342dbc2"
+    },
+    "technical-documentation": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "technical-documentation/SKILL.md",
+      "computedHash": "d8a12a7114e9b86d9e12040fe6a7df645be0df7faaa47598bfcc7d664ffc8f4e"
+    },
+    "update-funcoes-md": {
+      "source": "dmslabsbr/ia_skills",
+      "sourceType": "github",
+      "skillPath": "update-funcoes-md/SKILL.md",
+      "computedHash": "d09c2d6a2ea8ac014c59888e47f30d3862917b751948d0d1db0825d2e0c00cd5"
+    }
+  }
+}

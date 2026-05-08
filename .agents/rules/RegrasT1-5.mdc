@@ -1,0 +1,13 @@
+---
+description: Regras para Python 3.12+; ambiente virtual (venv/uv/poetry) e dependências travadas (requirements.txt, poetry.lock).
+globs: "**/*.py"
+---
+
+# REGRAS PARA PYTHON
+
+- Garantir compatibilidade com Python 3.12+.
+
+## Ambiente e Dependências
+
+- Sempre usar ambiente virtual isolado (venv/uv/poetry) por projeto para as aplicações em python.
+- - Gerar/atualizar arquivo de dependências travadas (ex.: `requirements.txt` ou `poetry.lock`).

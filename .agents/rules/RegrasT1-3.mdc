@@ -1,0 +1,115 @@
+---
+description: Padrões de código, segurança, arquitetura, DevOps, testes, banco de dados, limites e frontend (widgets, funcoes.md).
+alwaysApply: true
+---
+
+# 🧱 Padrões de Código
+
+- Usar type hints e docstrings no padrão Google.
+- Nomear variáveis, funções e arquivos em snake_case.
+- Nomear classes em PascalCase.
+- Nomear constantes em UPPER_CASE.
+- Limitar funções a no máximo 40 linhas.
+- Usar f-strings e logging ao invés de print().
+- Usar f-strings para formatação.
+- Priorizar o uso de `pathlib`, `async` e `context managers` (`with`).
+- Evitar código duplicado; aplicar DRY e SRP.
+- Usar nomes descritivos: `dados_usuario`, `processar_evento`, etc.
+- Usar Markdown para documentações.
+
+# 🔒 Boas Práticas de Segurança
+
+- Não incluir chaves, tokens ou dados sensíveis no código.
+- Jamais expor dados sensíveis (api_key, token, senha, etc.)
+- Utilizar variáveis de ambiente via `.env` ou `os.environ`.
+- Sanitizar entradas de usuário.
+- Evitar SQL dinâmico; sempre usar placeholders (`%s` ou `:param`).
+- Validar todas as entradas com Pydantic.
+
+# 🧠 Princípios Arquiteturais
+
+- Aplicar Clean Architecture, separando domínios, casos de uso e infraestrutura.
+- Utilizar padrões Repository e Service Layer.
+- Evitar dependências circulares.
+- Garantir isolamento entre camadas.
+- Priorizar coesão alta e acoplamento baixo.
+- Evitar lógica de negócios dentro de controladores.
+
+# 🚀 Regras de Entrega de Código
+
+- Sempre incluir imports completos e necessários.
+- Formatar automaticamente com **Black** e **Ruff**.
+- Incluir testes unitários relevantes para novas funções.
+- Adotar commits descritivos no padrão Conventional Commits.
+- Nunca commitar dependências globais ou arquivos de cache do sistema.
+
+## Versionamento Visível
+
+- Manter arquivo `VERSION` no raiz do repositório (semver, ex.: `0.1.0`) como **fonte única da verdade**.
+- Nunca hard-codar versão em múltiplos arquivos; sempre ler do `VERSION`.
+- Exibir a versão em **ambientes dev e prod** (UI/HTML, template base, landing ou endpoint `/version`).
+- Em PRs/commits que mudam código de produção, garantir que a versão seja incrementada (manual ou via hook/script).
+
+# 🧪 Testes e Qualidade
+
+- Criar testes com `pytest` em pasta separada (`/tests`)
+- Nomear arquivos de teste como `test_<modulo>.py`
+- Cobertura mínima esperada: **80%**
+- Sempre validar exemplos antes de sugerir novos métodos
+
+## Testes e Qualidade (checks de versão)
+
+- Teste falha se:
+  - o arquivo `VERSION` não existir; ou
+  - o HTML/base (ou endpoint de status) não contiver a string "versão:" (ou equivalente).
+
+# 🧑 DevOps (auto-bump)
+
+- Configurar hook/script de CI/CD para auto-incrementar `VERSION` quando houver mudanças elegíveis (ex.: `feat`/`fix` em Conventional Commits).
+- Padronizar semver: `MAJOR.MINOR.PATCH`.
+
+## Segurança e Setup Inicial
+- O sistema deve sempre possuir **pelo menos um usuário administrador** cadastrado.
+- Garantir que, em setups novos, seja criada automaticamente uma conta `admin` com credenciais padrão temporárias e exigência de troca de senha no primeiro login.
+
+## DevOps e Deploy
+- Garantir que os comandos de build e run estejam descritos no `README.md`.
+
+## Banco de Dados e Modelagem
+- Manter o `diagrama_er.md` (Mermaid.js) sempre atualizado na raiz representando o **diagrama entidade-relacionamento (ER)**.
+- Atualizar o diagrama sempre que houver mudanças nas tabelas, views ou relacionamentos.
+- Convenções de nomenclatura:
+  - Chave primária: `id_nome_da_tabela`
+  - Chave estrangeira: `id_nome_da_tabela_key`
+- Sugerir criação ou ajuste de **tabelas e views** quando necessário.
+- Sempre confirmar com o usuário antes de alterar estruturas de banco.
+- Ao alterar múltiplas tabelas, **usar transações** para manter consistência.
+- Sugira criar views para simplificar consultas e padronizar acesso a dados.
+
+
+
+
+# 🧭 Limites e Restrições
+
+- Não inventar bibliotecas inexistentes.
+- Não propor soluções inseguras ou obsoletas.
+- Evitar dependências externas desnecessárias.
+- Pedir confirmação antes de alterar arquitetura existente.
+- Em caso de dúvida, priorizar legibilidade sobre micro-otimização.
+
+
+## Interface e Frontend (HTML / Widgets)
+- Em aplicativos com interface web, **priorizar widgets reutilizáveis** em vez de HTML fixo.
+- Criar um **widget de cabeçalho** e outro de **rodapé**, para facilitar consistência visual.
+- Componentes `TextField` devem permitir configurar:
+  - `Max Length` (tamanho máximo de texto);
+  - `Max Length Enforcement` (bloquear digitação além do limite).
+- Manter os widgets organizados em pastas claras (`/widgets`, `/components`, etc.).
+
+## Funções e Testes
+- Manter o arquivo `funcoes.md` na raiz do projeto listando e explicando **todas as funções criadas**.
+- Atualizar `funcoes.md` **sempre que** uma função for criada, alterada ou removida.
+- Priorizar **reuso de funções existentes** antes de criar novas semelhantes.
+- Criar **um teste unitário para cada versão** da função.
+- Quando atualizar uma função, criar **um novo teste correspondente**.
+- Todas as funções devem considerar **null safety** e tratar possíveis exceções.
