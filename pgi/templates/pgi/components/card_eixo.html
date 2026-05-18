@@ -1,0 +1,57 @@
+<!-- ============================================================
+     CARD DE EIXO — Componente reutilizável
+     Uso: include 'pgi/components/card_eixo.html' with eixo=eixo
+     
+     Variáveis esperadas:
+       eixo.id, eixo.numero, eixo.nome, eixo.num_acoes,
+       eixo.evolucao, eixo.icon, eixo.cor
+     ============================================================ -->
+
+<a href="{% url 'pgi:eixo_detail' eixo.id %}"
+   class="group block rounded-2xl bg-surface-dark border border-white/5 p-5 hover:border-white/15 hover:bg-surface-hover transition-all duration-300 cursor-pointer"
+   id="card-eixo-{{ eixo.id }}"
+   title="Ver ações do eixo {{ eixo.nome }}">
+
+  <!-- Cabeçalho: Ícone + Número do Eixo -->
+  <div class="flex items-center justify-between mb-3">
+    <!-- Ícone com cor de destaque -->
+    <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+         style="background-color: {{ eixo.cor }}20;">
+      <span class="material-symbols-outlined text-xl" style="color: {{ eixo.cor }};">
+        {{ eixo.icon }}
+      </span>
+    </div>
+    <!-- Badge do número -->
+    <span class="text-xs text-text-muted font-medium px-2 py-1 rounded-lg bg-white/5">
+      Eixo {{ eixo.numero }}
+    </span>
+  </div>
+
+  <!-- Nome do Eixo -->
+  <h3 class="text-base font-semibold text-text-light mb-4 leading-snug line-clamp-2 group-hover:text-white transition-colors duration-200">
+    {{ eixo.nome }}
+  </h3>
+
+  <!-- Barra de Progresso -->
+  <div class="mb-3">
+    <div class="flex items-center justify-between mb-1.5">
+      <span class="text-xs text-text-muted font-medium">Progresso</span>
+      <span class="text-xs font-semibold" style="color: {{ eixo.cor }};">{{ eixo.evolucao }}%</span>
+    </div>
+    <!-- Fundo da barra -->
+    <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+      <!-- Preenchimento (largura dinâmica via style) -->
+      <div class="h-full rounded-full transition-all duration-500"
+           style="width: {{ eixo.evolucao }}%; background-color: {{ eixo.cor }};">
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé: Quantidade de ações -->
+  <div class="flex items-center justify-end">
+    <span class="text-xs text-text-muted">
+      {{ eixo.num_acoes }} Aç{{ eixo.num_acoes|pluralize:"ão,ões" }}
+    </span>
+  </div>
+
+</a>

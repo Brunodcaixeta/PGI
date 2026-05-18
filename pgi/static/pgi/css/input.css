@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design System PGI — Tokens de Cor e Tipografia
+   Baseado no UI Guide v1.0 (Dark Mode First)
+   ============================================================ */
+
+@theme {
+  /* --- Cores Principais --- */
+  --color-primary: #0ea5e9;
+  --color-secondary: #0284c7;
+  --color-accent-cyan: #22d3ee;
+
+  /* --- Fundos (Dark Mode) --- */
+  --color-bg-dark: #0f172a;
+  --color-surface-dark: #1e293b;
+  --color-surface-hover: #334155;
+
+  /* --- Texto --- */
+  --color-text-light: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-text-primary: #0ea5e9;
+
+  /* --- Estados --- */
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-error: #ef4444;
+  --color-info: #38bdf8;
+
+  /* --- Tipografia --- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}

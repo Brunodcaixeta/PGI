@@ -1,0 +1,159 @@
+{% extends 'pgi/base.html' %}
+
+{% block title %}Visão Geral — PGI MPGO{% endblock %}
+
+{% block content %}
+
+<!-- ===== CABEÇALHO DA PÁGINA ===== -->
+<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+  <div>
+    <h2 class="text-2xl font-bold text-text-light tracking-tight">Visão Geral do Plano</h2>
+    <p class="text-text-muted text-sm mt-1">Acompanhamento de execução 2025–2027</p>
+  </div>
+
+  <!-- Toggle: Visão por Eixos / Visão por Áreas -->
+  <div class="flex bg-surface-dark rounded-xl p-1 border border-white/10" id="toggle-visao">
+    <button
+      id="btn-eixos"
+      class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-primary/10 text-primary"
+      onclick="toggleVisao('eixos')">
+      Visão por Eixos ({{ total_eixos }})
+    </button>
+    <button
+      id="btn-areas"
+      class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-text-muted hover:text-text-light"
+      onclick="toggleVisao('areas')">
+      Visão por Áreas ({{ total_areas }})
+    </button>
+  </div>
+</div>
+
+<!-- ===== LAYOUT PRINCIPAL: Progresso Global + Grid de Cards ===== -->
+<div class="flex flex-col lg:flex-row gap-6">
+
+  <!-- ── COLUNA ESQUERDA: Progresso Global ── -->
+  <div class="w-full lg:w-[300px] flex-shrink-0 space-y-6">
+
+    <!-- Card Progresso Global -->
+    <div class="rounded-2xl bg-surface-dark border border-white/5 p-6">
+      <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+        Progresso Global
+      </h3>
+
+      <!-- Número grande -->
+      <div class="flex items-end gap-3 mb-4">
+        <span class="text-5xl font-bold text-text-light leading-none">
+          {{ progresso_global }}%
+        </span>
+      </div>
+
+      <!-- Barra de progresso grossa -->
+      <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden mb-4">
+        <div class="h-full rounded-full bg-primary transition-all duration-700"
+             style="width: {{ progresso_global }}%;">
+        </div>
+      </div>
+
+      <!-- Meta label -->
+      <p class="text-xs text-text-muted">
+        Meta PGI 2025–2027: <span class="text-text-light font-medium">100%</span>
+      </p>
+    </div>
+
+    <!-- Card de Resumo Rápido -->
+    <div class="rounded-2xl bg-surface-dark border border-white/5 p-6 space-y-4">
+      <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider">
+        Resumo
+      </h3>
+
+      <div class="space-y-3">
+        <!-- Eixos -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-lg">target</span>
+            <span class="text-sm text-text-muted">Eixos</span>
+          </div>
+          <span class="text-sm font-semibold text-text-light">{{ total_eixos }}</span>
+        </div>
+
+        <!-- Áreas -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-accent-cyan text-lg">apartment</span>
+            <span class="text-sm text-text-muted">Áreas</span>
+          </div>
+          <span class="text-sm font-semibold text-text-light">{{ total_areas }}</span>
+        </div>
+
+        <!-- Total de ações -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-success text-lg">task_alt</span>
+            <span class="text-sm text-text-muted">Ações</span>
+          </div>
+          <span class="text-sm font-semibold text-text-light">{{ total_acoes }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── COLUNA DIREITA: Grid de Cards ── -->
+  <div class="flex-1">
+
+    <!-- Grid de EIXOS (visível por padrão) -->
+    <div id="grid-eixos" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      {% for eixo in eixos %}
+        {% include 'pgi/components/card_eixo.html' with eixo=eixo %}
+      {% endfor %}
+    </div>
+
+    <!-- Grid de ÁREAS (escondida por padrão) -->
+    <div id="grid-areas" class="hidden grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      {% for area in areas %}
+        {% include 'pgi/components/card_area.html' with area=area %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  /**
+   * Toggle entre visão por Eixos e visão por Áreas.
+   * Mostra/esconde os grids e atualiza o estilo dos botões.
+   *
+   * @param {string} visao - 'eixos' ou 'areas'
+   */
+  function toggleVisao(visao) {
+    const gridEixos = document.getElementById('grid-eixos');
+    const gridAreas = document.getElementById('grid-areas');
+    const btnEixos = document.getElementById('btn-eixos');
+    const btnAreas = document.getElementById('btn-areas');
+
+    if (visao === 'eixos') {
+      gridEixos.classList.remove('hidden');
+      gridAreas.classList.add('hidden');
+      // Estilo ativo no botão Eixos
+      btnEixos.classList.add('bg-primary/10', 'text-primary');
+      btnEixos.classList.remove('text-text-muted');
+      // Estilo inativo no botão Áreas
+      btnAreas.classList.remove('bg-primary/10', 'text-primary');
+      btnAreas.classList.add('text-text-muted');
+    } else {
+      gridAreas.classList.remove('hidden');
+      gridEixos.classList.add('hidden');
+      // Estilo ativo no botão Áreas
+      btnAreas.classList.add('bg-primary/10', 'text-primary');
+      btnAreas.classList.remove('text-text-muted');
+      // Estilo inativo no botão Eixos
+      btnEixos.classList.remove('bg-primary/10', 'text-primary');
+      btnEixos.classList.add('text-text-muted');
+    }
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,62 @@
+<!-- ============================================================
+     CARD DE ÁREA — Componente reutilizável
+     Uso: include 'pgi/components/card_area.html' with area=area
+     
+     Variáveis esperadas:
+       area.id, area.numero, area.sigla, area.nome, area.num_acoes,
+       area.evolucao, area.cor, area.atuacao_fim
+     ============================================================ -->
+
+<a href="#"
+   class="group block rounded-2xl bg-surface-dark border border-white/5 p-5 hover:border-white/15 hover:bg-surface-hover transition-all duration-300 cursor-pointer"
+   id="card-area-{{ area.id }}"
+   title="Ver ações da área {{ area.nome }}">
+
+  <!-- Cabeçalho: Ícone + Tipo de Atuação -->
+  <div class="flex items-center justify-between mb-3">
+    <!-- Ícone da Área -->
+    <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+         style="background-color: {{ area.cor }}20;">
+      <span class="material-symbols-outlined text-xl" style="color: {{ area.cor }};">
+        apartment
+      </span>
+    </div>
+    <!-- Badge: Área Fim ou Área Meio -->
+    <span class="text-xs font-medium px-2 py-1 rounded-lg {% if area.atuacao_fim %}bg-success/10 text-success{% else %}bg-info/10 text-info{% endif %}">
+      {% if area.atuacao_fim %}Área Fim{% else %}Área Meio{% endif %}
+    </span>
+  </div>
+
+  <!-- Sigla (destaque) -->
+  {% if area.sigla %}
+  <p class="text-xs font-semibold tracking-wider mb-1" style="color: {{ area.cor }};">
+    {{ area.sigla }}
+  </p>
+  {% endif %}
+
+  <!-- Nome da Área -->
+  <h3 class="text-sm font-semibold text-text-light mb-4 leading-snug line-clamp-2 group-hover:text-white transition-colors duration-200">
+    {{ area.nome }}
+  </h3>
+
+  <!-- Barra de Progresso -->
+  <div class="mb-3">
+    <div class="flex items-center justify-between mb-1.5">
+      <span class="text-xs text-text-muted font-medium">Progresso</span>
+      <span class="text-xs font-semibold" style="color: {{ area.cor }};">{{ area.evolucao }}%</span>
+    </div>
+    <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+      <div class="h-full rounded-full transition-all duration-500"
+           style="width: {{ area.evolucao }}%; background-color: {{ area.cor }};">
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé: Quantidade de ações -->
+  <div class="flex items-center justify-end">
+    <span class="text-xs text-text-muted">
+      {{ area.num_acoes }} Aç{{ area.num_acoes|pluralize:"ão,ões" }}
+    </span>
+  </div>
+
+</a>

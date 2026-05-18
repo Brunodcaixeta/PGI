@@ -1,0 +1,44 @@
+<!-- ============================================================
+     HEADER — Barra superior com glassmorphism (backdrop-blur)
+     Altura: 64px | Fundo translúcido | Sticky no topo
+     ============================================================ -->
+
+<header class="sticky top-0 z-30 h-16 bg-bg-dark/80 backdrop-blur-xl border-b border-white/5 flex items-center justify-between px-6 lg:px-8">
+
+  <!-- ===== TÍTULO DO SISTEMA ===== -->
+  <h2 class="text-lg font-semibold text-text-light tracking-tight">
+    Plano de Gestão Institucional 2025–2027
+  </h2>
+
+  <!-- ===== AÇÕES DO HEADER (direita) ===== -->
+  <div class="flex items-center gap-2">
+
+    <!-- Busca -->
+    <div class="relative hidden md:block">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-lg">search</span>
+      <input
+        type="text"
+        placeholder="Pesquisar..."
+        id="header-search"
+        class="w-56 pl-10 pr-4 py-2 rounded-lg bg-surface-dark border border-white/10 text-sm text-text-light placeholder-text-muted focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all duration-200"
+      >
+    </div>
+
+    <!-- Notificações -->
+    <button class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200" id="btn-notificacoes" title="Notificações">
+      <span class="material-symbols-outlined text-xl">notifications</span>
+    </button>
+
+    <!-- Ajuda -->
+    <button class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200" id="btn-ajuda" title="Ajuda">
+      <span class="material-symbols-outlined text-xl">help_outline</span>
+    </button>
+
+    <!-- Avatar do Usuário -->
+    <button class="ml-2 w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors duration-200" id="btn-perfil" title="Meu Perfil">
+      <span class="material-symbols-outlined text-primary text-lg">person</span>
+    </button>
+
+  </div>
+
+</header>

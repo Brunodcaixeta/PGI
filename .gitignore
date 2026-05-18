@@ -17,6 +17,10 @@ staticfiles/
 .AppleDouble
 .LSOverride
 
+# Tailwind CSS v4
+tailwindcss
+pgi/static/pgi/css/output.css
+
 # Editores / IDEs
 .vscode/
 .idea/
