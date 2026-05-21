@@ -1,5 +1,10 @@
+import json
+from decimal import Decimal, InvalidOperation
 from django.shortcuts import render, get_object_or_404
-from .models import Eixo, Area, AcaoInstitucional
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from .models import Eixo, Area, AcaoInstitucional, AtualizacaoAcao
 
 
 # ────────────────────────────────────────────────────────
@@ -226,6 +231,17 @@ def eixo_detail(request, eixo_id):
         if acao.responsavel:
             resp_nome = str(acao.responsavel)
 
+        # Permissão de edição: responsável, admin, gestor_chefe ou superuser
+        pode_editar = False
+        if request.user.is_authenticated:
+            u = request.user
+            pode_editar = (
+                u.is_superuser
+                or getattr(u, 'admin', False)
+                or getattr(u, 'gestor_chefe', False)
+                or (acao.responsavel_id and acao.responsavel_id == u.id)
+            )
+
         acoes_data.append({
             'id': acao.id,
             'codigo': acao.codigo or '—',
@@ -237,6 +253,7 @@ def eixo_detail(request, eixo_id):
             'etapas': etapas,
             'total_etapas': total_etapas,
             'etapas_concluidas': etapas_concluidas,
+            'pode_editar': pode_editar,
         })
 
     # Evolução média do eixo
@@ -259,3 +276,74 @@ def eixo_detail(request, eixo_id):
     }
 
     return render(request, 'pgi/eixo_detail.html', context)
+
+
+@login_required
+@require_POST
+def atualizar_evolucao(request, acao_id):
+    """
+    Endpoint AJAX para atualizar o percentual de evolução de uma Ação.
+
+    - Aceita apenas POST
+    - Exige usuário autenticado
+    - Valida permissão: responsável, admin, gestor_chefe ou superuser
+    - Cria novo registro em AtualizacaoAcao preservando valor anterior
+    - Retorna JSON para atualização dinâmica do front-end
+    """
+    acao = get_object_or_404(AcaoInstitucional, pk=acao_id)
+
+    # ── Verificar permissão ──
+    u = request.user
+    pode_editar = (
+        u.is_superuser
+        or getattr(u, 'admin', False)
+        or getattr(u, 'gestor_chefe', False)
+        or (acao.responsavel_id and acao.responsavel_id == u.id)
+    )
+    if not pode_editar:
+        return JsonResponse(
+            {'success': False, 'error': 'Você não tem permissão para atualizar esta ação.'},
+            status=403,
+        )
+
+    # ── Extrair e validar o novo percentual ──
+    try:
+        body = json.loads(request.body)
+        novo_percentual = Decimal(str(body.get('novo_percentual', '')))
+    except (json.JSONDecodeError, InvalidOperation, TypeError):
+        return JsonResponse(
+            {'success': False, 'error': 'Valor inválido. Envie um número entre 0 e 100.'},
+            status=400,
+        )
+
+    if novo_percentual < 0 or novo_percentual > 100:
+        return JsonResponse(
+            {'success': False, 'error': 'O valor deve estar entre 0 e 100.'},
+            status=400,
+        )
+
+    # ── Buscar valor anterior (última atualização) ──
+    ultima = (
+        AtualizacaoAcao.objects
+        .filter(acao=acao)
+        .order_by('-data_atualizacao')
+        .first()
+    )
+    valor_anterior = ultima.valor_evolucao if ultima else Decimal('0.00')
+
+    # ── Criar novo registro de atualização ──
+    valor_evolucao = novo_percentual / Decimal('100')  # 0–100 → 0.00–1.00
+
+    AtualizacaoAcao.objects.create(
+        acao=acao,
+        valor_anterior=valor_anterior,
+        valor_evolucao=valor_evolucao,
+        atualizacao_percentual=True,
+        responsavel_registro=u,
+    )
+
+    return JsonResponse({
+        'success': True,
+        'novo_valor': float(novo_percentual),
+        'valor_anterior': float(valor_anterior) * 100,
+    })

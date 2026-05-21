@@ -34,10 +34,26 @@
       <span class="material-symbols-outlined text-xl">help_outline</span>
     </button>
 
-    <!-- Avatar do Usuário -->
-    <button class="ml-2 w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors duration-200" id="btn-perfil" title="Meu Perfil">
-      <span class="material-symbols-outlined text-primary text-lg">person</span>
-    </button>
+    <!-- Avatar do Usuário / Login -->
+    {% if user.is_authenticated %}
+    <div class="ml-2 flex items-center gap-2">
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5">
+        <span class="material-symbols-outlined text-primary text-lg">person</span>
+        <span class="text-sm text-text-light font-medium hidden sm:inline">{{ user.first_name|default:user.username }}</span>
+      </div>
+      <a href="{% url 'logout' %}"
+         class="p-2 rounded-lg text-text-muted hover:text-error hover:bg-error/10 transition-colors duration-200"
+         title="Sair">
+        <span class="material-symbols-outlined text-xl">logout</span>
+      </a>
+    </div>
+    {% else %}
+    <a href="{% url 'login' %}"
+       class="ml-2 flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 text-sm font-medium">
+      <span class="material-symbols-outlined text-lg">login</span>
+      Entrar
+    </a>
+    {% endif %}
 
   </div>
 

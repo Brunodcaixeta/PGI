@@ -46,5 +46,50 @@
 
   {% block extra_scripts %}{% endblock %}
 
+  <!-- ===== CONTAINER DE TOASTS (notificações) ===== -->
+  <div id="toast-container" class="fixed top-20 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+  <script>
+    /**
+     * Exibe um toast de notificação temporário.
+     * @param {string} message - Texto da notificação
+     * @param {'success'|'error'|'info'} type - Tipo visual
+     * @param {number} duration - Duração em ms (padrão 4000)
+     */
+    function showToast(message, type = 'success', duration = 4000) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+
+      const colors = {
+        success: 'bg-success/90 border-success/30',
+        error:   'bg-error/90 border-error/30',
+        info:    'bg-info/90 border-info/30',
+      };
+      const icons = {
+        success: 'check_circle',
+        error:   'error',
+        info:    'info',
+      };
+
+      toast.className = `pointer-events-auto flex items-center gap-3 px-5 py-3 rounded-xl border text-white text-sm font-medium shadow-2xl backdrop-blur-sm transition-all duration-300 transform translate-x-full opacity-0 ${colors[type] || colors.info}`;
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-lg">${icons[type] || icons.info}</span>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+
+      // Animar entrada
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-x-full', 'opacity-0');
+      });
+
+      // Animar saída e remover
+      setTimeout(() => {
+        toast.classList.add('translate-x-full', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+  </script>
+
 </body>
 </html>

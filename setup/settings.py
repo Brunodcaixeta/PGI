@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-==tt6o&&4^l%sam*jhd(!0=)ltzuw2%c$$*+n%snm@^%k5wyr!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.234.51.244', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -138,3 +138,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configuração de Autenticação - Usa nosso modelo User Customizado
 AUTH_USER_MODEL = 'pgi.User'
+
+# URLs de Login/Logout
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

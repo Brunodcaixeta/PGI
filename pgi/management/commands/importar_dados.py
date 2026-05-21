@@ -137,14 +137,22 @@ class Command(BaseCommand):
                 
                 etapa_ref = row.get('id_etapa', '').strip()
                 concluido = row.get('concluido', '').strip().lower() in ['sim', 'true', '1']
+                ordem_raw = row.get('ordem', '').strip()
+                
+                # Regra Sênior: Identificar se o registro é um rascunho/deletado herdado do sistema legado
+                # (Registros sem ordem definida ou cuja referência termina em hífen, ex: 'AI85-')
+                bl_deletado = False
+                if not ordem_raw or etapa_ref.endswith('-'):
+                    bl_deletado = True
                 
                 etapa = Etapa.objects.create(
                     acao_id=acao_id,
                     etapa=row['etapa'].strip(),
                     etapa_referencia=etapa_ref,
-                    ordem=int(row['ordem']) if row.get('ordem') else None,
+                    ordem=int(ordem_raw) if ordem_raw else None,
                     concluido=concluido,
                     responsavel_id=int(row['id_user']) if row.get('id_user') else None,
+                    bl_deletado=bl_deletado,
                 )
                 etapa_codigo_map[etapa_ref] = etapa.id
 

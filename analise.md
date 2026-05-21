@@ -47,6 +47,8 @@ Na visualização detalhada (`eixo_detail.html`), adotamos uma escala de cores b
 
 - **Recursão Infinita no Template Django:** Durante a montagem dos cards, deixou-se tags `{% include %}` comentadas com HTML puro (`<!-- -->`). O parser de template do Django continuava avaliando e executando as tags comentadas, levando a um `RecursionError` de limite de profundidade. A solução foi remover a tag ou usar `{% comment %}`.
 - **Filtro Pluralize:** O Django espera a sintaxe `singular,plural`. Em português, para "Ação/Ações", é necessário usar: `Aç{{ num|pluralize:"ão,ões" }}`.
+- **Registros Órfãos/Deletados no Banco (Legado):** No banco de dados original, existiam 95 etapas de rascunho ou marcadas como deletadas (com `ordem=None` e referência terminando em hífen, ex: `AI85-`). Como a coluna de controle original `_deletado` foi omitida na limpeza do CSV final, o script de importação inicial as carregou como etapas ativas, gerando duplicações visuais (como o ID 54 duplicando o ID 58).
+  - **A Solução Sênior:** Atualizamos o banco de dados ativo marcando as 95 etapas como `bl_deletado=True`. Adicionalmente, alteramos a lógica do script `importar_dados.py` para identificar registros sem ordem definida ou terminando em hífen e importá-los diretamente com `bl_deletado=True`. Isso garante que futuras re-importações preservem o comportamento correto e resiliente da aplicação.
 
 ---
 

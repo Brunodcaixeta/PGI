@@ -75,14 +75,22 @@
           </span>
         </div>
 
-        <!-- Percentual de execução -->
+        <!-- Percentual de execução + Botão Editar -->
         <div class="flex items-center gap-3 flex-shrink-0">
+          {% if acao.pode_editar %}
+          <button onclick="abrirModal({{ acao.id }}, {{ acao.evolucao }}, '{{ acao.codigo }}')"
+                  class="p-1.5 rounded-lg text-text-muted hover:text-primary hover:bg-primary/10 transition-all duration-200"
+                  title="Atualizar evolução"
+                  id="btn-editar-{{ acao.id }}">
+            <span class="material-symbols-outlined text-lg">edit</span>
+          </button>
+          {% endif %}
           <div class="text-right">
-            <span class="text-2xl font-bold text-text-light">{{ acao.evolucao }}%</span>
+            <span class="text-2xl font-bold text-text-light" id="evolucao-valor-{{ acao.id }}">{{ acao.evolucao }}%</span>
           </div>
           <div class="w-20">
             <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
-              <div class="h-full rounded-full transition-all duration-500"
+              <div class="h-full rounded-full transition-all duration-500" id="evolucao-barra-{{ acao.id }}"
                    style="width: {{ acao.evolucao }}%; background-color: {% if acao.evolucao >= 80 %}#22c55e{% elif acao.evolucao >= 40 %}#eab308{% else %}{{ eixo_cor }}{% endif %};"></div>
             </div>
           </div>
@@ -175,13 +183,88 @@
 
 </div>
 
+<!-- ===== MODAL DE ATUALIZAÇÃO DE EVOLUÇÃO ===== -->
+<div id="modal-evolucao" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+  <!-- Overlay escuro -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="fecharModal()"></div>
+
+  <!-- Card do modal -->
+  <div class="relative w-full max-w-md mx-4 rounded-2xl bg-surface-dark border border-white/10 shadow-2xl p-6 transform transition-all duration-300 scale-95 opacity-0" id="modal-card">
+
+    <!-- Cabeçalho -->
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary text-xl">trending_up</span>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-text-light">Atualizar Evolução</h3>
+          <p class="text-xs text-text-muted" id="modal-codigo-label">Ação —</p>
+        </div>
+      </div>
+      <button onclick="fecharModal()" class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Valor atual (referência) -->
+    <div class="mb-6 p-4 rounded-xl bg-bg-dark border border-white/5">
+      <p class="text-xs text-text-muted font-medium uppercase tracking-wider mb-1">Valor Atual</p>
+      <p class="text-2xl font-bold text-text-muted" id="modal-valor-atual">0%</p>
+    </div>
+
+    <!-- Novo valor -->
+    <div class="mb-6">
+      <label class="block text-sm font-medium text-text-light mb-3">Novo Percentual de Evolução</label>
+
+      <!-- Display do valor selecionado -->
+      <div class="text-center mb-4">
+        <span class="text-5xl font-bold text-primary" id="modal-display-valor">0</span>
+        <span class="text-2xl font-bold text-primary">%</span>
+      </div>
+
+      <!-- Slider -->
+      <input type="range" min="0" max="100" step="1" value="0"
+             id="modal-slider"
+             class="w-full h-2 rounded-full appearance-none cursor-pointer accent-primary bg-white/10"
+             oninput="sincronizarValor(this.value, 'slider')">
+
+      <!-- Input numérico -->
+      <div class="flex items-center gap-3 mt-4">
+        <input type="number" min="0" max="100" step="0.1" value="0"
+               id="modal-input"
+               class="flex-1 px-4 py-2.5 rounded-xl bg-bg-dark border border-white/10 text-sm text-text-light text-center focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+               oninput="sincronizarValor(this.value, 'input')">
+        <span class="text-text-muted text-sm font-medium">%</span>
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <div class="flex gap-3">
+      <button onclick="fecharModal()"
+              class="flex-1 py-2.5 rounded-xl border border-white/10 text-text-muted hover:text-text-light hover:bg-white/5 text-sm font-medium transition-all duration-200">
+        Cancelar
+      </button>
+      <button onclick="salvarEvolucao()"
+              id="btn-salvar-modal"
+              class="flex-1 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-white text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+        <span class="material-symbols-outlined text-lg">save</span>
+        Salvar
+      </button>
+    </div>
+
+  </div>
+</div>
+
 {% endblock %}
 
 {% block extra_scripts %}
 <script>
+  // ── Estado do modal ──
+  let modalAcaoId = null;
+
   /**
    * Expande ou recolhe o painel de etapas de uma ação.
-   *
    * @param {number} acaoId - ID da ação
    */
   function toggleEtapas(acaoId) {
@@ -190,17 +273,148 @@
     const label = document.getElementById('label-etapas-' + acaoId);
 
     if (panel.classList.contains('hidden')) {
-      // Expandir
       panel.classList.remove('hidden');
       icon.style.transform = 'rotate(180deg)';
       label.textContent = 'Ocultar etapas';
     } else {
-      // Recolher
       panel.classList.add('hidden');
       icon.style.transform = 'rotate(0deg)';
-      label.textContent = label.textContent.replace('Ocultar', 'Ver') ||
-        'Ver etapas';
+      label.textContent = label.textContent.replace('Ocultar', 'Ver') || 'Ver etapas';
     }
   }
+
+  /**
+   * Abre o modal de atualização de evolução.
+   * @param {number} acaoId - ID da ação
+   * @param {number} valorAtual - Evolução atual (0-100)
+   * @param {string} codigoAcao - Código da ação (ex: "AI110")
+   */
+  function abrirModal(acaoId, valorAtual, codigoAcao) {
+    modalAcaoId = acaoId;
+
+    // Preencher dados
+    document.getElementById('modal-codigo-label').textContent = 'Ação ' + codigoAcao;
+    document.getElementById('modal-valor-atual').textContent = valorAtual + '%';
+    sincronizarValor(valorAtual, 'init');
+
+    // Mostrar modal com animação
+    const modal = document.getElementById('modal-evolucao');
+    const card = document.getElementById('modal-card');
+    modal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      card.classList.remove('scale-95', 'opacity-0');
+      card.classList.add('scale-100', 'opacity-100');
+    });
+  }
+
+  /**
+   * Fecha o modal de atualização.
+   */
+  function fecharModal() {
+    const modal = document.getElementById('modal-evolucao');
+    const card = document.getElementById('modal-card');
+    card.classList.add('scale-95', 'opacity-0');
+    card.classList.remove('scale-100', 'opacity-100');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modalAcaoId = null;
+    }, 200);
+  }
+
+  /**
+   * Sincroniza os valores entre slider, input numérico e display.
+   * @param {string|number} valor - Novo valor
+   * @param {string} source - Origem da mudança ('slider', 'input', 'init')
+   */
+  function sincronizarValor(valor, source) {
+    const v = Math.max(0, Math.min(100, parseFloat(valor) || 0));
+    const rounded = Math.round(v * 10) / 10;
+
+    document.getElementById('modal-display-valor').textContent = rounded;
+    if (source !== 'slider') document.getElementById('modal-slider').value = rounded;
+    if (source !== 'input') document.getElementById('modal-input').value = rounded;
+  }
+
+  /**
+   * Envia a atualização de evolução via AJAX (fetch).
+   * Atualiza o DOM dinamicamente em caso de sucesso.
+   */
+  async function salvarEvolucao() {
+    if (!modalAcaoId) return;
+
+    const novoValor = parseFloat(document.getElementById('modal-input').value);
+    if (isNaN(novoValor) || novoValor < 0 || novoValor > 100) {
+      showToast('Valor inválido. Informe um número entre 0 e 100.', 'error');
+      return;
+    }
+
+    const btnSalvar = document.getElementById('btn-salvar-modal');
+    const textoOriginal = btnSalvar.innerHTML;
+    btnSalvar.disabled = true;
+    btnSalvar.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">progress_activity</span> Salvando...';
+
+    try {
+      const csrfToken = getCsrfToken();
+      const response = await fetch(`/acao/${modalAcaoId}/atualizar/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrfToken,
+        },
+        body: JSON.stringify({ novo_percentual: novoValor }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Atualizar o percentual no DOM
+        const valorEl = document.getElementById('evolucao-valor-' + modalAcaoId);
+        const barraEl = document.getElementById('evolucao-barra-' + modalAcaoId);
+
+        if (valorEl) valorEl.textContent = data.novo_valor + '%';
+        if (barraEl) {
+          barraEl.style.width = data.novo_valor + '%';
+          // Atualizar cor da barra baseado no valor
+          if (data.novo_valor >= 80) {
+            barraEl.style.backgroundColor = '#22c55e';
+          } else if (data.novo_valor >= 40) {
+            barraEl.style.backgroundColor = '#eab308';
+          }
+        }
+
+        fecharModal();
+        showToast('Evolução atualizada com sucesso!', 'success');
+      } else {
+        showToast(data.error || 'Erro ao salvar.', 'error');
+      }
+    } catch (err) {
+      showToast('Erro de conexão. Tente novamente.', 'error');
+      console.error(err);
+    } finally {
+      btnSalvar.disabled = false;
+      btnSalvar.innerHTML = textoOriginal;
+    }
+  }
+
+  /**
+   * Obtém o CSRF token do cookie do Django.
+   * @returns {string} Token CSRF
+   */
+  function getCsrfToken() {
+    const name = 'csrftoken';
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+      cookie = cookie.trim();
+      if (cookie.startsWith(name + '=')) {
+        return cookie.substring(name.length + 1);
+      }
+    }
+    return '';
+  }
+
+  // Fechar modal com tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') fecharModal();
+  });
 </script>
 {% endblock %}
