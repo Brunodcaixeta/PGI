@@ -378,12 +378,12 @@ AI119,sim,Firmar parceria com a Associação Goiana de Municípios e Federação
 AI111,não,3.	Encontros da Subprocuradoria-Geral de Justiça com os Procuradores e com os Promotores de Justiça para exposição das linhas de atuação e acolhimento de sugestões para aprimorar e tornar efetiva a atuação ministerial no âmbito dos recursos constitucionais.,AI111-3,3,fabiana.zamalloa@mpgo.mp.br,32
 AI111,não,"4.	Conclusão do Projeto Conexões, com levantamento das ações adotadas e dos resultados proporcionados.  ",AI111-4,4,fabiana.zamalloa@mpgo.mp.br,32
 AI95,não,"Desenvolvimento de sistema de busca de precedentes para compilar as decisões proferidas pelo Procurador-Geral de Justiça no âmbito de sua atuação decisória e revisional, a fim de oportunizar aos demais órgãos ministeriais a pesquisa e o acesso ao conteúdo dessas decisões.",AI95-2,2,fabiana.zamalloa@mpgo.mp.br,32
-AI164,sim,"PROJETO. ICT. PARECER. Obter parecer jurídico formal da Assessoria Jurídica acerca do reconhecimento do MPGO como ICT, com base na Lei nº 10.973/2004 e Lei Estadual.",AI164-5,5,marcelo.azevedo@mpgo.mp.br,8
-AI164,sim,PROJETO. ICT. TRATATIVAS. AGU. Tratativas iniciais com AGU que se qualificou como ICT,AI164-2,2,marcelo.azevedo@mpgo.mp.br,8
-AI164,não,Propor alteração legislativa (estadual ou resolução) reconhecendo formalmente o MPGO como ICT no âmbito estadual.,AI164-,,marcelo.azevedo@mpgo.mp.br,8
-AI164,não,"PROJETO. ICT. Cadastrar o MPGO na Plataforma Nacional das ICTs e no CNPq, com vinculação técnica e responsável institucional.",AI164-8,8,marcelo.azevedo@mpgo.mp.br,8
-AI164,não,"PROJETO. ICT. Firmar primeiros convênios com universidades e centros de pesquisa reconhecidos, com base na Lei da Inovação.",AI164-9,9,marcelo.azevedo@mpgo.mp.br,8
-AI164,sim,PROJETO. ICT. ESTUDOS. Viabilizar o estudo da legislação aplicável e viabilidade de adequação ao MPGO;,AI164-1,1,marcelo.azevedo@mpgo.mp.br,8
+AI178,sim,"PROJETO. ICT. PARECER. Obter parecer jurídico formal da Assessoria Jurídica acerca do reconhecimento do MPGO como ICT, com base na Lei nº 10.973/2004 e Lei Estadual.",AI178-5,5,marcelo.azevedo@mpgo.mp.br,8
+AI178,sim,PROJETO. ICT. TRATATIVAS. AGU. Tratativas iniciais com AGU que se qualificou como ICT,AI178-2,2,marcelo.azevedo@mpgo.mp.br,8
+AI178,não,Propor alteração legislativa (estadual ou resolução) reconhecendo formalmente o MPGO como ICT no âmbito estadual.,AI178-,,marcelo.azevedo@mpgo.mp.br,8
+AI178,não,"PROJETO. ICT. Cadastrar o MPGO na Plataforma Nacional das ICTs e no CNPq, com vinculação técnica e responsável institucional.",AI178-8,8,marcelo.azevedo@mpgo.mp.br,8
+AI178,não,"PROJETO. ICT. Firmar primeiros convênios com universidades e centros de pesquisa reconhecidos, com base na Lei da Inovação.",AI178-9,9,marcelo.azevedo@mpgo.mp.br,8
+AI178,sim,PROJETO. ICT. ESTUDOS. Viabilizar o estudo da legislação aplicável e viabilidade de adequação ao MPGO;,AI178-1,1,marcelo.azevedo@mpgo.mp.br,8
 AI123,não,"PROGRAMA. MPGO SOLUÇÕES TECNOLÓGICAS. LABORATÓRIO IA. Estruturar o Laboratório de Dados, Estatística e IA: 
 1. Elaborar proposta de plano de atividades a ser aprovada pelo PGJ; 
 2. Contratar quadro de pessoal para as atribuições definidas no plano.        ",AI123-7,7,marcelo.azevedo@mpgo.mp.br,8
@@ -452,7 +452,7 @@ AI110,sim,Planejar e executar o Programa MP Projeta,AI110-,,liana.tormin@mpgo.mp
 AI113,sim,"PROJETO. PAINEL TEMÁTICO MPGO. Desenvolvimento e implementação do BI Temático MPGO. Disponibilização do BI Temático MPGO para gestores e tomadores de decisão, em especial para subsidiar a revisão do Planejamento Estratégico Institucional.",AI113-5,5,rafael.correa@mpgo.mp.br,10
 AI113,não,"Disponibilização do BI MPGO Temático para gestores e tomadores de decisão, em especial para subsidiar a revisão do Planejamento Estratégico Institucional",AI113-,,liana.tormin@mpgo.mp.br,9
 AI123,sim,Realizar estudos e tratativas para o reconhecimento do MPGO como ICT,AI123-,,liana.tormin@mpgo.mp.br,9
-AI164,sim,PROJETO. ICT. TRATATIVAS. TCU. Realizar tratativas com TCU acerca do procedimento para reconhecimento de órgãos públicos como ICT,AI164-3,3,marcelo.azevedo@mpgo.mp.br,8
+AI178,sim,PROJETO. ICT. TRATATIVAS. TCU. Realizar tratativas com TCU acerca do procedimento para reconhecimento de órgãos públicos como ICT,AI178-3,3,marcelo.azevedo@mpgo.mp.br,8
 AI141,sim,ARTICULAÇÃO. TRIBUNAIS SUPERIORES. Realizar reuniões periódicas com ministros dos Tribunais Superiores para despachar assuntos de interesse do MPGO,AI141-1,1,marcelo.azevedo@mpgo.mp.br,8
 AI141,sim,ACOMPANHAMENTO. SESSÕES DE JULGAMENTO. TRIBUNAIS SUPERIORES. Acompanhar sessões de julgamento dos Tribunais Superiores com monitoramento dos resultados de processos e matérias de interesse do MPGO,AI141-3,3,marcelo.azevedo@mpgo.mp.br,8
 AI92,sim,Acompanhar a tramitação da Proposta no CNMP.,AI92-1,1,rafael.oliveira@mpgo.mp.br,2
@@ -483,12 +483,12 @@ AI128,sim,"WORKSPACE. SERPRO. TRATATIVAS. Realizar tratativas com o SERPRO  para
 Obs: a disponibilização do serviço/produto pelo Serpro somente se deu em setembro de 2025. ",AI128-7,7,luizmauro@mpgo.mp.br,
 AI128,não,"WORKSPACE. CONTRATAÇÃO. Contratação de suíte de ferramentas de colaboração e compartilhamento de arquivos em nuvem (Google Workspace, Google Drive, Calendar, Docs, dentre outros).",AI128-8,8,luizmauro@mpgo.mp.br,
 AI128,sim,SERPRO. CONTRATAÇÃO. Assinatura do contrato com o SERPRO para fornecimento de serviços de infraestrutura em nuvem.,AI128-4,4,luizmauro@mpgo.mp.br,
-AI164,não,PROJETO. ICT. Manifestação formal do Subplei.,AI164-7,7,marcelo.azevedo@mpgo.mp.br,8
-AI164,sim,PROJETO. ICT. PGA. ICT. Instaurar PGA com despacho fundamentado. ,AI164-4,4,marcelo.azevedo@mpgo.mp.br,8
-AI164,sim,PROJETO. ICT. TRATATIVAS. MPRS. Realizar tratativas com MPRS acerca do procedimento para reconhecimento de órgãos públicos como ICT,AI164-6,6,marcelo.azevedo@mpgo.mp.br,8
-AI164,não,"PROJETO. ICT. RECONHECIMENTO. MPGO.ICT. 
+AI178,não,PROJETO. ICT. Manifestação formal do Subplei.,AI178-7,7,marcelo.azevedo@mpgo.mp.br,8
+AI178,sim,PROJETO. ICT. PGA. ICT. Instaurar PGA com despacho fundamentado. ,AI178-4,4,marcelo.azevedo@mpgo.mp.br,8
+AI178,sim,PROJETO. ICT. TRATATIVAS. MPRS. Realizar tratativas com MPRS acerca do procedimento para reconhecimento de órgãos públicos como ICT,AI178-6,6,marcelo.azevedo@mpgo.mp.br,8
+AI178,não,"PROJETO. ICT. RECONHECIMENTO. MPGO.ICT. 
 1. Elaborar minuta de Ato reconhecendo o MPGO como ICT; 
-2. Assinatura do Ato.",AI164-10,10,liana.tormin@mpgo.mp.br,9
+2. Assinatura do Ato.",AI178-10,10,liana.tormin@mpgo.mp.br,9
 AI91,sim,PROJETO. MPGO EM DESTAQUE. Planejar o projeto de gestão de premiações que visa identificar certames de premiações de outros órgãos e fomentar as inscrições.,AI91-6,6,liana.tormin@mpgo.mp.br,9
 AI91,não,PROJETO GESTÃO DE RISCOS. Aprovar o projeto na RAE e prosseguir com a sua execução.,AI91-13,13,liana.tormin@mpgo.mp.br,9
 AI91,sim,PROJETO. MP PERFORMANCE. Planejar o projeto de gestão de indicadores dos projetos institucionais.,AI91-7,7,liana.tormin@mpgo.mp.br,9
