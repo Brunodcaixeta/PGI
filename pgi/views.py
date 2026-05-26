@@ -2,9 +2,10 @@ import json
 from decimal import Decimal, InvalidOperation
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.db.models import Max
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
-from .models import Eixo, Area, AcaoInstitucional, AtualizacaoAcao
+from .models import Eixo, Area, AcaoInstitucional, AtualizacaoAcao, Etapa, UserAssessor
 
 
 # ────────────────────────────────────────────────────────
@@ -231,15 +232,23 @@ def eixo_detail(request, eixo_id):
         if acao.responsavel:
             resp_nome = str(acao.responsavel)
 
-        # Permissão de edição: responsável, admin, gestor_chefe ou superuser
+        # Permissão de edição: responsável, admin, gestor_chefe, superuser ou assessor
         pode_editar = False
         if request.user.is_authenticated:
             u = request.user
+            eh_assessor = (
+                acao.responsavel_id
+                and UserAssessor.objects.filter(
+                    titular_id=acao.responsavel_id,
+                    assessor_id=u.id,
+                ).exists()
+            )
             pode_editar = (
                 u.is_superuser
                 or getattr(u, 'admin', False)
                 or getattr(u, 'gestor_chefe', False)
                 or (acao.responsavel_id and acao.responsavel_id == u.id)
+                or eh_assessor
             )
 
         acoes_data.append({
@@ -347,3 +356,160 @@ def atualizar_evolucao(request, acao_id):
         'novo_valor': float(novo_percentual),
         'valor_anterior': float(valor_anterior) * 100,
     })
+
+
+@login_required
+@require_POST
+def criar_etapa(request, acao_id):
+    """
+    Endpoint AJAX para cadastrar uma nova Etapa em uma Ação Institucional.
+
+    - Aceita apenas POST
+    - Exige usuário autenticado
+    - Valida permissão: responsável, assessor, admin, gestor_chefe ou superuser
+    - Calcula automaticamente: ordem, etapa_referencia, responsável
+    - Retorna JSON com dados da etapa criada
+    """
+    acao = get_object_or_404(AcaoInstitucional, pk=acao_id)
+
+    # ── Verificar permissão ──
+    u = request.user
+    eh_assessor = (
+        acao.responsavel_id
+        and UserAssessor.objects.filter(
+            titular_id=acao.responsavel_id,
+            assessor_id=u.id,
+        ).exists()
+    )
+    pode_editar = (
+        u.is_superuser
+        or getattr(u, 'admin', False)
+        or getattr(u, 'gestor_chefe', False)
+        or (acao.responsavel_id and acao.responsavel_id == u.id)
+        or eh_assessor
+    )
+    if not pode_editar:
+        return JsonResponse(
+            {'success': False, 'error': 'Você não tem permissão para cadastrar etapas nesta ação.'},
+            status=403,
+        )
+
+    # ── Extrair e validar a descrição ──
+    try:
+        body = json.loads(request.body)
+        descricao = body.get('descricao', '').strip()
+    except (json.JSONDecodeError, TypeError):
+        return JsonResponse(
+            {'success': False, 'error': 'Dados inválidos.'},
+            status=400,
+        )
+
+    if not descricao:
+        return JsonResponse(
+            {'success': False, 'error': 'A descrição da etapa é obrigatória.'},
+            status=400,
+        )
+
+    # ── Calcular próxima ordem e etapa_referencia ──
+    ultima_ordem = (
+        Etapa.objects
+        .filter(acao=acao, bl_deletado=False)
+        .aggregate(max_ordem=Max('ordem'))
+    )['max_ordem'] or 0
+    nova_ordem = ultima_ordem + 1
+
+    codigo_acao = acao.codigo or f'A{acao.id}'
+    etapa_ref = f'{codigo_acao}-{nova_ordem}'
+
+    # ── Criar a etapa ──
+    etapa = Etapa.objects.create(
+        acao=acao,
+        etapa=descricao,
+        etapa_referencia=etapa_ref,
+        ordem=nova_ordem,
+        concluido=False,
+        responsavel=u,
+    )
+
+    return JsonResponse({
+        'success': True,
+        'etapa': {
+            'id': etapa.id,
+            'descricao': etapa.etapa,
+            'etapa_referencia': etapa.etapa_referencia,
+            'ordem': etapa.ordem,
+            'concluido': etapa.concluido,
+            'responsavel': str(u),
+        },
+    })
+
+
+@login_required
+@require_POST
+def excluir_etapa(request, etapa_id):
+    """
+    Endpoint AJAX para excluir uma Etapa (soft delete).
+    """
+    etapa = get_object_or_404(Etapa, pk=etapa_id)
+    acao = etapa.acao
+
+    # ── Verificar permissão ──
+    u = request.user
+    eh_assessor = (
+        acao.responsavel_id
+        and UserAssessor.objects.filter(
+            titular_id=acao.responsavel_id,
+            assessor_id=u.id,
+        ).exists()
+    )
+    pode_editar = (
+        u.is_superuser
+        or getattr(u, 'admin', False)
+        or getattr(u, 'gestor_chefe', False)
+        or (acao.responsavel_id and acao.responsavel_id == u.id)
+        or eh_assessor
+    )
+    if not pode_editar:
+        return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
+
+    etapa.bl_deletado = True
+    etapa.save()
+
+    # Retorna o total de etapas ativas agora para atualizar o contador
+    total_etapas = Etapa.objects.filter(acao=acao, bl_deletado=False).count()
+
+    return JsonResponse({'success': True, 'total_etapas': total_etapas})
+
+
+@login_required
+@require_POST
+def toggle_concluido_etapa(request, etapa_id):
+    """
+    Endpoint AJAX para marcar/desmarcar uma Etapa como concluída.
+    """
+    etapa = get_object_or_404(Etapa, pk=etapa_id)
+    acao = etapa.acao
+
+    # ── Verificar permissão ──
+    u = request.user
+    eh_assessor = (
+        acao.responsavel_id
+        and UserAssessor.objects.filter(
+            titular_id=acao.responsavel_id,
+            assessor_id=u.id,
+        ).exists()
+    )
+    pode_editar = (
+        u.is_superuser
+        or getattr(u, 'admin', False)
+        or getattr(u, 'gestor_chefe', False)
+        or (acao.responsavel_id and acao.responsavel_id == u.id)
+        or eh_assessor
+    )
+    if not pode_editar:
+        return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
+
+    etapa.concluido = not etapa.concluido
+    etapa.save()
+
+    return JsonResponse({'success': True, 'concluido': etapa.concluido})

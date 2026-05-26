@@ -124,38 +124,47 @@
       </div>
 
       <!-- Botão expandir/recolher etapas -->
-      {% if acao.total_etapas > 0 %}
       <button onclick="toggleEtapas({{ acao.id }})"
               class="mt-4 flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-all duration-200"
               id="btn-etapas-{{ acao.id }}">
         <span class="material-symbols-outlined text-base transition-transform duration-200" id="icon-etapas-{{ acao.id }}">
           expand_more
         </span>
-        <span id="label-etapas-{{ acao.id }}">Ver {{ acao.total_etapas }} etapas</span>
+        <span id="label-etapas-{{ acao.id }}">Ver etapas (<span id="count-etapas-{{ acao.id }}">{{ acao.total_etapas }}</span>)</span>
       </button>
-      {% endif %}
 
     </div>
 
     <!-- Painel de Etapas (oculto por padrão) -->
-    {% if acao.total_etapas > 0 %}
     <div class="hidden border-t border-white/5 bg-bg-dark/50 px-5 py-4"
          id="panel-etapas-{{ acao.id }}">
 
-      <div class="space-y-2">
+      <div class="space-y-2" id="lista-etapas-{{ acao.id }}">
         {% for etapa in acao.etapas %}
-        <div class="flex items-start gap-3 py-2 px-3 rounded-lg {% if etapa.concluido %}bg-success/5{% else %}hover:bg-white/5{% endif %} transition-colors duration-150">
+        <div class="flex items-start gap-3 py-2 px-3 rounded-lg {% if etapa.concluido %}bg-success/5{% else %}hover:bg-white/5{% endif %} transition-colors duration-150" id="etapa-item-{{ etapa.id }}">
 
-          <!-- Ícone de status -->
-          {% if etapa.concluido %}
-          <span class="material-symbols-outlined text-success text-lg mt-0.5">check_circle</span>
+          <!-- Ícone de status (Toggle Concluído se puder editar) -->
+          {% if acao.pode_editar %}
+          <button onclick="toggleConcluidoEtapa({{ etapa.id }}, {{ acao.id }})"
+                  class="mt-0.5 focus:outline-none transition-transform hover:scale-110"
+                  title="Marcar/Desmarcar Concluído">
+            {% if etapa.concluido %}
+            <span class="material-symbols-outlined text-success text-lg" id="icon-concluido-{{ etapa.id }}">check_circle</span>
+            {% else %}
+            <span class="material-symbols-outlined text-text-muted/50 hover:text-success text-lg transition-colors" id="icon-concluido-{{ etapa.id }}">radio_button_unchecked</span>
+            {% endif %}
+          </button>
           {% else %}
-          <span class="material-symbols-outlined text-text-muted/50 text-lg mt-0.5">radio_button_unchecked</span>
+            {% if etapa.concluido %}
+            <span class="material-symbols-outlined text-success text-lg mt-0.5">check_circle</span>
+            {% else %}
+            <span class="material-symbols-outlined text-text-muted/50 text-lg mt-0.5">radio_button_unchecked</span>
+            {% endif %}
           {% endif %}
 
           <!-- Conteúdo da etapa -->
           <div class="flex-1 min-w-0">
-            <p class="text-sm {% if etapa.concluido %}text-text-muted line-through{% else %}text-text-light{% endif %} leading-relaxed">
+            <p id="desc-etapa-{{ etapa.id }}" class="text-sm {% if etapa.concluido %}text-text-muted line-through{% else %}text-text-light{% endif %} leading-relaxed transition-all duration-200">
               {{ etapa.etapa }}
             </p>
             {% if etapa.responsavel %}
@@ -166,17 +175,36 @@
             {% endif %}
           </div>
 
-          <!-- Ordem -->
-          {% if etapa.ordem %}
-          <span class="text-xs text-text-muted/50 font-mono mt-1">#{{ etapa.ordem }}</span>
-          {% endif %}
+          <!-- Ordem & Ações -->
+          <div class="flex flex-col items-end gap-1">
+            {% if etapa.ordem %}
+            <span class="text-xs text-text-muted/50 font-mono">#{{ etapa.ordem }}</span>
+            {% endif %}
+            
+            {% if acao.pode_editar %}
+            <button onclick="excluirEtapa({{ etapa.id }}, {{ acao.id }})"
+                    class="text-text-muted/50 hover:text-error transition-colors p-1 rounded hover:bg-error/10 flex items-center justify-center mt-1"
+                    title="Excluir Etapa">
+              <span class="material-symbols-outlined text-[16px]">delete</span>
+            </button>
+            {% endif %}
+          </div>
 
         </div>
         {% endfor %}
       </div>
 
+      <!-- Botão + Nova Etapa (visível apenas para quem pode editar) -->
+      {% if acao.pode_editar %}
+      <button onclick="abrirModalEtapa({{ acao.id }}, '{{ acao.codigo }}')"
+              class="mt-4 flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-200"
+              id="btn-nova-etapa-{{ acao.id }}">
+        <span class="material-symbols-outlined text-base">add_circle</span>
+        Nova Etapa
+      </button>
+      {% endif %}
+
     </div>
-    {% endif %}
 
   </div>
   {% endfor %}
@@ -250,6 +278,58 @@
               class="flex-1 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-white text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
         <span class="material-symbols-outlined text-lg">save</span>
         Salvar
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== MODAL DE CADASTRO DE ETAPA ===== -->
+<div id="modal-etapa" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+  <!-- Overlay escuro -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="fecharModalEtapa()"></div>
+
+  <!-- Card do modal -->
+  <div class="relative w-full max-w-lg mx-4 rounded-2xl bg-surface-dark border border-white/10 shadow-2xl p-6 transform transition-all duration-300 scale-95 opacity-0" id="modal-etapa-card">
+
+    <!-- Cabeçalho -->
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center">
+          <span class="material-symbols-outlined text-success text-xl">add_task</span>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-text-light">Nova Etapa</h3>
+          <p class="text-xs text-text-muted" id="modal-etapa-codigo-label">Ação —</p>
+        </div>
+      </div>
+      <button onclick="fecharModalEtapa()" class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Campo de descrição -->
+    <div class="mb-6">
+      <label for="modal-etapa-descricao" class="block text-sm font-medium text-text-light mb-2">Descrição da Etapa</label>
+      <textarea
+        id="modal-etapa-descricao"
+        rows="4"
+        placeholder="Descreva a nova etapa..."
+        class="w-full px-4 py-3 rounded-xl bg-bg-dark border border-white/10 text-sm text-text-light placeholder-text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none"
+      ></textarea>
+    </div>
+
+    <!-- Botões -->
+    <div class="flex gap-3">
+      <button onclick="fecharModalEtapa()"
+              class="flex-1 py-2.5 rounded-xl border border-white/10 text-text-muted hover:text-text-light hover:bg-white/5 text-sm font-medium transition-all duration-200">
+        Cancelar
+      </button>
+      <button onclick="salvarNovaEtapa()"
+              id="btn-salvar-etapa"
+              class="flex-1 py-2.5 rounded-xl bg-success hover:bg-success/90 text-white text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-success/20">
+        <span class="material-symbols-outlined text-lg">add_task</span>
+        Cadastrar
       </button>
     </div>
 
@@ -414,7 +494,228 @@
 
   // Fechar modal com tecla Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') fecharModal();
+    if (e.key === 'Escape') {
+      fecharModal();
+      fecharModalEtapa();
+    }
   });
+
+  // ── Estado do modal de etapa ──
+  let modalEtapaAcaoId = null;
+
+  /**
+   * Abre o modal de cadastro de nova etapa.
+   * @param {number} acaoId - ID da ação
+   * @param {string} codigoAcao - Código da ação (ex: "AI178")
+   */
+  function abrirModalEtapa(acaoId, codigoAcao) {
+    modalEtapaAcaoId = acaoId;
+    document.getElementById('modal-etapa-codigo-label').textContent = 'Ação ' + codigoAcao;
+    document.getElementById('modal-etapa-descricao').value = '';
+
+    const modal = document.getElementById('modal-etapa');
+    const card = document.getElementById('modal-etapa-card');
+    modal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      card.classList.remove('scale-95', 'opacity-0');
+      card.classList.add('scale-100', 'opacity-100');
+    });
+
+    // Foca no textarea
+    setTimeout(() => document.getElementById('modal-etapa-descricao').focus(), 200);
+  }
+
+  /**
+   * Fecha o modal de cadastro de etapa.
+   */
+  function fecharModalEtapa() {
+    const modal = document.getElementById('modal-etapa');
+    const card = document.getElementById('modal-etapa-card');
+    card.classList.add('scale-95', 'opacity-0');
+    card.classList.remove('scale-100', 'opacity-100');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modalEtapaAcaoId = null;
+    }, 200);
+  }
+
+  /**
+   * Envia o cadastro de nova etapa via AJAX (fetch).
+   * Insere dinamicamente no DOM em caso de sucesso.
+   */
+  async function salvarNovaEtapa() {
+    if (!modalEtapaAcaoId) return;
+
+    const descricao = document.getElementById('modal-etapa-descricao').value.trim();
+    if (!descricao) {
+      showToast('A descrição da etapa é obrigatória.', 'error');
+      return;
+    }
+
+    const btnSalvar = document.getElementById('btn-salvar-etapa');
+    const textoOriginal = btnSalvar.innerHTML;
+    btnSalvar.disabled = true;
+    btnSalvar.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">progress_activity</span> Salvando...';
+
+    try {
+      const csrfToken = getCsrfToken();
+      const response = await fetch(`/acao/${modalEtapaAcaoId}/etapa/criar/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrfToken,
+        },
+        body: JSON.stringify({ descricao: descricao }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        const et = data.etapa;
+
+        // Criar o HTML da nova etapa
+        const novaEtapaHtml = `
+          <div class="flex items-start gap-3 py-2 px-3 rounded-lg hover:bg-white/5 transition-colors duration-150 animate-pulse-once" id="etapa-item-${et.id}">
+            
+            <button onclick="toggleConcluidoEtapa(${et.id}, ${modalEtapaAcaoId})"
+                    class="mt-0.5 focus:outline-none transition-transform hover:scale-110"
+                    title="Marcar/Desmarcar Concluído">
+              <span class="material-symbols-outlined text-text-muted/50 hover:text-success text-lg transition-colors" id="icon-concluido-${et.id}">radio_button_unchecked</span>
+            </button>
+
+            <div class="flex-1 min-w-0">
+              <p id="desc-etapa-${et.id}" class="text-sm text-text-light leading-relaxed transition-all duration-200">${et.descricao}</p>
+              <p class="text-xs text-text-muted mt-1 flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs">person</span>
+                ${et.responsavel}
+              </p>
+            </div>
+            
+            <div class="flex flex-col items-end gap-1">
+              <span class="text-xs text-text-muted/50 font-mono">#${et.ordem}</span>
+              <button onclick="excluirEtapa(${et.id}, ${modalEtapaAcaoId})"
+                      class="text-text-muted/50 hover:text-error transition-colors p-1 rounded hover:bg-error/10 flex items-center justify-center mt-1"
+                      title="Excluir Etapa">
+                <span class="material-symbols-outlined text-[16px]">delete</span>
+              </button>
+            </div>
+          </div>
+        `;
+
+        // Inserir no painel de etapas
+        const lista = document.getElementById('lista-etapas-' + modalEtapaAcaoId);
+        if (lista) {
+          lista.insertAdjacentHTML('beforeend', novaEtapaHtml);
+        }
+
+        // Garantir que o painel esteja visível
+        const panel = document.getElementById('panel-etapas-' + modalEtapaAcaoId);
+        if (panel && panel.classList.contains('hidden')) {
+          panel.classList.remove('hidden');
+          const icon = document.getElementById('icon-etapas-' + modalEtapaAcaoId);
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+
+        // Atualizar o contador de etapas
+        const countEl = document.getElementById('count-etapas-' + modalEtapaAcaoId);
+        if (countEl) {
+          countEl.textContent = parseInt(countEl.textContent) + 1;
+        }
+
+        fecharModalEtapa();
+        showToast('Etapa cadastrada com sucesso!', 'success');
+      } else {
+        showToast(data.error || 'Erro ao cadastrar etapa.', 'error');
+      }
+    } catch (err) {
+      showToast('Erro de conexão. Tente novamente.', 'error');
+      console.error(err);
+    } finally {
+      btnSalvar.disabled = false;
+      btnSalvar.innerHTML = textoOriginal;
+    }
+  }
+
+  /**
+   * Exclui uma etapa via AJAX.
+   */
+  async function excluirEtapa(etapaId, acaoId) {
+    if (!confirm('Tem certeza que deseja excluir esta etapa?')) return;
+
+    try {
+      const csrfToken = getCsrfToken();
+      const response = await fetch(`/etapa/${etapaId}/excluir/`, {
+        method: 'POST',
+        headers: { 'X-CSRFToken': csrfToken },
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        const item = document.getElementById('etapa-item-' + etapaId);
+        if (item) item.remove();
+
+        const countEl = document.getElementById('count-etapas-' + acaoId);
+        if (countEl) {
+          countEl.textContent = data.total_etapas;
+        }
+
+        showToast('Etapa excluída com sucesso!', 'success');
+      } else {
+        showToast(data.error || 'Erro ao excluir.', 'error');
+      }
+    } catch (err) {
+      showToast('Erro de conexão.', 'error');
+      console.error(err);
+    }
+  }
+
+  /**
+   * Marca/desmarca conclusão de uma etapa via AJAX.
+   */
+  async function toggleConcluidoEtapa(etapaId, acaoId) {
+    try {
+      const csrfToken = getCsrfToken();
+      const response = await fetch(`/etapa/${etapaId}/toggle-concluido/`, {
+        method: 'POST',
+        headers: { 'X-CSRFToken': csrfToken },
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        const item = document.getElementById('etapa-item-' + etapaId);
+        const icon = document.getElementById('icon-concluido-' + etapaId);
+        const desc = document.getElementById('desc-etapa-' + etapaId);
+
+        if (data.concluido) {
+          item.classList.add('bg-success/5');
+          item.classList.remove('hover:bg-white/5');
+          
+          icon.textContent = 'check_circle';
+          icon.classList.remove('text-text-muted/50', 'hover:text-success');
+          icon.classList.add('text-success');
+          
+          desc.classList.remove('text-text-light');
+          desc.classList.add('text-text-muted', 'line-through');
+        } else {
+          item.classList.remove('bg-success/5');
+          item.classList.add('hover:bg-white/5');
+          
+          icon.textContent = 'radio_button_unchecked';
+          icon.classList.remove('text-success');
+          icon.classList.add('text-text-muted/50', 'hover:text-success');
+          
+          desc.classList.remove('text-text-muted', 'line-through');
+          desc.classList.add('text-text-light');
+        }
+      } else {
+        showToast(data.error || 'Erro ao atualizar status.', 'error');
+      }
+    } catch (err) {
+      showToast('Erro de conexão.', 'error');
+      console.error(err);
+    }
+  }
 </script>
 {% endblock %}
