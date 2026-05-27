@@ -41,11 +41,15 @@
         <span class="material-symbols-outlined text-primary text-lg">person</span>
         <span class="text-sm text-text-light font-medium hidden sm:inline">{{ user.first_name|default:user.username }}</span>
       </div>
-      <a href="{% url 'logout' %}"
-         class="p-2 rounded-lg text-text-muted hover:text-error hover:bg-error/10 transition-colors duration-200"
-         title="Sair">
+      <form id="logout-form" action="{% url 'logout' %}" method="post" class="hidden">
+        {% csrf_token %}
+      </form>
+      <button type="button"
+              onclick="document.getElementById('logout-form').submit();"
+              class="p-2 rounded-lg text-text-muted hover:text-error hover:bg-error/10 transition-colors duration-200"
+              title="Sair">
         <span class="material-symbols-outlined text-xl">logout</span>
-      </a>
+      </button>
     </div>
     {% else %}
     <a href="{% url 'login' %}"
