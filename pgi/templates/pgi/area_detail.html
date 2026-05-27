@@ -1,10 +1,10 @@
 {% extends 'pgi/base.html' %}
 
-{% block title %}{{ eixo.eixo }} — PGI MPGO{% endblock %}
+{% block title %}{{ area.nome_area }} — PGI MPGO{% endblock %}
 
 {% block content %}
 
-<!-- ===== BOTÃO VOLTAR + CABEÇALHO DO EIXO ===== -->
+<!-- ===== BOTÃO VOLTAR + CABEÇALHO DA ÁREA ===== -->
 <div class="mb-8">
   <!-- Voltar -->
   <a href="{% url 'pgi:home' %}"
@@ -13,36 +13,38 @@
     Voltar para Visão Geral
   </a>
 
-  <!-- Card cabeçalho do eixo -->
+  <!-- Card cabeçalho da área -->
   <div class="rounded-2xl bg-surface-dark border border-white/5 p-6">
     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
 
-      <!-- Info do eixo -->
+      <!-- Info da área -->
       <div class="flex items-center gap-4">
         <div class="w-14 h-14 rounded-2xl flex items-center justify-center"
-             style="background-color: {{ eixo_cor }}20;">
-          <span class="material-symbols-outlined text-3xl" style="color: {{ eixo_cor }};">
-            {{ eixo_icon }}
+             style="background-color: {{ area_cor }}20;">
+          <span class="material-symbols-outlined text-3xl" style="color: {{ area_cor }};">
+            apartment
           </span>
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-text-light tracking-tight">{{ eixo.eixo }}</h2>
+          <h2 class="text-2xl font-bold text-text-light tracking-tight">
+            {% if area.sigla %}{{ area.sigla }} — {% endif %}{{ area.nome_area }}
+          </h2>
           <p class="text-text-muted text-sm mt-0.5">
             {{ total_acoes }} Aç{{ total_acoes|pluralize:"ão,ões" }} Instituciona{{ total_acoes|pluralize:"l,is" }}
           </p>
         </div>
       </div>
 
-      <!-- Progresso do Eixo -->
+      <!-- Progresso da Área -->
       <div class="flex items-center gap-6">
         <div class="text-right">
-          <p class="text-xs text-text-muted font-medium uppercase tracking-wider mb-1">Evolução do Eixo</p>
-          <p class="text-3xl font-bold text-text-light">{{ eixo_evolucao }}%</p>
+          <p class="text-xs text-text-muted font-medium uppercase tracking-wider mb-1">Evolução da Área</p>
+          <p class="text-3xl font-bold text-text-light">{{ area_evolucao }}%</p>
         </div>
         <div class="w-32">
           <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
             <div class="h-full rounded-full transition-all duration-700"
-                 style="width: {{ eixo_evolucao }}%; background-color: {{ eixo_cor }};"></div>
+                 style="width: {{ area_evolucao }}%; background-color: {{ area_cor }};"></div>
           </div>
         </div>
       </div>
@@ -66,7 +68,7 @@
         <div class="flex items-center gap-3">
           <!-- Badge do código -->
           <span class="text-xs font-bold px-2.5 py-1 rounded-lg tracking-wider"
-                style="background-color: {{ eixo_cor }}15; color: {{ eixo_cor }};">
+                style="background-color: {{ area_cor }}15; color: {{ area_cor }};">
             {{ acao.codigo }}
           </span>
           <!-- Badge da área -->
@@ -91,7 +93,7 @@
           <div class="w-20">
             <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
               <div class="h-full rounded-full transition-all duration-500" id="evolucao-barra-{{ acao.id }}"
-                   style="width: {{ acao.evolucao }}%; background-color: {% if acao.evolucao >= 80 %}#22c55e{% elif acao.evolucao >= 40 %}#eab308{% else %}{{ eixo_cor }}{% endif %};"></div>
+                   style="width: {{ acao.evolucao }}%; background-color: {% if acao.evolucao >= 80 %}#22c55e{% elif acao.evolucao >= 40 %}#eab308{% else %}{{ area_cor }}{% endif %};"></div>
             </div>
           </div>
         </div>
@@ -567,7 +569,7 @@
         }
 
         fecharModal();
-        showToast('Evolução atualizada com sucesso!', 'success');
+        showToast('Evolução actualizada com sucesso!', 'success');
       } else {
         showToast(data.error || 'Erro ao salvar.', 'error');
       }
@@ -677,31 +679,61 @@
       if (data.success) {
         const et = data.etapa;
 
-        // Criar o HTML da nova etapa
+        // Criar o HTML da nova etapa (com botão e timeline de andamentos acoplada)
         const novaEtapaHtml = `
-          <div class="flex items-start gap-3 py-2 px-3 rounded-lg hover:bg-white/5 transition-colors duration-150 animate-pulse-once" id="etapa-item-${et.id}">
-            
-            <button onclick="toggleConcluidoEtapa(${et.id}, ${modalEtapaAcaoId})"
-                    class="mt-0.5 focus:outline-none transition-transform hover:scale-110"
-                    title="Marcar/Desmarcar Concluído">
-              <span class="material-symbols-outlined text-text-muted/50 hover:text-success text-lg transition-colors" id="icon-concluido-${et.id}">radio_button_unchecked</span>
-            </button>
-
-            <div class="flex-1 min-w-0">
-              <p id="desc-etapa-${et.id}" class="text-sm text-text-light leading-relaxed transition-all duration-200">${et.descricao}</p>
-              <p class="text-xs text-text-muted mt-1 flex items-center gap-1">
-                <span class="material-symbols-outlined text-xs">person</span>
-                ${et.responsavel}
-              </p>
-            </div>
-            
-            <div class="flex flex-col items-end gap-1">
-              <span class="text-xs text-text-muted/50 font-mono">#${et.ordem}</span>
-              <button onclick="excluirEtapa(${et.id}, ${modalEtapaAcaoId})"
-                      class="text-text-muted/50 hover:text-error transition-colors p-1 rounded hover:bg-error/10 flex items-center justify-center mt-1"
-                      title="Excluir Etapa">
-                <span class="material-symbols-outlined text-[16px]">delete</span>
+          <div class="etapa-wrapper mb-1" id="etapa-item-${et.id}">
+            <div class="flex items-start gap-3 py-2 px-3 rounded-lg hover:bg-white/5 transition-colors duration-150 animate-pulse-once">
+              
+              <button onclick="toggleConcluidoEtapa(${et.id}, ${modalEtapaAcaoId})"
+                      class="mt-0.5 focus:outline-none transition-transform hover:scale-110"
+                      title="Marcar/Desmarcar Concluído">
+                <span class="material-symbols-outlined text-text-muted/50 hover:text-success text-lg transition-colors" id="icon-concluido-${et.id}">radio_button_unchecked</span>
               </button>
+
+              <div class="flex-1 min-w-0">
+                <p id="desc-etapa-${et.id}" class="text-sm text-text-light leading-relaxed transition-all duration-200">${et.descricao}</p>
+                <p class="text-xs text-text-muted mt-1 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">person</span>
+                  ${et.responsavel}
+                </p>
+
+                <!-- Indicador de andamentos -->
+                <button onclick="toggleAndamentos(${et.id})"
+                        class="mt-1.5 flex items-center gap-1.5 text-xs text-accent-cyan/80 hover:text-accent-cyan transition-colors duration-200"
+                        id="btn-andamentos-${et.id}">
+                  <span class="material-symbols-outlined text-sm">chat_bubble</span>
+                  <span id="count-andamentos-${et.id}">0</span> andamentos
+                  <span class="material-symbols-outlined text-sm transition-transform duration-200" id="icon-andamentos-${et.id}">expand_more</span>
+                </button>
+              </div>
+              
+              <div class="flex flex-col items-end gap-1">
+                <span class="text-xs text-text-muted/50 font-mono">#${et.ordem}</span>
+                <button onclick="excluirEtapa(${et.id}, ${modalEtapaAcaoId})"
+                        class="text-text-muted/50 hover:text-error transition-colors p-1 rounded hover:bg-error/10 flex items-center justify-center mt-1"
+                        title="Excluir Etapa">
+                  <span class="material-symbols-outlined text-[16px]">delete</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- ===== TIMELINE DE ANDAMENTOS (oculto por padrão) ===== -->
+            <div class="hidden ml-10 mt-1 mb-2" id="panel-andamentos-${et.id}">
+              <div class="border-l-2 border-accent-cyan/20 pl-4 space-y-3" id="lista-andamentos-${et.id}"></div>
+              <div class="mt-3 ml-4 flex gap-2">
+                <textarea
+                  id="input-andamento-${et.id}"
+                  rows="2"
+                  placeholder="Adicionar andamento..."
+                  class="flex-1 px-3 py-2 rounded-xl bg-bg-dark border border-white/10 text-sm text-text-light placeholder-text-muted/50 focus:outline-none focus:border-accent-cyan/50 focus:ring-1 focus:ring-accent-cyan/20 transition-all duration-200 resize-none"
+                ></textarea>
+                <button onclick="salvarAndamento(${et.id})"
+                        class="self-end p-2.5 rounded-xl bg-accent-cyan/10 text-accent-cyan hover:bg-accent-cyan/20 transition-all duration-200"
+                        title="Enviar andamento"
+                        id="btn-enviar-andamento-${et.id}">
+                  <span class="material-symbols-outlined text-lg">send</span>
+                </button>
+              </div>
             </div>
           </div>
         `;

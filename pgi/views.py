@@ -2,10 +2,11 @@ import json
 from decimal import Decimal, InvalidOperation
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.db.models import Max
+from django.db.models import Max, Prefetch
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
-from .models import Eixo, Area, AcaoInstitucional, AtualizacaoAcao, Etapa, UserAssessor
+from django.utils import timezone
+from .models import Eixo, Area, AcaoInstitucional, AtualizacaoAcao, Etapa, AtualizacaoEtapa, UserAssessor
 
 
 # ────────────────────────────────────────────────────────
@@ -194,7 +195,23 @@ def eixo_detail(request, eixo_id):
         AcaoInstitucional.objects
         .filter(eixo=eixo)
         .select_related('area', 'responsavel', 'responsavel_suplan')
-        .prefetch_related('atualizacoes', 'etapas__responsavel')
+        .prefetch_related(
+            'atualizacoes',
+            Prefetch(
+                'etapas',
+                queryset=Etapa.objects.filter(bl_deletado=False)
+                    .select_related('responsavel')
+                    .prefetch_related(
+                        Prefetch(
+                            'atualizacoes',
+                            queryset=AtualizacaoEtapa.objects.filter(bl_deletado=False)
+                                .select_related('responsavel_registro')
+                                .order_by('-data_atualizacao'),
+                        )
+                    )
+                    .order_by('ordem', 'id')
+            )
+        )
         .order_by('ordem', 'codigo')
     )
 
@@ -218,12 +235,8 @@ def eixo_detail(request, eixo_id):
             evolucao = 0.0
         todas_evolucoes.append(evolucao)
 
-        # Etapas ordenadas
-        etapas = list(
-            acao.etapas
-            .filter(bl_deletado=False)
-            .order_by('ordem', 'id')
-        )
+        # Etapas ordenadas (já filtradas e ordenadas pelo Prefetch)
+        etapas = list(acao.etapas.all())
         total_etapas = len(etapas)
         etapas_concluidas = sum(1 for e in etapas if e.concluido)
 
@@ -285,6 +298,120 @@ def eixo_detail(request, eixo_id):
     }
 
     return render(request, 'pgi/eixo_detail.html', context)
+
+
+def area_detail(request, area_id):
+    """
+    View de detalhes de uma Área — lista suas Ações Institucionais.
+    """
+    area = get_object_or_404(Area, pk=area_id)
+
+    # Buscar todas as ações desta área com dados relacionados pré-carregados (Prefetch Aninhado)
+    acoes = (
+        AcaoInstitucional.objects
+        .filter(area=area)
+        .select_related('area', 'responsavel', 'responsavel_suplan')
+        .prefetch_related(
+            'atualizacoes',
+            Prefetch(
+                'etapas',
+                queryset=Etapa.objects.filter(bl_deletado=False)
+                    .select_related('responsavel')
+                    .prefetch_related(
+                        Prefetch(
+                            'atualizacoes',
+                            queryset=AtualizacaoEtapa.objects.filter(bl_deletado=False)
+                                .select_related('responsavel_registro')
+                                .order_by('-data_atualizacao'),
+                        )
+                    )
+                    .order_by('ordem', 'id')
+            )
+        )
+        .order_by('ordem', 'codigo')
+    )
+
+    acoes_data = []
+    todas_evolucoes = []
+
+    for acao in acoes:
+        # Evolução: última atualização
+        atualizacoes = sorted(
+            acao.atualizacoes.all(),
+            key=lambda a: a.data_atualizacao,
+            reverse=True,
+        )
+        if atualizacoes and atualizacoes[0].valor_evolucao is not None:
+            evolucao = float(atualizacoes[0].valor_evolucao) * 100
+        else:
+            evolucao = 0.0
+        todas_evolucoes.append(evolucao)
+
+        # Etapas ordenadas (já filtradas e ordenadas pelo Prefetch)
+        etapas = list(acao.etapas.all())
+        total_etapas = len(etapas)
+        etapas_concluidas = sum(1 for e in etapas if e.concluido)
+
+        # Responsável formatado
+        resp_nome = ''
+        if acao.responsavel:
+            resp_nome = str(acao.responsavel)
+
+        # Permissão de edição
+        pode_editar = False
+        if request.user.is_authenticated:
+            u = request.user
+            eh_assessor = (
+                acao.responsavel_id
+                and UserAssessor.objects.filter(
+                    titular_id=acao.responsavel_id,
+                    assessor_id=u.id,
+                ).exists()
+            )
+            pode_editar = (
+                u.is_superuser
+                or getattr(u, 'admin', False)
+                or getattr(u, 'gestor_chefe', False)
+                or (acao.responsavel_id and acao.responsavel_id == u.id)
+                or eh_assessor
+            )
+
+        acoes_data.append({
+            'id': acao.id,
+            'codigo': acao.codigo or '—',
+            'acao': acao.acao,
+            'area_sigla': acao.area.sigla or '',
+            'area_nome': acao.area.nome_area,
+            'responsavel': resp_nome,
+            'evolucao': round(evolucao, 1),
+            'etapas': etapas,
+            'total_etapas': total_etapas,
+            'etapas_concluidas': etapas_concluidas,
+            'pode_editar': pode_editar,
+        })
+
+    # Evolução média da área
+    evolucao_area = round(
+        sum(todas_evolucoes) / len(todas_evolucoes), 1
+    ) if todas_evolucoes else 0
+
+    # Determinar cor de destaque (ciclada com base no ID)
+    try:
+        area_idx = list(Area.objects.values_list('id', flat=True)).index(area_id)
+    except ValueError:
+        area_idx = 0
+    cor = ACCENT_COLORS[area_idx % len(ACCENT_COLORS)]
+
+    context = {
+        'area': area,
+        'area_cor': cor,
+        'area_evolucao': evolucao_area,
+        'acoes': acoes_data,
+        'total_acoes': len(acoes_data),
+    }
+
+    return render(request, 'pgi/area_detail.html', context)
+
 
 
 @login_required
@@ -513,3 +640,148 @@ def toggle_concluido_etapa(request, etapa_id):
     etapa.save()
 
     return JsonResponse({'success': True, 'concluido': etapa.concluido})
+
+
+@login_required
+@require_POST
+def criar_andamento(request, etapa_id):
+    """
+    Endpoint AJAX para cadastrar um andamento (AtualizacaoEtapa).
+    """
+    etapa = get_object_or_404(Etapa, pk=etapa_id)
+    acao = etapa.acao
+
+    # ── Verificar permissão ──
+    u = request.user
+    eh_assessor = (
+        acao.responsavel_id
+        and UserAssessor.objects.filter(
+            titular_id=acao.responsavel_id,
+            assessor_id=u.id,
+        ).exists()
+    )
+    pode_editar = (
+        u.is_superuser
+        or getattr(u, 'admin', False)
+        or getattr(u, 'gestor_chefe', False)
+        or (acao.responsavel_id and acao.responsavel_id == u.id)
+        or eh_assessor
+    )
+    if not pode_editar:
+        return JsonResponse(
+            {'success': False, 'error': 'Permissão negada.'},
+            status=403,
+        )
+
+    # ── Extrair e validar o texto ──
+    try:
+        body = json.loads(request.body)
+        progresso = body.get('progresso', '').strip()
+    except (json.JSONDecodeError, TypeError):
+        return JsonResponse(
+            {'success': False, 'error': 'Dados inválidos.'},
+            status=400,
+        )
+
+    if not progresso:
+        return JsonResponse(
+            {'success': False, 'error': 'O texto do andamento é obrigatório.'},
+            status=400,
+        )
+
+    # ── Criar registro ──
+    andamento = AtualizacaoEtapa.objects.create(
+        etapa=etapa,
+        progresso_entrega=progresso,
+        responsavel_registro=u,
+    )
+
+    # Formatar data para retorno
+    data_formatada = timezone.localtime(andamento.data_atualizacao).strftime('%d/%m/%Y às %H:%M')
+
+    return JsonResponse({
+        'success': True,
+        'andamento': {
+            'id': andamento.id,
+            'progresso': andamento.progresso_entrega,
+            'autor': str(u),
+            'data': data_formatada,
+        },
+    })
+
+
+@login_required
+@require_POST
+def excluir_andamento(request, andamento_id):
+    """
+    Endpoint AJAX para excluir um andamento (soft delete).
+    """
+    andamento = get_object_or_404(AtualizacaoEtapa, pk=andamento_id)
+    acao = andamento.etapa.acao
+
+    # ── Verificar permissão ──
+    u = request.user
+    eh_assessor = (
+        acao.responsavel_id
+        and UserAssessor.objects.filter(
+            titular_id=acao.responsavel_id,
+            assessor_id=u.id,
+        ).exists()
+    )
+    pode_editar = (
+        u.is_superuser
+        or getattr(u, 'admin', False)
+        or getattr(u, 'gestor_chefe', False)
+        or (acao.responsavel_id and acao.responsavel_id == u.id)
+        or eh_assessor
+    )
+    if not pode_editar:
+        return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
+
+    andamento.bl_deletado = True
+    andamento.save()
+
+    return JsonResponse({'success': True})
+
+
+@login_required
+@require_POST
+def editar_andamento(request, andamento_id):
+    """
+    Endpoint AJAX para editar o texto de um andamento.
+    """
+    andamento = get_object_or_404(AtualizacaoEtapa, pk=andamento_id)
+    acao = andamento.etapa.acao
+
+    # ── Verificar permissão ──
+    u = request.user
+    eh_assessor = (
+        acao.responsavel_id
+        and UserAssessor.objects.filter(
+            titular_id=acao.responsavel_id,
+            assessor_id=u.id,
+        ).exists()
+    )
+    pode_editar = (
+        u.is_superuser
+        or getattr(u, 'admin', False)
+        or getattr(u, 'gestor_chefe', False)
+        or (acao.responsavel_id and acao.responsavel_id == u.id)
+        or eh_assessor
+    )
+    if not pode_editar:
+        return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
+
+    try:
+        body = json.loads(request.body)
+        novo_texto = body.get('progresso', '').strip()
+    except (json.JSONDecodeError, TypeError):
+        return JsonResponse({'success': False, 'error': 'Dados inválidos.'}, status=400)
+
+    if not novo_texto:
+        return JsonResponse({'success': False, 'error': 'O texto não pode ficar vazio.'}, status=400)
+
+    andamento.progresso_entrega = novo_texto
+    andamento.save()
+
+    return JsonResponse({'success': True, 'progresso': andamento.progresso_entrega})

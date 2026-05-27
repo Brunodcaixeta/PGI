@@ -7,7 +7,7 @@
        area.evolucao, area.cor, area.atuacao_fim
      ============================================================ -->
 
-<a href="#"
+<a href="{% url 'pgi:area_detail' area.id %}"
    class="group block rounded-2xl bg-surface-dark border border-white/5 p-5 hover:border-white/15 hover:bg-surface-hover transition-all duration-300 cursor-pointer"
    id="card-area-{{ area.id }}"
    title="Ver ações da área {{ area.nome }}">
