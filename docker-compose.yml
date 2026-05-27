@@ -25,9 +25,9 @@ services:
     env_file:
       - .env
     environment:
-      - SQL_ENGINE=django.db.backends.postgresql
-      - SQL_HOST=db
-      - SQL_PORT=5432
+      - SQL_ENGINE=${SQL_ENGINE:-django.db.backends.postgresql}
+      - SQL_HOST=${SQL_HOST:-db}
+      - SQL_PORT=${SQL_PORT:-5432}
     depends_on:
       - db
 
