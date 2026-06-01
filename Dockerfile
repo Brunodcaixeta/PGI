@@ -8,7 +8,13 @@ ENV PYTHONUNBUFFERED=1
 # Diretório de trabalho dentro do container
 WORKDIR /app
 
-# Instalar dependências
+# Instalar dependências de sistema
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN git config --global http.sslVerify false
+
 COPY requirements.txt /app/
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt

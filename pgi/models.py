@@ -3,35 +3,43 @@ from django.db import models
 
 
 class User(AbstractUser):
-    # O AbstractUser já traz os campos padrão: username, first_name (Nome), last_name (sobrenome), email, password, date_joined (created_at).
-    # Abaixo adicionamos apenas os campos específicos do seu diagrama.
+    PERFIL_CHOICES = [
+        ('adm', 'Administrador'),
+        ('gestor', 'Gestor'),
+        ('editor', 'Editor'),
+        ('leitor', 'Leitor'),
+    ]
+
     matricula = models.CharField('Matrícula', max_length=50, blank=True, null=True)
-    admin = models.BooleanField('Admin', default=False)
-    gestor_chefe = models.BooleanField('Gestor Chefe', default=False)
-    suporte_admin = models.BooleanField('Suporte Admin', default=False)
+    perfil = models.CharField('Perfil', max_length=10, choices=PERFIL_CHOICES, default='leitor')
+    area = models.ForeignKey('Area', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Área', related_name='usuarios')
 
     class Meta:
         verbose_name = 'Usuário'
         verbose_name_plural = 'Usuários'
         db_table = 'users'
 
-    def __str__(self):
-        # Tenta usar o nome completo primeiro, senão cai para o username
+    def get_full_name(self):
+        from pgi.utils import remover_duplicados_nome
         full_name = f"{self.first_name} {self.last_name}".strip()
+        return remover_duplicados_nome(full_name)
+
+    def __str__(self):
+        full_name = self.get_full_name()
         return full_name if full_name else self.username
 
+    def pode_escrever_na_area(self, area_id):
+        if not self.is_authenticated:
+            return False
+        if self.is_superuser or self.perfil == 'adm' or self.perfil == 'gestor':
+            return True
+        if self.perfil == 'editor' and self.area_id and self.area_id == area_id:
+            return True
+        return False
 
-class UserAssessor(models.Model):
-    titular = models.ForeignKey(User, on_delete=models.CASCADE, related_name='assessores_do_titular')
-    assessor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='titulares_assessorados')
+    def pode_escrever_na_acao(self, acao):
+        return self.pode_escrever_na_area(acao.area_id)
 
-    class Meta:
-        verbose_name = 'Assessor de Usuário'
-        verbose_name_plural = 'Assessores de Usuários'
-        db_table = 'user_assessores'
-
-    def __str__(self):
-        return f"{self.assessor} auxilia {self.titular}"
 
 
 class Eixo(models.Model):

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import (
-    User, UserAssessor, Eixo, Area, AcaoInstitucional,
+    User, Eixo, Area, AcaoInstitucional,
     Etapa, AtualizacaoAcao, AtualizacaoEtapa
 )
 
@@ -9,16 +9,11 @@ from .models import (
 class CustomUserAdmin(UserAdmin):
     # Adicionando os campos customizados na tela de edição do Admin
     fieldsets = UserAdmin.fieldsets + (
-        ('Informações do Módulo PGI', {'fields': ('matricula', 'admin', 'gestor_chefe', 'suporte_admin')}),
+        ('Informações do Módulo PGI', {'fields': ('matricula', 'perfil', 'area')}),
     )
-    list_display = ('username', 'email', 'first_name', 'last_name', 'matricula', 'gestor_chefe', 'is_staff')
+    list_display = ('username', 'email', 'first_name', 'last_name', 'matricula', 'perfil', 'area', 'is_staff')
     search_fields = ('username', 'first_name', 'last_name', 'email', 'matricula')
 
-
-@admin.register(UserAssessor)
-class UserAssessorAdmin(admin.ModelAdmin):
-    list_display = ('id', 'titular', 'assessor')
-    search_fields = ('titular__username', 'assessor__username', 'titular__first_name', 'assessor__first_name')
 
 
 @admin.register(Eixo)
