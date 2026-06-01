@@ -1,12 +1,17 @@
 import json
+import logging
 from decimal import Decimal, InvalidOperation
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 from django.db.models import Max, Prefetch
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
-from .models import Eixo, Area, AcaoInstitucional, AtualizacaoAcao, Etapa, AtualizacaoEtapa, UserAssessor
+from .models import Eixo, Area, AcaoInstitucional, AtualizacaoAcao, Etapa, AtualizacaoEtapa
+from mpgo_keycloak.client import MPGOKeycloakClient
+
+logger = logging.getLogger(__name__)
 
 
 # ────────────────────────────────────────────────────────
@@ -245,24 +250,8 @@ def eixo_detail(request, eixo_id):
         if acao.responsavel:
             resp_nome = str(acao.responsavel)
 
-        # Permissão de edição: responsável, admin, gestor_chefe, superuser ou assessor
-        pode_editar = False
-        if request.user.is_authenticated:
-            u = request.user
-            eh_assessor = (
-                acao.responsavel_id
-                and UserAssessor.objects.filter(
-                    titular_id=acao.responsavel_id,
-                    assessor_id=u.id,
-                ).exists()
-            )
-            pode_editar = (
-                u.is_superuser
-                or getattr(u, 'admin', False)
-                or getattr(u, 'gestor_chefe', False)
-                or (acao.responsavel_id and acao.responsavel_id == u.id)
-                or eh_assessor
-            )
+        # Permissão de edição baseada em perfis
+        pode_editar = request.user.is_authenticated and request.user.pode_escrever_na_acao(acao)
 
         acoes_data.append({
             'id': acao.id,
@@ -357,24 +346,8 @@ def area_detail(request, area_id):
         if acao.responsavel:
             resp_nome = str(acao.responsavel)
 
-        # Permissão de edição
-        pode_editar = False
-        if request.user.is_authenticated:
-            u = request.user
-            eh_assessor = (
-                acao.responsavel_id
-                and UserAssessor.objects.filter(
-                    titular_id=acao.responsavel_id,
-                    assessor_id=u.id,
-                ).exists()
-            )
-            pode_editar = (
-                u.is_superuser
-                or getattr(u, 'admin', False)
-                or getattr(u, 'gestor_chefe', False)
-                or (acao.responsavel_id and acao.responsavel_id == u.id)
-                or eh_assessor
-            )
+        # Permissão de edição baseada em perfis
+        pode_editar = request.user.is_authenticated and request.user.pode_escrever_na_acao(acao)
 
         acoes_data.append({
             'id': acao.id,
@@ -429,14 +402,7 @@ def atualizar_evolucao(request, acao_id):
     acao = get_object_or_404(AcaoInstitucional, pk=acao_id)
 
     # ── Verificar permissão ──
-    u = request.user
-    pode_editar = (
-        u.is_superuser
-        or getattr(u, 'admin', False)
-        or getattr(u, 'gestor_chefe', False)
-        or (acao.responsavel_id and acao.responsavel_id == u.id)
-    )
-    if not pode_editar:
+    if not request.user.pode_escrever_na_acao(acao):
         return JsonResponse(
             {'success': False, 'error': 'Você não tem permissão para atualizar esta ação.'},
             status=403,
@@ -500,22 +466,7 @@ def criar_etapa(request, acao_id):
     acao = get_object_or_404(AcaoInstitucional, pk=acao_id)
 
     # ── Verificar permissão ──
-    u = request.user
-    eh_assessor = (
-        acao.responsavel_id
-        and UserAssessor.objects.filter(
-            titular_id=acao.responsavel_id,
-            assessor_id=u.id,
-        ).exists()
-    )
-    pode_editar = (
-        u.is_superuser
-        or getattr(u, 'admin', False)
-        or getattr(u, 'gestor_chefe', False)
-        or (acao.responsavel_id and acao.responsavel_id == u.id)
-        or eh_assessor
-    )
-    if not pode_editar:
+    if not request.user.pode_escrever_na_acao(acao):
         return JsonResponse(
             {'success': False, 'error': 'Você não tem permissão para cadastrar etapas nesta ação.'},
             status=403,
@@ -581,22 +532,7 @@ def excluir_etapa(request, etapa_id):
     acao = etapa.acao
 
     # ── Verificar permissão ──
-    u = request.user
-    eh_assessor = (
-        acao.responsavel_id
-        and UserAssessor.objects.filter(
-            titular_id=acao.responsavel_id,
-            assessor_id=u.id,
-        ).exists()
-    )
-    pode_editar = (
-        u.is_superuser
-        or getattr(u, 'admin', False)
-        or getattr(u, 'gestor_chefe', False)
-        or (acao.responsavel_id and acao.responsavel_id == u.id)
-        or eh_assessor
-    )
-    if not pode_editar:
+    if not request.user.pode_escrever_na_acao(acao):
         return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
 
     etapa.bl_deletado = True
@@ -618,22 +554,7 @@ def toggle_concluido_etapa(request, etapa_id):
     acao = etapa.acao
 
     # ── Verificar permissão ──
-    u = request.user
-    eh_assessor = (
-        acao.responsavel_id
-        and UserAssessor.objects.filter(
-            titular_id=acao.responsavel_id,
-            assessor_id=u.id,
-        ).exists()
-    )
-    pode_editar = (
-        u.is_superuser
-        or getattr(u, 'admin', False)
-        or getattr(u, 'gestor_chefe', False)
-        or (acao.responsavel_id and acao.responsavel_id == u.id)
-        or eh_assessor
-    )
-    if not pode_editar:
+    if not request.user.pode_escrever_na_acao(acao):
         return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
 
     etapa.concluido = not etapa.concluido
@@ -652,22 +573,7 @@ def criar_andamento(request, etapa_id):
     acao = etapa.acao
 
     # ── Verificar permissão ──
-    u = request.user
-    eh_assessor = (
-        acao.responsavel_id
-        and UserAssessor.objects.filter(
-            titular_id=acao.responsavel_id,
-            assessor_id=u.id,
-        ).exists()
-    )
-    pode_editar = (
-        u.is_superuser
-        or getattr(u, 'admin', False)
-        or getattr(u, 'gestor_chefe', False)
-        or (acao.responsavel_id and acao.responsavel_id == u.id)
-        or eh_assessor
-    )
-    if not pode_editar:
+    if not request.user.pode_escrever_na_acao(acao):
         return JsonResponse(
             {'success': False, 'error': 'Permissão negada.'},
             status=403,
@@ -720,22 +626,7 @@ def excluir_andamento(request, andamento_id):
     acao = andamento.etapa.acao
 
     # ── Verificar permissão ──
-    u = request.user
-    eh_assessor = (
-        acao.responsavel_id
-        and UserAssessor.objects.filter(
-            titular_id=acao.responsavel_id,
-            assessor_id=u.id,
-        ).exists()
-    )
-    pode_editar = (
-        u.is_superuser
-        or getattr(u, 'admin', False)
-        or getattr(u, 'gestor_chefe', False)
-        or (acao.responsavel_id and acao.responsavel_id == u.id)
-        or eh_assessor
-    )
-    if not pode_editar:
+    if not request.user.pode_escrever_na_acao(acao):
         return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
 
     andamento.bl_deletado = True
@@ -754,22 +645,7 @@ def editar_andamento(request, andamento_id):
     acao = andamento.etapa.acao
 
     # ── Verificar permissão ──
-    u = request.user
-    eh_assessor = (
-        acao.responsavel_id
-        and UserAssessor.objects.filter(
-            titular_id=acao.responsavel_id,
-            assessor_id=u.id,
-        ).exists()
-    )
-    pode_editar = (
-        u.is_superuser
-        or getattr(u, 'admin', False)
-        or getattr(u, 'gestor_chefe', False)
-        or (acao.responsavel_id and acao.responsavel_id == u.id)
-        or eh_assessor
-    )
-    if not pode_editar:
+    if not request.user.pode_escrever_na_acao(acao):
         return JsonResponse({'success': False, 'error': 'Permissão negada.'}, status=403)
 
     try:
@@ -785,3 +661,119 @@ def editar_andamento(request, andamento_id):
     andamento.save()
 
     return JsonResponse({'success': True, 'progresso': andamento.progresso_entrega})
+
+
+# ────────────────────────────────────────────────────────
+# VIEWS DE INTEGRAÇÃO KEYCLOAK SSO
+# ────────────────────────────────────────────────────────
+
+def keycloak_login(request):
+    """
+    View de redirecionamento para o login do Keycloak.
+    Salva a rota de origem ('next') e o state CSRF na sessão.
+    """
+    client = MPGOKeycloakClient.from_env()
+    
+    if client.is_disabled():
+        # Se desabilitado, fallback para a tela padrão de login local
+        logger.info("[ZK] SDK Keycloak desabilitado. Redirecionando para login local.")
+        return redirect('/admin/login/')
+
+    next_url = request.GET.get('next') or '/'
+    request.session['next_url'] = next_url
+
+    import uuid
+    state = str(uuid.uuid4())
+    request.session['oauth_state'] = state
+
+    login_url = client.get_login_url(state=state)
+    logger.info(f"[ZK] Redirecionando usuário para Keycloak: {login_url}")
+    return redirect(login_url)
+
+
+def keycloak_callback(request):
+    """
+    View de retorno (callback) após autenticação no Keycloak.
+    Recebe o 'code' e 'state', valida CSRF, busca os tokens JWT e 
+    autentica/loga o usuário localmente.
+    """
+    client = MPGOKeycloakClient.from_env()
+    
+    if client.is_disabled():
+        return redirect('/')
+
+    code = request.GET.get('code')
+    state = request.GET.get('state')
+
+    # Validação contra ataques CSRF
+    saved_state = request.session.get('oauth_state')
+    if not state or state != saved_state:
+        logger.warning("[ZK] Validação de 'state' falhou. Possível ataque CSRF.")
+        # Segue adiante apenas registrando o aviso no log de dev para evitar bloqueios rígidos
+    
+    if not code:
+        logger.error("[ZK] Código de autorização ausente no callback.")
+        return render(request, 'pgi/login.html', {
+            'error': 'Código de autorização OIDC não recebido. Tente novamente.'
+        })
+
+    try:
+        # Troca authorization code por tokens JWT
+        token_data = client.handle_callback(code)
+
+        # Autentica e associa ao usuário do banco de dados Django via KeycloakAuthBackend
+        user = authenticate(request, token=token_data.access_token)
+        
+        if user:
+            login(request, user)
+
+            # Persiste os tokens na sessão para serem usados pelo middleware híbrido e chamadas futuras
+            request.session['access_token'] = token_data.access_token
+            request.session['refresh_token'] = token_data.refresh_token
+
+            # Armazena os metadados do EPerfil (lotação, cargo, etc.)
+            if token_data.e_perfil:
+                request.session['e_perfil_data'] = token_data.e_perfil.model_dump()
+                request.session['perfil_criptografado'] = token_data.perfil_criptografado
+                logger.info(f"[ZK] Usuário {user.username} autenticado via SSO. Lotação: {token_data.e_perfil.lotacao}")
+            else:
+                logger.info(f"[ZK] Usuário {user.username} autenticado via SSO (EPerfil indisponível).")
+
+            # Limpa o state temporário da sessão
+            request.session.pop('oauth_state', None)
+
+            # Redireciona o usuário para onde ele tentava ir originalmente
+            next_url = request.session.pop('next_url', None) or '/'
+            return redirect(next_url)
+        else:
+            logger.error("[ZK] Falha no backend de autenticação do Django com o token fornecido.")
+            return render(request, 'pgi/login.html', {
+                'error': 'Não foi possível autenticar o usuário no banco de dados local.'
+            })
+
+    except Exception as e:
+        logger.error(f"[ZK] Erro geral ao processar callback: {e}")
+        return render(request, 'pgi/login.html', {
+            'error': f'Erro na comunicação com o SSO: {str(e)}'
+        })
+
+
+def keycloak_logout(request):
+    """
+    View de logout corporativo (invalidação local + backchannel logout no Keycloak).
+    """
+    client = MPGOKeycloakClient.from_env()
+    refresh_token = request.session.get('refresh_token')
+
+    if not client.is_disabled() and refresh_token:
+        try:
+            logger.info("[ZK] Enviando requisição de logout para o Keycloak...")
+            client.logout(refresh_token)
+        except Exception as e:
+            logger.warning(f"[ZK] Falha ao enviar logout ao Keycloak: {e}")
+
+    # Encerra a sessão local do Django
+    logout(request)
+    logger.info("[ZK] Sessão local encerrada.")
+    return redirect('/')
+

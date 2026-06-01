@@ -25,35 +25,120 @@
     </div>
 
     <!-- Notificações -->
-    <button class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200" id="btn-notificacoes" title="Notificações">
-      <span class="material-symbols-outlined text-xl">notifications</span>
-    </button>
+    <div class="relative">
+      <button class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200 relative" id="btn-notificacoes" title="Notificações">
+        <span class="material-symbols-outlined text-xl">notifications</span>
+        {% if notificacoes_recentes %}
+        <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-bg-dark"></span>
+        {% endif %}
+      </button>
 
-    <!-- Ajuda -->
-    <button class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200" id="btn-ajuda" title="Ajuda">
-      <span class="material-symbols-outlined text-xl">help_outline</span>
-    </button>
+      <!-- Dropdown Popover de Notificações -->
+      <div id="dropdown-notificacoes" class="hidden absolute right-0 mt-2 w-80 rounded-2xl bg-surface-dark/95 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden z-50 transform origin-top-right transition-all duration-200 scale-95 opacity-0">
+        <div class="p-4 border-b border-white/5 flex items-center justify-between">
+          <span class="text-sm font-semibold text-text-light">Atividade Recente</span>
+          <span class="text-[10px] text-text-muted font-medium uppercase tracking-wider">Últimas 5</span>
+        </div>
+        <div class="max-h-[300px] overflow-y-auto divide-y divide-white/5" id="lista-notificacoes-dropdown">
+          {% if notificacoes_recentes %}
+            {% for n in notificacoes_recentes %}
+            <div class="p-4 hover:bg-white/5 transition-colors duration-150">
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-accent-cyan text-sm mt-0.5">chat_bubble</span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-xs text-text-light font-medium truncate">
+                    {% if n.responsavel_registro %}{{ n.responsavel_registro }}{% else %}Usuário{% endif %}
+                  </p>
+                  <p class="text-xs text-text-muted mt-1 leading-relaxed line-clamp-2">
+                    {{ n.progresso_entrega }}
+                  </p>
+                  <div class="flex items-center justify-between mt-2 text-[10px] text-text-muted/65 font-medium">
+                    <span class="truncate max-w-[120px]" title="{{ n.etapa.acao.codigo }}">
+                      {{ n.etapa.acao.codigo }}
+                    </span>
+                    <span>
+                      {{ n.data_atualizacao|date:"d/m" }} às {{ n.data_atualizacao|time:"H:i" }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          {% else %}
+            <div class="p-8 text-center text-text-muted">
+              <span class="material-symbols-outlined text-3xl opacity-30 mb-2">notifications_off</span>
+              <p class="text-xs">Nenhuma notificação recente</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('btn-notificacoes');
+        const dropdown = document.getElementById('dropdown-notificacoes');
+
+        if (btn && dropdown) {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (dropdown.classList.contains('hidden')) {
+              dropdown.classList.remove('hidden');
+              requestAnimationFrame(() => {
+                dropdown.classList.remove('scale-95', 'opacity-0');
+                dropdown.classList.add('scale-100', 'opacity-100');
+              });
+            } else {
+              fecharDropdown();
+            }
+          });
+
+          document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target) && e.target !== btn) {
+              fecharDropdown();
+            }
+          });
+        }
+
+        function fecharDropdown() {
+          if (dropdown && !dropdown.classList.contains('hidden')) {
+            dropdown.classList.remove('scale-100', 'opacity-100');
+            dropdown.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => dropdown.classList.add('hidden'), 200);
+          }
+        }
+      });
+    </script>
 
     <!-- Avatar do Usuário / Login -->
     {% if user.is_authenticated %}
-    <div class="ml-2 flex items-center gap-2">
-      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5">
-        <span class="material-symbols-outlined text-primary text-lg">person</span>
-        <span class="text-sm text-text-light font-medium hidden sm:inline">{{ user.first_name|default:user.username }}</span>
+    <div class="ml-2 flex items-center gap-3">
+      <div class="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/5 border border-white/5 shadow-inner">
+        <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">person</span>
+        <div class="flex flex-col items-start leading-tight">
+          <span class="text-sm text-text-light font-semibold">
+            {% if request.keycloak_user %}{{ request.keycloak_user.nome|default:user.get_full_name|default:user.username }}{% else %}{{ user.get_full_name|default:user.username }}{% endif %}
+          </span>
+          {% if request.keycloak_user.lotacao %}
+          <span class="text-[10px] text-text-muted font-medium mt-0.5 max-w-[150px] truncate" title="{{ request.keycloak_user.lotacao }}">
+            {{ request.keycloak_user.lotacao }}
+          </span>
+          {% endif %}
+        </div>
       </div>
       <form id="logout-form" action="{% url 'logout' %}" method="post" class="hidden">
         {% csrf_token %}
       </form>
       <button type="button"
               onclick="document.getElementById('logout-form').submit();"
-              class="p-2 rounded-lg text-text-muted hover:text-error hover:bg-error/10 transition-colors duration-200"
+              class="p-2.5 rounded-xl text-text-muted hover:text-error hover:bg-error/10 border border-transparent hover:border-error/10 transition-all duration-200"
               title="Sair">
         <span class="material-symbols-outlined text-xl">logout</span>
       </button>
     </div>
     {% else %}
     <a href="{% url 'login' %}"
-       class="ml-2 flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 text-sm font-medium">
+       class="ml-2 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-200 text-sm font-semibold border border-primary/10 hover:border-primary/20 shadow-inner">
       <span class="material-symbols-outlined text-lg">login</span>
       Entrar
     </a>

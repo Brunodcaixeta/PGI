@@ -29,16 +29,22 @@
       <span class="material-symbols-outlined text-xl">apartment</span>
       <span class="text-sm font-medium">Áreas de Atuação</span>
     </a>
-
-
-
-    <!-- Configurações (futuro) -->
-    <a href="#"
-       class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-muted/50 cursor-not-allowed"
+    <!-- Configurações -->
+    {% if user.is_superuser or user.perfil == 'adm' %}
+    <a href="/admin/"
+       class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-muted hover:bg-white/5 hover:text-text-light transition-all duration-200"
        id="nav-config">
       <span class="material-symbols-outlined text-xl">settings</span>
       <span class="text-sm font-medium">Configurações</span>
     </a>
+    {% else %}
+    <a href="#" onclick="abrirModalPerfil(event)"
+       class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-muted hover:bg-white/5 hover:text-text-light transition-all duration-200"
+       id="nav-config">
+      <span class="material-symbols-outlined text-xl">settings</span>
+      <span class="text-sm font-medium">Configurações</span>
+    </a>
+    {% endif %}
 
   </nav>
 

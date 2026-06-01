@@ -49,6 +49,75 @@
   <!-- ===== CONTAINER DE TOASTS (notificações) ===== -->
   <div id="toast-container" class="fixed top-20 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
 
+  <!-- ===== MODAL DE PERFIL DO USUÁRIO ===== -->
+  <div id="modal-perfil" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+    <!-- Overlay escuro -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="fecharModalPerfil()"></div>
+
+    <!-- Card do modal -->
+    <div class="relative w-full max-w-md mx-4 rounded-2xl bg-surface-dark border border-white/10 shadow-2xl p-6 transform transition-all duration-300 scale-95 opacity-0" id="modal-perfil-card">
+      <!-- Cabeçalho -->
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-xl">person</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-text-light">Meu Perfil PGI</h3>
+            <p class="text-xs text-text-muted">Detalhes do usuário logado</p>
+          </div>
+        </div>
+        <button onclick="fecharModalPerfil()" class="p-2 rounded-lg text-text-muted hover:text-text-light hover:bg-white/5 transition-colors duration-200">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <!-- Conteúdo do Perfil -->
+      <div class="space-y-4">
+        <div class="p-4 rounded-xl bg-bg-dark border border-white/5 space-y-3">
+          <div>
+            <p class="text-[10px] text-text-muted font-semibold uppercase tracking-wider">Nome Completo</p>
+            <p class="text-sm font-medium text-text-light mt-0.5">
+              {% if request.keycloak_user %}{{ request.keycloak_user.nome|default:user.get_full_name|default:user.username }}{% else %}{{ user.get_full_name|default:user.username }}{% endif %}
+            </p>
+          </div>
+          <div>
+            <p class="text-[10px] text-text-muted font-semibold uppercase tracking-wider">E-mail</p>
+            <p class="text-sm font-medium text-text-light mt-0.5">{{ user.email|default:"Não informado" }}</p>
+          </div>
+          {% if user.matricula %}
+          <div>
+            <p class="text-[10px] text-text-muted font-semibold uppercase tracking-wider">Matrícula</p>
+            <p class="text-sm font-medium text-text-light mt-0.5">{{ user.matricula }}</p>
+          </div>
+          {% endif %}
+          <div>
+            <p class="text-[10px] text-text-muted font-semibold uppercase tracking-wider">Perfil de Acesso</p>
+            <p class="text-sm font-semibold text-primary mt-0.5">
+              {{ user.get_perfil_display|default:"Leitor" }}
+            </p>
+          </div>
+          {% if user.area %}
+          <div>
+            <p class="text-[10px] text-text-muted font-semibold uppercase tracking-wider">Área Vinculada</p>
+            <p class="text-sm font-medium text-accent-cyan mt-0.5">
+              {{ user.area.sigla }} — {{ user.area.nome_area }}
+            </p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Botão Fechar -->
+      <div class="mt-6 flex">
+        <button onclick="fecharModalPerfil()"
+                class="flex-1 py-2.5 rounded-xl bg-white/5 border border-white/10 text-text-light hover:bg-white/10 text-sm font-semibold transition-all duration-200">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     /**
      * Exibe um toast de notificação temporário.
@@ -89,6 +158,123 @@
         setTimeout(() => toast.remove(), 300);
       }, duration);
     }
+
+    /**
+     * Abre o modal de perfil do usuário.
+     */
+    function abrirModalPerfil(event) {
+      if (event) event.preventDefault();
+      const modal = document.getElementById('modal-perfil');
+      const card = document.getElementById('modal-perfil-card');
+      if (modal && card) {
+        modal.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          card.classList.remove('scale-95', 'opacity-0');
+          card.classList.add('scale-100', 'opacity-100');
+        });
+      }
+    }
+
+    /**
+     * Fecha o modal de perfil do usuário.
+     */
+    function fecharModalPerfil() {
+      const modal = document.getElementById('modal-perfil');
+      const card = document.getElementById('modal-perfil-card');
+      if (modal && card) {
+        card.classList.add('scale-95', 'opacity-0');
+        card.classList.remove('scale-100', 'opacity-100');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 200);
+      }
+    }
+
+    // Controle do filtro dinâmico de pesquisa (Header Search)
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('header-search');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+
+          // 1. Filtragem para as páginas de Detalhe (Eixo / Área) - Ações e Etapas
+          const cardsAcao = document.querySelectorAll('.acao-card');
+          if (cardsAcao.length > 0) {
+            cardsAcao.forEach(card => {
+              // Busca no corpo principal da ação (bloco .p-5)
+              const mainEl = card.querySelector('.p-5');
+              const mainText = mainEl ? mainEl.textContent.toLowerCase() : '';
+
+              // Busca nas etapas internas da ação
+              const stages = card.querySelectorAll('.etapa-wrapper');
+              let matchStage = false;
+
+              stages.forEach(stage => {
+                const stageText = stage.textContent.toLowerCase();
+                if (query !== '' && stageText.includes(query)) {
+                  matchStage = true;
+                  stage.classList.add('ring-1', 'ring-accent-cyan/40', 'bg-accent-cyan/5');
+                } else {
+                  stage.classList.remove('ring-1', 'ring-accent-cyan/40', 'bg-accent-cyan/5');
+                }
+              });
+
+              // Exibe/Oculta o card da ação
+              if (query === '' || mainText.includes(query) || matchStage) {
+                card.classList.remove('hidden');
+
+                // Se o match foi em uma etapa, expande o painel de etapas automaticamente para mostrar
+                if (matchStage) {
+                  const panel = card.querySelector('[id^="panel-etapas-"]');
+                  if (panel && panel.classList.contains('hidden')) {
+                    const acaoId = card.id.split('-')[1];
+                    if (typeof toggleEtapas === 'function') {
+                      toggleEtapas(acaoId);
+                    } else {
+                      panel.classList.remove('hidden');
+                    }
+                  }
+                }
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          }
+
+          // 2. Filtragem para a Home (Visão por Eixos / Áreas)
+          const cardsEixo = document.querySelectorAll('[id^="card-eixo-"]');
+          if (cardsEixo.length > 0) {
+            cardsEixo.forEach(card => {
+              const text = card.textContent.toLowerCase();
+              if (query === '' || text.includes(query)) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          }
+
+          const cardsArea = document.querySelectorAll('[id^="card-area-"]');
+          if (cardsArea.length > 0) {
+            cardsArea.forEach(card => {
+              const text = card.textContent.toLowerCase();
+              if (query === '' || text.includes(query)) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          }
+        });
+      }
+
+      // Atalho Escape para fechar modal de perfil
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          fecharModalPerfil();
+        }
+      });
+    });
   </script>
 
 </body>

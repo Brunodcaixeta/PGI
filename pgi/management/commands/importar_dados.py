@@ -6,7 +6,7 @@ from django.core.management import call_command
 from django.conf import settings
 from django.utils.timezone import make_aware
 from django.db import transaction
-from pgi.models import User, UserAssessor, Eixo, Area, AcaoInstitucional, Etapa, AtualizacaoAcao, AtualizacaoEtapa
+from pgi.models import User, Eixo, Area, AcaoInstitucional, Etapa, AtualizacaoAcao, AtualizacaoEtapa
 
 class Command(BaseCommand):
     help = 'Importa os dados refinados dos arquivos CSV para o banco de dados do Django.'
@@ -48,6 +48,13 @@ class Command(BaseCommand):
                 is_gestor = row.get('gestor_chefe', '').strip().lower() in ['sim', 'true', '1']
                 is_admin = row.get('suporte_admin', '').strip().lower() in ['sim', 'true', '1']
                 
+                if is_admin:
+                    perfil = 'adm'
+                elif is_gestor:
+                    perfil = 'gestor'
+                else:
+                    perfil = 'leitor'
+
                 email = row['email'].strip()
                 username = email.split('@')[0] if email else f"user_{row['id_user']}"
                 
@@ -57,8 +64,7 @@ class Command(BaseCommand):
                     email=email,
                     first_name=row.get('nome', '').strip(),
                     last_name=row.get('sobrenome', '').strip(),
-                    gestor_chefe=is_gestor,
-                    suporte_admin=is_admin,
+                    perfil=perfil,
                     is_staff=is_admin,
                     is_superuser=is_admin,
                 )
@@ -66,25 +72,6 @@ class Command(BaseCommand):
                 user.save()
                 user_email_map[email] = user.id
 
-        # 2. Assessores
-        self.stdout.write("Importando Assessores...")
-        with open(os.path.join(csvs_dir, 'tabela_assessores.csv'), newline='', encoding='utf-8') as f:
-            for row in csv.DictReader(f):
-                # We need the user objects
-                assessor_email = row.get('email_assessor', '').strip()
-                # From CSV we know id_user_titular_key is somehow the ID? Wait, it's not present or it's a bubble hash?
-                # Actually, skipping assessores for now unless strictly needed, or we can look it up by email.
-                # Let's check if the fields are actually user IDs in the new tables.
-                # Assuming the user IDs are correctly mapped in 'id_user_titular_key' as integers if refined.
-                try:
-                    titular_id = int(row['id_user_titular_key'])
-                    assessor_id = int(row['id_user_assessor_key'])
-                    UserAssessor.objects.create(
-                        titular_id=titular_id,
-                        assessor_id=assessor_id
-                    )
-                except ValueError:
-                    pass
 
         # 3. Eixos
         self.stdout.write("Importando Eixos...")
@@ -113,15 +100,28 @@ class Command(BaseCommand):
         with open(os.path.join(csvs_dir, 'tabela_acoes.csv'), newline='', encoding='utf-8') as f:
             for row in csv.DictReader(f):
                 try:
+                    area_id = int(row['id_area'])
+                    responsavel_id = int(row['id_user']) if row.get('id_user') else None
+                    
                     acao = AcaoInstitucional.objects.create(
                         acao=row['acao'].strip(),
                         codigo=row.get('codigo_acao', '').strip(),
                         ordem=int(row['ordem']) if row.get('ordem') else None,
                         eixo_id=int(row['id_eixo']),
-                        area_id=int(row['id_area']),
-                        responsavel_id=int(row['id_user']) if row.get('id_user') else None,
+                        area_id=area_id,
+                        responsavel_id=responsavel_id,
                     )
                     acao_codigo_map[acao.codigo] = acao.id
+                    
+                    # Vínculo automático: se o usuário for responsável por esta ação, atualiza sua área e perfil
+                    if responsavel_id:
+                        user = User.objects.get(id=responsavel_id)
+                        if not user.area_id:
+                            user.area_id = area_id
+                            if user.perfil == 'leitor':
+                                user.perfil = 'editor'
+                            user.save()
+                            
                 except ValueError as e:
                     self.stdout.write(self.style.WARNING(f"Erro ao importar ação {row.get('codigo_acao')}: {e}"))
 
@@ -145,16 +145,28 @@ class Command(BaseCommand):
                 if not ordem_raw or etapa_ref.endswith('-'):
                     bl_deletado = True
                 
+                responsavel_id = int(row['id_user']) if row.get('id_user') else None
                 etapa = Etapa.objects.create(
                     acao_id=acao_id,
                     etapa=row['etapa'].strip(),
                     etapa_referencia=etapa_ref,
                     ordem=int(ordem_raw) if ordem_raw else None,
                     concluido=concluido,
-                    responsavel_id=int(row['id_user']) if row.get('id_user') else None,
+                    responsavel_id=responsavel_id,
                     bl_deletado=bl_deletado,
                 )
                 etapa_codigo_map[etapa_ref] = etapa.id
+                
+                # Vínculo automático: se o usuário for responsável por esta etapa, atualiza sua área e perfil baseado na ação
+                if responsavel_id:
+                    user = User.objects.get(id=responsavel_id)
+                    if not user.area_id:
+                        # Busca o ID da área a partir do mapeamento de ações
+                        acao_obj = AcaoInstitucional.objects.get(id=acao_id)
+                        user.area_id = acao_obj.area_id
+                        if user.perfil == 'leitor':
+                            user.perfil = 'editor'
+                        user.save()
 
         # 7. Atualizações das Ações
         self.stdout.write("Importando Atualizações de Ações...")

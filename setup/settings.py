@@ -57,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mpgo_keycloak.integrations.django.KeycloakMiddleware',
+    'pgi.middleware.HybridKeycloakMiddleware',
 ]
 
 ROOT_URLCONF = 'setup.urls'
@@ -72,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pgi.context_processors.notificacoes_recentes',
             ],
         },
     },
@@ -140,6 +143,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'pgi.User'
 
 # URLs de Login/Logout
-LOGIN_URL = '/login/'
+LOGIN_URL = '/auth/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Backends de Autenticação
+AUTHENTICATION_BACKENDS = [
+    'mpgo_keycloak.integrations.django.KeycloakAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# Configurações do SDK Keycloak
+KEYCLOAK_CONFIG = {
+    'auto_load_eperfil': True,
+}
+
