@@ -1,0 +1,29 @@
+default:
+  tags:
+    - kubernetes
+    
+include:
+  - project: devops/pipeline/flows
+    file: mvp-auto-deploy-hmg.yml
+
+variables:
+  FILEBEAT_LOGS: "yes"
+
+"🐋 Buildar p/ Harbor":
+  script:
+    - pipe_load_envs_global
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${REGISTRY_HOST}\":{\"auth\":\"$(printf "%s:%s" "${REGISTRY_USER}" "${REGISTRY_PASS}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --cache=true
+      --cache-repo=${REGISTRY_HOST}/kaniko-cache
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${REGISTRY_HOST}/gitlab_ci/${APP_CONFIG_DIR_NAME}:${CI_PIPELINE_ID}"
+      --skip-unused-stages
+      --snapshot-mode=time
+      --use-new-run
+      --insecure
+      --insecure-pull
+
