@@ -36,6 +36,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['10.234.51.244', 'localhost', '127.0.0.1'])
 
+# Suporte a proxy reverso servindo a aplicação em um sub-path (ex: /pgi)
+if env('FORCE_SCRIPT_NAME', default=''):
+    FORCE_SCRIPT_NAME = env('FORCE_SCRIPT_NAME')
+    USE_X_FORWARDED_HOST = True
+
 
 # Application definition
 

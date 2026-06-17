@@ -24,4 +24,14 @@ urlpatterns = [
     path('auth/callback/', pgi_views.keycloak_callback, name='keycloak_callback'),
     path('auth/logout/', pgi_views.keycloak_logout, name='logout'),
     path('', include('pgi.urls')),
+    
+    # Endpoint explícito para o proxy reverso em homologação/produção
+    # Opcionalmente a TI poderia usar proxy_pass http://.../; (com a barra no final) para remover o prefixo.
+    path('pgi/', include([
+        path('admin/', admin.site.urls),
+        path('auth/login/', pgi_views.keycloak_login),
+        path('auth/callback/', pgi_views.keycloak_callback),
+        path('auth/logout/', pgi_views.keycloak_logout),
+        path('', include('pgi.urls')),
+    ])),
 ]
