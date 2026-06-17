@@ -28,5 +28,6 @@ RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-# Comando padrão: servidor de desenvolvimento Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Iniciar a aplicação usando Gunicorn com parâmetros das variáveis de ambiente (ou defaults)
+EXPOSE 8000
+CMD ["sh", "-c", "gunicorn --workers ${GUNICORN_WORKERS:-4} --timeout ${GUNICORN_TIMEOUT:-60} --bind 0.0.0.0:8000 setup.wsgi:application"]
