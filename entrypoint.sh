@@ -12,25 +12,25 @@ set -e
 # ──────────────────────────────────────────────────────────────
 # 1. Aguardar banco de dados ficar disponível
 # ──────────────────────────────────────────────────────────────
-if [ -n "$SQL_HOST" ]; then
-    echo "⏳ Aguardando PostgreSQL em $SQL_HOST:$SQL_PORT ..."
-    until python -c "
-import socket, sys, os
-host = os.environ.get('SQL_HOST')
-port = int(os.environ.get('SQL_PORT'))
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-try:
-    s.connect((host, port))
-    s.close()
-    sys.exit(0)
-except:
-    sys.exit(1)
-" 2>/dev/null; do
-        echo "   PostgreSQL não está pronto ainda... aguardando 1s"
-        sleep 1
-    done
-    echo "✅ PostgreSQL está pronto!"
-fi
+# if [ -n "$SQL_HOST" ]; then
+#     echo "⏳ Aguardando PostgreSQL em $SQL_HOST:$SQL_PORT ..."
+#     until python -c "
+# import socket, sys, os
+# host = os.environ.get('SQL_HOST')
+# port = int(os.environ.get('SQL_PORT'))
+# s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# try:
+#     s.connect((host, port))
+#     s.close()
+#     sys.exit(0)
+# except:
+#     sys.exit(1)
+# " 2>/dev/null; do
+#         echo "   PostgreSQL não está pronto ainda... aguardando 1s"
+#         sleep 1
+#     done
+#     echo "✅ PostgreSQL está pronto!"
+# fi
 
 # ──────────────────────────────────────────────────────────────
 # 2. Executar migrações do Django
