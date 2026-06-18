@@ -26,7 +26,7 @@ COPY . /app/
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Comando padrão: servidor de desenvolvimento Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
