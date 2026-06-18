@@ -16,8 +16,8 @@ if [ -n "$SQL_HOST" ]; then
     echo "⏳ Aguardando PostgreSQL em $SQL_HOST:$SQL_PORT ..."
     until python -c "
 import socket, sys, os
-host = os.environ.get('SQL_HOST', 'db')
-port = int(os.environ.get('SQL_PORT', 5432))
+host = os.environ.get('SQL_HOST')
+port = int(os.environ.get('SQL_PORT'))
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     s.connect((host, port))
