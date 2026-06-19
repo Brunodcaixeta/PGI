@@ -22,6 +22,14 @@ RUN pip install --upgrade pip && \
 # Copiar o restante do código do projeto para o container
 COPY . /app/
 
+# Fazer o download do Tailwind CSS standalone para Linux, gerar o CSS e coletar os estáticos
+RUN apt-get update && apt-get install -y --no-install-recommends curl && \
+    curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64 && \
+    chmod +x tailwindcss-linux-x64 && \
+    mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss && \
+    tailwindcss -i ./pgi/static/pgi/css/input.css -o ./pgi/static/pgi/css/output.css --minify && \
+    python manage.py collectstatic --noinput
+
 # Entrypoint: prepara o ambiente (banco, migrações, import opcional)
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
